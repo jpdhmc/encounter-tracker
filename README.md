@@ -8,4 +8,6 @@ Keeping track of combat encounters when you're playing Dungeons and Dragons can 
 
 ### Project Plan
 
-#### [TimeLog](TimeLog.md)
+#### [Time Log](TimeLog.md)
+
+#### [User Stories](UserStories.md)
