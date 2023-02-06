@@ -13,3 +13,4 @@
 13. As a game master, I want to be able to name encounters.
 14. As a game master, I want to be able to delete encounters.
 15. As a game master, I want to be able to log in and access encounters on other devices.
+16. As a game master, I want to be able to have checkboxes for status conditions for each creature.
