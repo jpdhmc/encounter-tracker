@@ -9,3 +9,9 @@
 2/4/23 - 1 hours - Week 3 exercise work
 
 2/5/23 - 2 hours - Week 3 exercise work
+
+2/6/23 - 1 hours - Encounter Tracker checkpoint 1 work
+
+2/7/23 - 2 hours - Encounter Tracker checkpoint 1 work
+
+2/8/23 - 2 hours - Encounter Tracker checkpoint 1 work
