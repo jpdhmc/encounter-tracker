@@ -9,6 +9,7 @@
   <url>http://maven.apache.org</url>
   <properties>
     <log4j-version>2.19.0</log4j-version>
+    <hibernate-version>5.4.4.Final</hibernate-version>
   </properties>
 
   <dependencies>
@@ -61,13 +62,13 @@
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-core</artifactId>
-      <version>5.2.12.Final</version>
+      <version>${hibernate-version}</version>
     </dependency>
-
+    <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-c3p0 -->
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-c3p0</artifactId>
-      <version>5.2.12.Final</version>
+      <version>${hibernate-version}</version>
     </dependency>
 
     <!-- project lombok to eliminate redundant code -->
