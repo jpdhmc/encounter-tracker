@@ -1,5 +1,8 @@
 package jdh.entity;
 
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -8,11 +11,22 @@ import java.util.Set;
  *
  * @author John Den Hartog
  */
+@Entity(name = "Encounter")
+@Table(name = "encounters")
 public class Encounter {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
+    @GenericGenerator(name = "native", strategy = "native")
     private int id;
+
+    @Column(name = "name")
     private String encounterName;
+
+    @ManyToOne
     private User user;
-    private Set<Creature> creatures = new HashSet<>();
+
+
+    // TODO private Set<Creature> creatures = new HashSet<>();
 
     /**
      * No-arg constructor
@@ -85,21 +99,23 @@ public class Encounter {
         this.user = user;
     }
 
-    /**
+
+    /** TODO
      * Gets creatures.
      *
      * @return the creatures
-     */
+
     public Set<Creature> getCreatures() {
         return creatures;
     }
 
-    /**
+
      * Sets creatures.
      *
      * @param creatures the creatures
-     */
+
     public void setCreatures(Set<Creature> creatures) {
         this.creatures = creatures;
     }
+    */
 }
