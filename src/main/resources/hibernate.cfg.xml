@@ -5,7 +5,7 @@
 <hibernate-configuration>
     <session-factory>
         <!-- TODO: replace connection url and mapping class -->
-        <property name="connection.url">jdbc:mysql://localhost:3306/placeholdername</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/encounter_tracker</property>
         <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
 
         <property name="connection.username">root</property>
@@ -17,7 +17,9 @@
         <property name="hibernate.c3p0.max_statements">50</property>
         <property name="hibernate.c3p0.idle_test_period">3000</property>
 
-        <mapping class="edu.matc.entity.Book"/>
+        <mapping class="jdh.entity.User"/>
+        <mapping class="jdh.entity.Encounter"/>
+        <!-- TODO: <mapping class="jdh.entity.Creature"/> -->
 
 
     </session-factory>
