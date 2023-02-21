@@ -1,7 +1,6 @@
 package jdh.persistence;
 
 import jdh.entity.Encounter;
-import jdh.entity.User;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.hibernate.Session;
@@ -70,7 +69,7 @@ public class EncounterDao {
         Session session = sessionFactory.openSession();
         Encounter encounter = session.get(Encounter.class, id);
         session.close();
-        logger.info("GET USER BY ID: " + user);
+        logger.info("GET ENCOUNTER BY ID: " + encounter);
         return encounter;
     }
 

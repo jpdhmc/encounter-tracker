@@ -118,6 +118,16 @@ public class User {
         this.encounters = encounters;
     }
 
+    public void addEncounter(Encounter encounter) {
+        encounters.add(encounter);
+        encounter.setUser(this);
+    }
+
+    public void removeEncounter(Encounter encounter) {
+        encounters.remove(encounter);
+        encounter.setUser(null);
+    }
+
     @Override
     public String toString() {
         return "User{" +
