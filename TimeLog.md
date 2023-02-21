@@ -15,3 +15,9 @@
 2/7/23 - 2 hours - Encounter Tracker checkpoint 1 work
 
 2/8/23 - 2 hours - Encounter Tracker checkpoint 1 work
+
+2/19/23 - 1 hours - Week 5 exercise/Encounter Tracker hibernate work
+
+2/20/23 - 2 hours - Week 5 exercise/Encounter Tracker hibernate work
+
+2/21/23 - 4 hours - Week 5 exercise/Encounter Tracker hibernate work
