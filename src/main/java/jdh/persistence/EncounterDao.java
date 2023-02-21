@@ -1,5 +1,6 @@
 package jdh.persistence;
 
+import jdh.entity.Encounter;
 import jdh.entity.User;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -13,112 +14,107 @@ import javax.persistence.criteria.Expression;
 import javax.persistence.criteria.Root;
 import java.util.List;
 
-/**
- * User Data Access Object
- *
- * @author John Den Hartog
- */
-public class UserDao {
+public class EncounterDao {
     private final Logger logger = LogManager.getLogger(this.getClass());
     SessionFactory sessionFactory = SessionFactoryProvider.getSessionFactory();
 
     /**
-     * Gets all users.
+     * Gets all encounters
      *
-     * @return all users
+     * @return all encounters
      */
-    public List<User> getAllUsers() {
+    public List<Encounter> getAllEncounters() {
         Session session = sessionFactory.openSession();
         CriteriaBuilder builder = session.getCriteriaBuilder();
-        CriteriaQuery<User> query = builder.createQuery(User.class);
-        Root<User> root = query.from(User.class);
-        List<User> users = session.createQuery(query).getResultList();
+        CriteriaQuery<Encounter> query = builder.createQuery(Encounter.class);
+        Root<Encounter> root = query.from(Encounter.class);
+        List<Encounter> encounters = session.createQuery(query).getResultList();
         session.close();
-        logger.info("GET ALL USERS: ");
-        for (User listUser : users) {
-            logger.info(listUser.toString());
+        logger.info("GET ALL ENCOUNTERS: ");
+        for (Encounter listEncounter : encounters) {
+            logger.info(listEncounter.toString());
         }
-        return users;
+        return encounters;
     }
 
     /**
-     * Gets a user by property with a value similar to entered value
+     * Gets an encounter by property with a value similar to entered value
      *
      * @param propertyName the property name
      * @param value        the value
-     * @return users
+     * @return encounters
      */
-    public List<User> getByPropertyLike(String propertyName, String value) {
+    public List<Encounter> getByPropertyLike(String propertyName, String value) {
         Session session = sessionFactory.openSession();
 
-        logger.info("GET USER BY " + propertyName + " like " + value);
+        logger.info("GET ENCOUNTER BY " + propertyName + " like " + value);
 
         CriteriaBuilder builder = session.getCriteriaBuilder();
-        CriteriaQuery<User> query = builder.createQuery(User.class);
-        Root<User> root = query.from(User.class);
+        CriteriaQuery<Encounter> query = builder.createQuery(Encounter.class);
+        Root<Encounter> root = query.from(Encounter.class);
         Expression<String> propertyPath = root.get(propertyName);
         query.where(builder.like(propertyPath, "%" + value + "%"));
 
-        List<User> users = session.createQuery(query).getResultList();
+        List<Encounter> encounters = session.createQuery(query).getResultList();
         session.close();
-        return users;
+        return encounters;
     }
 
     /**
-     * Gets user by id.
+     * Gets encounter by id.
      *
      * @param id the id
      * @return the id
      */
-    public User getById(int id) {
+    public Encounter getById(int id) {
         Session session = sessionFactory.openSession();
-        User user = session.get(User.class, id);
+        Encounter encounter = session.get(Encounter.class, id);
         session.close();
         logger.info("GET USER BY ID: " + user);
-        return user;
+        return encounter;
     }
 
     /**
-     * Insert a user
+     * Insert an encounter
      *
-     * @param user the user
-     * @return the id of the inserted user
+     * @param encounter the encounter
+     * @return the id of the inserted encounter
      */
-    public int insert(User user) {
+    public int insert(Encounter encounter) {
         int id = 0;
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
-        id = (int)session.save(user);
+        id = (int)session.save(encounter);
         transaction.commit();
         session.close();
-        logger.info("INSERTED USER: " + user);
+        logger.info("INSERTED ENCOUNTER: " + encounter);
         return id;
     }
 
     /**
-     * Save or update a user
+     * Save or update an encounter
      *
-     * @param user the user
+     * @param encounter the encounter
      */
-    public void saveOrUpdate(User user) {
+    public void saveOrUpdate(Encounter encounter) {
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
-        session.saveOrUpdate(user);
+        session.saveOrUpdate(encounter);
         transaction.commit();
         session.close();
-        logger.info("UPDATED NAME: " + user.getUsername());
+        logger.info("UPDATED ENCOUNTER NAME: " + encounter.getEncounterName());
     }
 
     /**
-     * Delete a user
+     * Delete an encounter
      *
-     * @param user the user
+     * @param encounter the encounter
      */
-    public void delete(User user) {
-        logger.info("DELETING USER: " + user);
+    public void delete(Encounter encounter) {
+        logger.info("DELETING ENCOUNTER: " + encounter);
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
-        session.delete(user);
+        session.delete(encounter);
         transaction.commit();
         session.close();
     }

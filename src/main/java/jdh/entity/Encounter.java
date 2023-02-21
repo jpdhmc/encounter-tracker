@@ -99,6 +99,14 @@ public class Encounter {
         this.user = user;
     }
 
+    @Override
+    public String toString() {
+        return "Encounter{" +
+                "id=" + id +
+                ", encounterName='" + encounterName + '\'' +
+                ", user=" + user +
+                '}';
+    }
 
     /** TODO
      * Gets creatures.
