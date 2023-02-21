@@ -35,3 +35,31 @@
 [INFO ] 2023-02-21 00:53:19.213 [main] UserDao - User{id=3, username='testuserthree', password='pass3'}
 [INFO ] 2023-02-21 00:53:19.242 [main] UserDao - INSERTED USER: User{id=24, username='JohnDAOTest', password='daopass'}
 [INFO ] 2023-02-21 00:53:19.245 [main] UserDao - GET USER BY ID: User{id=24, username='JohnDAOTest', password='daopass'}
+[INFO ] 2023-02-21 01:03:18.520 [main] UserDao - GET USER BY ID: User{id=3, username='testuserthree', password='pass3'}
+[INFO ] 2023-02-21 01:03:18.521 [main] UserDao - DELETING USER: User{id=3, username='testuserthree', password='pass3'}
+[INFO ] 2023-02-21 01:03:18.558 [main] UserDao - GET USER BY ID: null
+[INFO ] 2023-02-21 01:03:18.589 [main] UserDao - GET BY username like j
+[INFO ] 2023-02-21 01:03:18.776 [main] UserDao - GET USER BY ID: User{id=1, username='jdhtest', password='pass123'}
+[INFO ] 2023-02-21 01:03:18.810 [main] UserDao - GET USER BY ID: User{id=3, username='testuserthree', password='pass3'}
+[INFO ] 2023-02-21 01:03:18.820 [main] UserDao - UPDATED NAME: coolnewname43
+[INFO ] 2023-02-21 01:03:18.858 [main] UserDao - GET USER BY ID: User{id=3, username='coolnewname43', password='pass3'}
+[INFO ] 2023-02-21 01:03:18.907 [main] UserDao - GET ALL USERS: 
+[INFO ] 2023-02-21 01:03:18.907 [main] UserDao - User{id=1, username='jdhtest', password='pass123'}
+[INFO ] 2023-02-21 01:03:18.907 [main] UserDao - User{id=2, username='secondtestname', password='secondpassword'}
+[INFO ] 2023-02-21 01:03:18.907 [main] UserDao - User{id=3, username='testuserthree', password='pass3'}
+[INFO ] 2023-02-21 01:03:18.940 [main] UserDao - INSERTED USER: User{id=25, username='JohnDAOTest', password='daopass'}
+[INFO ] 2023-02-21 01:03:18.946 [main] UserDao - GET USER BY ID: User{id=25, username='JohnDAOTest', password='daopass'}
+[INFO ] 2023-02-21 01:04:48.031 [main] UserDao - GET USER BY ID: User{id=3, username='testuserjdhthree', password='pass3'}
+[INFO ] 2023-02-21 01:04:48.032 [main] UserDao - DELETING USER: User{id=3, username='testuserjdhthree', password='pass3'}
+[INFO ] 2023-02-21 01:04:48.067 [main] UserDao - GET USER BY ID: null
+[INFO ] 2023-02-21 01:04:48.093 [main] UserDao - GET BY username like jdh
+[INFO ] 2023-02-21 01:04:48.259 [main] UserDao - GET USER BY ID: User{id=1, username='jdhtest', password='pass123'}
+[INFO ] 2023-02-21 01:04:48.280 [main] UserDao - GET USER BY ID: User{id=3, username='testuserjdhthree', password='pass3'}
+[INFO ] 2023-02-21 01:04:48.294 [main] UserDao - UPDATED NAME: coolnewname43
+[INFO ] 2023-02-21 01:04:48.298 [main] UserDao - GET USER BY ID: User{id=3, username='coolnewname43', password='pass3'}
+[INFO ] 2023-02-21 01:04:48.340 [main] UserDao - GET ALL USERS: 
+[INFO ] 2023-02-21 01:04:48.340 [main] UserDao - User{id=1, username='jdhtest', password='pass123'}
+[INFO ] 2023-02-21 01:04:48.340 [main] UserDao - User{id=2, username='secondtestname', password='secondpassword'}
+[INFO ] 2023-02-21 01:04:48.340 [main] UserDao - User{id=3, username='testuserjdhthree', password='pass3'}
+[INFO ] 2023-02-21 01:04:48.370 [main] UserDao - INSERTED USER: User{id=26, username='JohnDAOTest', password='daopass'}
+[INFO ] 2023-02-21 01:04:48.373 [main] UserDao - GET USER BY ID: User{id=26, username='JohnDAOTest', password='daopass'}

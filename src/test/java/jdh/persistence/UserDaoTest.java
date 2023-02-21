@@ -9,8 +9,18 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
+
+/**
+ * Test class - User DAO
+ *
+ * @author John Den Hartog
+ */
 class UserDaoTest {
     UserDao dao;
+
+    /**
+     * Sets up new dao and resets database before each test
+     */
     @BeforeEach
     void setUp() {
         dao = new UserDao();
@@ -19,12 +29,27 @@ class UserDaoTest {
         database.runSQL("cleandb.sql");
     }
 
+    /**
+     * Verifies getAllUsers
+     */
     @Test
     void getAllUsersSuccess() {
         List<User> users = dao.getAllUsers();
         assertEquals(3, users.size());
     }
 
+    /**
+     * Verifies getByPropertyLike
+     */
+    @Test
+    void getByPropertyLikeSuccess() {
+        List<User> users = dao.getByPropertyLike("username", "jdh");
+        assertEquals(2, users.size());
+    }
+
+    /**
+     * Verifies getById
+     */
     @Test
     void getByIdSuccess() {
         User retrievedUser = dao.getById(1);
@@ -32,6 +57,9 @@ class UserDaoTest {
     }
 
 
+    /**
+     * Verifies insert
+     */
     @Test
     void insertSuccess() {
         User newUser = new User("JohnDAOTest", "daopass");
@@ -40,6 +68,9 @@ class UserDaoTest {
         assertEquals("JohnDAOTest", insertedUser.getUsername());
     }
 
+    /**
+     * Verifies update
+     */
     @Test
     void updateSuccess() {
         String newUsername = "coolnewname43";
@@ -50,6 +81,9 @@ class UserDaoTest {
         assertEquals(newUsername, retrievedUser.getUsername());
     }
 
+    /**
+     * Verifies delete
+     */
     @Test
     void deleteSuccess() {
         dao.delete(dao.getById(3));
