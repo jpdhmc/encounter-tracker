@@ -117,4 +117,13 @@ public class User {
     public void setEncounters(Set<Encounter> encounters) {
         this.encounters = encounters;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                '}';
+    }
 }

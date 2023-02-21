@@ -1,0 +1,5 @@
+[INFO ] 2023-02-20 23:26:35.153 [main] UserDao - user by id: User{id=1, username='jdhtest', password='pass123'}
+[INFO ] 2023-02-20 23:26:35.441 [main] UserDao - all users: 
+[INFO ] 2023-02-20 23:26:35.441 [main] UserDao - User{id=1, username='jdhtest', password='pass123'}
+[INFO ] 2023-02-20 23:26:35.503 [main] UserDao - inserted user: User{id=17, username='JohnDAOTest', password='daopass'}
+[INFO ] 2023-02-20 23:26:35.510 [main] UserDao - user by id: User{id=17, username='JohnDAOTest', password='daopass'}
