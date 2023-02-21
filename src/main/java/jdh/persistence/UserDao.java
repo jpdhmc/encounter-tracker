@@ -28,7 +28,7 @@ public class UserDao {
         Root<User> root = query.from(User.class);
         List<User> users = session.createQuery(query).getResultList();
         session.close();
-        logger.info("all users: ");
+        logger.info("GET ALL USERS: ");
         for (User listUser : users) {
             logger.info(listUser.toString());
         }
@@ -39,7 +39,7 @@ public class UserDao {
         Session session = sessionFactory.openSession();
         User user = session.get(User.class, id);
         session.close();
-        logger.info("user by id: " + user);
+        logger.info("GET USER BY ID: " + user);
         return user;
     }
 
@@ -50,7 +50,25 @@ public class UserDao {
         id = (int)session.save(user);
         transaction.commit();
         session.close();
-        logger.info("inserted user: " + user);
+        logger.info("INSERTED USER: " + user);
         return id;
+    }
+
+    public void saveOrUpdate(User user) {
+        Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
+        session.saveOrUpdate(user);
+        transaction.commit();
+        session.close();
+        logger.info("UPDATED NAME: " + user.getUsername());
+    }
+
+    public void delete(User user) {
+        logger.info("DELETING USER: " + user);
+        Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
+        session.delete(user);
+        transaction.commit();
+        session.close();
     }
 }
