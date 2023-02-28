@@ -91,3 +91,90 @@
 [INFO ] 2023-02-21 02:12:35.707 [main] UserDao - GET USER BY ID: User{id=1, username='jdhtest', password='pass123'}
 [INFO ] 2023-02-21 02:12:35.721 [main] EncounterDao - INSERTED ENCOUNTER: Encounter{id=5, encounterName='brand new encounter', user=User{id=1, username='jdhtest', password='pass123'}}
 [INFO ] 2023-02-21 02:12:35.728 [main] EncounterDao - GET ENCOUNTER BY ID: Encounter{id=5, encounterName='brand new encounter', user=User{id=1, username='jdhtest', password='pass123'}}
+[INFO ] 2023-02-24 22:04:47.141 [main] EncounterDao - GET ENCOUNTER BY ID: Encounter{id=1, encounterName='test goblins', user=User{id=1, username='jdhtest', password='pass123'}}
+[INFO ] 2023-02-24 22:04:47.141 [main] EncounterDao - DELETING ENCOUNTER: Encounter{id=1, encounterName='test goblins', user=User{id=1, username='jdhtest', password='pass123'}}
+[INFO ] 2023-02-24 22:04:47.167 [main] EncounterDao - GET ENCOUNTER BY ID: null
+[INFO ] 2023-02-24 22:04:47.196 [main] EncounterDao - GET ENCOUNTER BY encounterName like test
+[INFO ] 2023-02-24 22:04:47.408 [main] EncounterDao - GET ENCOUNTER BY ID: Encounter{id=1, encounterName='test goblins', user=User{id=1, username='jdhtest', password='pass123'}}
+[INFO ] 2023-02-24 22:04:47.443 [main] EncounterDao - GET ENCOUNTER BY ID: Encounter{id=2, encounterName='wizardenc', user=User{id=2, username='secondtestname', password='secondpassword'}}
+[INFO ] 2023-02-24 22:04:47.457 [main] EncounterDao - UPDATED ENCOUNTER NAME: cool encounter name
+[INFO ] 2023-02-24 22:04:47.466 [main] EncounterDao - GET ENCOUNTER BY ID: Encounter{id=2, encounterName='cool encounter name', user=User{id=2, username='secondtestname', password='secondpassword'}}
+[INFO ] 2023-02-24 22:04:47.501 [main] EncounterDao - GET ALL ENCOUNTERS: 
+[INFO ] 2023-02-24 22:04:47.501 [main] EncounterDao - Encounter{id=1, encounterName='test goblins', user=User{id=1, username='jdhtest', password='pass123'}}
+[INFO ] 2023-02-24 22:04:47.501 [main] EncounterDao - Encounter{id=2, encounterName='wizardenc', user=User{id=2, username='secondtestname', password='secondpassword'}}
+[INFO ] 2023-02-24 22:04:47.502 [main] EncounterDao - Encounter{id=3, encounterName='thirdencountertest', user=User{id=1, username='jdhtest', password='pass123'}}
+[INFO ] 2023-02-24 22:04:47.528 [main] UserDao - GET USER BY ID: User{id=1, username='jdhtest', password='pass123'}
+[INFO ] 2023-02-24 22:04:47.542 [main] EncounterDao - INSERTED ENCOUNTER: Encounter{id=6, encounterName='brand new encounter', user=User{id=1, username='jdhtest', password='pass123'}}
+[INFO ] 2023-02-24 22:04:47.547 [main] EncounterDao - GET ENCOUNTER BY ID: Encounter{id=6, encounterName='brand new encounter', user=User{id=1, username='jdhtest', password='pass123'}}
+[INFO ] 2023-02-27 19:49:51.559 [main] UserDao - GET USER BY ID: User{id=3, username='testuserjdhthree', password='pass3'}
+[INFO ] 2023-02-27 19:49:51.559 [main] UserDao - DELETING USER: User{id=3, username='testuserjdhthree', password='pass3'}
+[INFO ] 2023-02-27 19:49:51.590 [main] UserDao - GET USER BY ID: null
+[INFO ] 2023-02-27 19:49:51.615 [main] UserDao - GET USER BY username like jdh
+[INFO ] 2023-02-27 19:49:51.796 [main] UserDao - GET USER BY ID: User{id=1, username='jdhtest', password='pass123'}
+[INFO ] 2023-02-27 19:49:51.826 [main] UserDao - GET USER BY ID: User{id=3, username='testuserjdhthree', password='pass3'}
+[INFO ] 2023-02-27 19:49:51.834 [main] UserDao - UPDATED NAME: coolnewname43
+[INFO ] 2023-02-27 19:49:51.837 [main] UserDao - GET USER BY ID: User{id=3, username='coolnewname43', password='pass3'}
+[INFO ] 2023-02-27 19:49:51.867 [main] UserDao - GET ALL USERS: 
+[INFO ] 2023-02-27 19:49:51.868 [main] UserDao - User{id=1, username='jdhtest', password='pass123'}
+[INFO ] 2023-02-27 19:49:51.868 [main] UserDao - User{id=2, username='secondtestname', password='secondpassword'}
+[INFO ] 2023-02-27 19:49:51.868 [main] UserDao - User{id=3, username='testuserjdhthree', password='pass3'}
+[INFO ] 2023-02-27 19:49:51.893 [main] UserDao - INSERTED USER: User{id=27, username='JohnDAOTest', password='daopass'}
+[INFO ] 2023-02-27 19:49:51.898 [main] UserDao - GET USER BY ID: User{id=27, username='JohnDAOTest', password='daopass'}
+[INFO ] 2023-02-27 20:05:56.065 [main] EncounterDao - GET ENCOUNTER BY ID: Encounter{id=1, encounterName='test goblins', user=User{id=1, username='jdhtest', password='pass123'}}
+[INFO ] 2023-02-27 20:05:56.066 [main] EncounterDao - DELETING ENCOUNTER: Encounter{id=1, encounterName='test goblins', user=User{id=1, username='jdhtest', password='pass123'}}
+[INFO ] 2023-02-27 20:05:56.097 [main] EncounterDao - GET ENCOUNTER BY ID: null
+[INFO ] 2023-02-27 20:05:56.125 [main] EncounterDao - GET ENCOUNTER BY encounterName like test
+[INFO ] 2023-02-27 20:05:56.308 [main] EncounterDao - GET ENCOUNTER BY ID: Encounter{id=1, encounterName='test goblins', user=User{id=1, username='jdhtest', password='pass123'}}
+[INFO ] 2023-02-27 20:05:56.345 [main] EncounterDao - GET ENCOUNTER BY ID: Encounter{id=2, encounterName='wizardenc', user=User{id=2, username='secondtestname', password='secondpassword'}}
+[INFO ] 2023-02-27 20:05:56.354 [main] EncounterDao - UPDATED ENCOUNTER NAME: cool encounter name
+[INFO ] 2023-02-27 20:05:56.361 [main] EncounterDao - GET ENCOUNTER BY ID: Encounter{id=2, encounterName='cool encounter name', user=User{id=2, username='secondtestname', password='secondpassword'}}
+[INFO ] 2023-02-27 20:05:56.391 [main] EncounterDao - GET ALL ENCOUNTERS: 
+[INFO ] 2023-02-27 20:05:56.391 [main] EncounterDao - Encounter{id=1, encounterName='test goblins', user=User{id=1, username='jdhtest', password='pass123'}}
+[INFO ] 2023-02-27 20:05:56.391 [main] EncounterDao - Encounter{id=2, encounterName='wizardenc', user=User{id=2, username='secondtestname', password='secondpassword'}}
+[INFO ] 2023-02-27 20:05:56.391 [main] EncounterDao - Encounter{id=3, encounterName='thirdencountertest', user=User{id=1, username='jdhtest', password='pass123'}}
+[INFO ] 2023-02-27 20:05:56.427 [main] UserDao - GET USER BY ID: User{id=1, username='jdhtest', password='pass123'}
+[INFO ] 2023-02-27 20:05:56.458 [main] EncounterDao - INSERTED ENCOUNTER: Encounter{id=7, encounterName='brand new encounter', user=User{id=1, username='jdhtest', password='pass123'}}
+[INFO ] 2023-02-27 20:05:56.466 [main] EncounterDao - GET ENCOUNTER BY ID: Encounter{id=7, encounterName='brand new encounter', user=User{id=1, username='jdhtest', password='pass123'}}
+[INFO ] 2023-02-27 20:05:56.523 [main] UserDao - GET USER BY ID: User{id=3, username='testuserjdhthree', password='pass3'}
+[INFO ] 2023-02-27 20:05:56.523 [main] UserDao - DELETING USER: User{id=3, username='testuserjdhthree', password='pass3'}
+[INFO ] 2023-02-27 20:05:56.537 [main] UserDao - GET USER BY ID: null
+[INFO ] 2023-02-27 20:05:56.558 [main] UserDao - GET USER BY username like jdh
+[INFO ] 2023-02-27 20:05:56.589 [main] UserDao - GET USER BY ID: User{id=1, username='jdhtest', password='pass123'}
+[INFO ] 2023-02-27 20:05:56.607 [main] UserDao - GET USER BY ID: User{id=3, username='testuserjdhthree', password='pass3'}
+[INFO ] 2023-02-27 20:05:56.611 [main] UserDao - UPDATED NAME: coolnewname43
+[INFO ] 2023-02-27 20:05:56.614 [main] UserDao - GET USER BY ID: User{id=3, username='coolnewname43', password='pass3'}
+[INFO ] 2023-02-27 20:05:56.658 [main] UserDao - GET ALL USERS: 
+[INFO ] 2023-02-27 20:05:56.658 [main] UserDao - User{id=1, username='jdhtest', password='pass123'}
+[INFO ] 2023-02-27 20:05:56.658 [main] UserDao - User{id=2, username='secondtestname', password='secondpassword'}
+[INFO ] 2023-02-27 20:05:56.658 [main] UserDao - User{id=3, username='testuserjdhthree', password='pass3'}
+[INFO ] 2023-02-27 20:05:56.684 [main] UserDao - INSERTED USER: User{id=28, username='JohnDAOTest', password='daopass'}
+[INFO ] 2023-02-27 20:05:56.687 [main] UserDao - GET USER BY ID: User{id=28, username='JohnDAOTest', password='daopass'}
+[INFO ] 2023-02-27 20:16:57.862 [main] EncounterDao - GET ENCOUNTER BY ID: Encounter{id=1, encounterName='test goblins', user=User{id=1, username='jdhtest', password='pass123'}}
+[INFO ] 2023-02-27 20:16:57.863 [main] EncounterDao - DELETING ENCOUNTER: Encounter{id=1, encounterName='test goblins', user=User{id=1, username='jdhtest', password='pass123'}}
+[INFO ] 2023-02-27 20:16:57.894 [main] EncounterDao - GET ENCOUNTER BY ID: null
+[INFO ] 2023-02-27 20:16:57.919 [main] EncounterDao - GET ENCOUNTER BY encounterName like test
+[INFO ] 2023-02-27 20:16:58.135 [main] EncounterDao - GET ENCOUNTER BY ID: Encounter{id=1, encounterName='test goblins', user=User{id=1, username='jdhtest', password='pass123'}}
+[INFO ] 2023-02-27 20:16:58.166 [main] EncounterDao - GET ENCOUNTER BY ID: Encounter{id=2, encounterName='wizardenc', user=User{id=2, username='secondtestname', password='secondpassword'}}
+[INFO ] 2023-02-27 20:16:58.178 [main] EncounterDao - UPDATED ENCOUNTER NAME: cool encounter name
+[INFO ] 2023-02-27 20:16:58.187 [main] EncounterDao - GET ENCOUNTER BY ID: Encounter{id=2, encounterName='cool encounter name', user=User{id=2, username='secondtestname', password='secondpassword'}}
+[INFO ] 2023-02-27 20:16:58.220 [main] EncounterDao - GET ALL ENCOUNTERS: 
+[INFO ] 2023-02-27 20:16:58.220 [main] EncounterDao - Encounter{id=1, encounterName='test goblins', user=User{id=1, username='jdhtest', password='pass123'}}
+[INFO ] 2023-02-27 20:16:58.221 [main] EncounterDao - Encounter{id=2, encounterName='wizardenc', user=User{id=2, username='secondtestname', password='secondpassword'}}
+[INFO ] 2023-02-27 20:16:58.221 [main] EncounterDao - Encounter{id=3, encounterName='thirdencountertest', user=User{id=1, username='jdhtest', password='pass123'}}
+[INFO ] 2023-02-27 20:16:58.260 [main] UserDao - GET USER BY ID: User{id=1, username='jdhtest', password='pass123'}
+[INFO ] 2023-02-27 20:16:58.286 [main] EncounterDao - INSERTED ENCOUNTER: Encounter{id=8, encounterName='brand new encounter', user=User{id=1, username='jdhtest', password='pass123'}}
+[INFO ] 2023-02-27 20:16:58.300 [main] EncounterDao - GET ENCOUNTER BY ID: Encounter{id=8, encounterName='brand new encounter', user=User{id=1, username='jdhtest', password='pass123'}}
+[INFO ] 2023-02-27 20:16:58.346 [main] UserDao - GET USER BY ID: User{id=3, username='testuserjdhthree', password='pass3'}
+[INFO ] 2023-02-27 20:16:58.346 [main] UserDao - DELETING USER: User{id=3, username='testuserjdhthree', password='pass3'}
+[INFO ] 2023-02-27 20:16:58.366 [main] UserDao - GET USER BY ID: null
+[INFO ] 2023-02-27 20:16:58.388 [main] UserDao - GET USER BY username like jdh
+[INFO ] 2023-02-27 20:16:58.429 [main] UserDao - GET USER BY ID: User{id=1, username='jdhtest', password='pass123'}
+[INFO ] 2023-02-27 20:16:58.451 [main] UserDao - GET USER BY ID: User{id=3, username='testuserjdhthree', password='pass3'}
+[INFO ] 2023-02-27 20:16:58.456 [main] UserDao - UPDATED NAME: coolnewname43
+[INFO ] 2023-02-27 20:16:58.460 [main] UserDao - GET USER BY ID: User{id=3, username='coolnewname43', password='pass3'}
+[INFO ] 2023-02-27 20:16:58.502 [main] UserDao - GET ALL USERS: 
+[INFO ] 2023-02-27 20:16:58.502 [main] UserDao - User{id=1, username='jdhtest', password='pass123'}
+[INFO ] 2023-02-27 20:16:58.502 [main] UserDao - User{id=2, username='secondtestname', password='secondpassword'}
+[INFO ] 2023-02-27 20:16:58.502 [main] UserDao - User{id=3, username='testuserjdhthree', password='pass3'}
+[INFO ] 2023-02-27 20:16:58.527 [main] UserDao - INSERTED USER: User{id=29, username='JohnDAOTest', password='daopass'}
+[INFO ] 2023-02-27 20:16:58.530 [main] UserDao - GET USER BY ID: User{id=29, username='JohnDAOTest', password='daopass'}
