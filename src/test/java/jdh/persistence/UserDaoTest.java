@@ -1,6 +1,7 @@
 package jdh.persistence;
 
 import jdh.entity.User;
+import jdh.test.util.DaoFactory;
 import jdh.test.util.Database;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -16,14 +17,14 @@ import static org.junit.jupiter.api.Assertions.*;
  * @author John Den Hartog
  */
 class UserDaoTest {
-    UserDao dao;
+    GenericDao<User> dao;
 
     /**
      * Sets up new dao and resets database before each test
      */
     @BeforeEach
     void setUp() {
-        dao = new UserDao();
+        dao = DaoFactory.createDao(User.class);
 
         Database database = Database.getInstance();
         database.runSQL("cleandb.sql");
@@ -34,17 +35,17 @@ class UserDaoTest {
      */
     @Test
     void getAllUsersSuccess() {
-        List<User> users = dao.getAllUsers();
+        List<User> users = dao.getAll();
         assertEquals(3, users.size());
     }
 
     /**
-     * Verifies getByPropertyLike
+     * Verifies findByPropertyEqual
      */
     @Test
-    void getByPropertyLikeSuccess() {
-        List<User> users = dao.getByPropertyLike("username", "jdh");
-        assertEquals(2, users.size());
+    void findByPropertyEqualSuccess() {
+        List<User> users = dao.findByPropertyEqual("username", "secondtestname");
+        assertEquals(1, users.size());
     }
 
     /**
