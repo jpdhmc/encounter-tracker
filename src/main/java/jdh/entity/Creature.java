@@ -1,5 +1,9 @@
 package jdh.entity;
 
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.*;
+
 /**
  * Represents a creature
  *
@@ -7,12 +11,27 @@ package jdh.entity;
  *
  * @author John Den Hartog
  */
+@Entity(name = "Creature")
+@Table(name = "creatures")
 public class Creature {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
+    @GenericGenerator(name = "native", strategy = "native")
     private int id;
+
+    @Column(name = "name")
+    private String creatureName;
+
+    @ManyToOne
+    private Encounter encounter;
+
+    @Column(name = "maxhitpoints")
     private int maxHitpoints;
+    @Column(name = "currenthitpoints")
     private int currentHitpoints;
     private int maxLegendaryActions;
     private int currentLegendaryActions;
+    @Column(name = "initiative")
     private int initiative;
 
     // Spell slots
@@ -50,9 +69,6 @@ public class Creature {
     private Boolean isProne;
     private Boolean isRestrained;
     private Boolean isUnconscious;
-
-    private String creatureName;
-    private Encounter encounter;
 
     /**
      * No-arg constructor

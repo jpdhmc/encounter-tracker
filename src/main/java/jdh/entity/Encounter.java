@@ -26,7 +26,8 @@ public class Encounter {
     private User user;
 
 
-    // TODO private Set<Creature> creatures = new HashSet<>();
+    @OneToMany(mappedBy = "encounter", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private Set<Creature> creatures = new HashSet<>();
 
     /**
      * No-arg constructor
