@@ -1,8 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<c:set var="title" value="Search Results" />
-<!DOCTYPE html>
-<html>
-<%@include file="head.jsp"%>
+<c:import url="head.jsp"/>
   <body>
     <h2>Users</h2>
     <table id="encounterTable">
@@ -26,4 +23,4 @@
       </tbody>
     </table>
   </body>
-</html>
+<c:import url="footer.jsp"/>
