@@ -9,7 +9,7 @@ class Open5eDataDaoTest {
     @Test
     void getMonster() {
         Open5eDataDao dao = new Open5eDataDao();
-        assertEquals(dao.getMonster().getHitPoints(), 11);
-        assertEquals(dao.getMonster().getName(), "Bandit");
+        assertEquals(dao.getMonster("bandit").getHitPoints(), 11);
+        assertEquals(dao.getMonster("bandit").getName(), "Bandit");
     }
 }

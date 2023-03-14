@@ -18,7 +18,7 @@ public class Monster{
 	private String conditionImmunities;
 
 	@JsonProperty("senses")
-	private String senses;
+	private Object senses;
 
 	@JsonProperty("challenge_rating")
 	private String challengeRating;
@@ -30,7 +30,7 @@ public class Monster{
 	private String type;
 
 	@JsonProperty("legendary_actions")
-	private String legendaryActions;
+	private Object legendaryActions;
 
 	@JsonProperty("speed")
 	private Speed speed;
@@ -66,7 +66,7 @@ public class Monster{
 	private String hitDice;
 
 	@JsonProperty("special_abilities")
-	private String specialAbilities;
+	private Object specialAbilities;
 
 	@JsonProperty("document__title")
 	private String documentTitle;
@@ -129,7 +129,7 @@ public class Monster{
 	private String name;
 
 	@JsonProperty("reactions")
-	private String reactions;
+	private Object reactions;
 
 	@JsonProperty("alignment")
 	private String alignment;
@@ -169,11 +169,11 @@ public class Monster{
 		return conditionImmunities;
 	}
 
-	public void setSenses(String senses){
+	public void setSenses(Object senses){
 		this.senses = senses;
 	}
 
-	public String getSenses(){
+	public Object getSenses(){
 		return senses;
 	}
 
@@ -201,11 +201,11 @@ public class Monster{
 		return type;
 	}
 
-	public void setLegendaryActions(String legendaryActions){
+	public void setLegendaryActions(Object legendaryActions){
 		this.legendaryActions = legendaryActions;
 	}
 
-	public String getLegendaryActions(){
+	public Object getLegendaryActions(){
 		return legendaryActions;
 	}
 
@@ -297,11 +297,11 @@ public class Monster{
 		return hitDice;
 	}
 
-	public void setSpecialAbilities(String specialAbilities){
+	public void setSpecialAbilities(Object specialAbilities){
 		this.specialAbilities = specialAbilities;
 	}
 
-	public String getSpecialAbilities(){
+	public Object getSpecialAbilities(){
 		return specialAbilities;
 	}
 
@@ -465,11 +465,11 @@ public class Monster{
 		return name;
 	}
 
-	public void setReactions(String reactions){
+	public void setReactions(Object reactions){
 		this.reactions = reactions;
 	}
 
-	public String getReactions(){
+	public Object getReactions(){
 		return reactions;
 	}
 
