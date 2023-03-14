@@ -1,6 +1,7 @@
 package jdh.persistence;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jdh.open5edata.Monster;
 import org.apache.logging.log4j.LogManager;
@@ -22,6 +23,7 @@ public class Open5eDataDao {
         ObjectMapper mapper = new ObjectMapper();
         Monster monster = null;
         try {
+            mapper.enable(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT);
             monster = mapper.readValue(response, Monster.class);
         } catch (JsonProcessingException e) {
             throw new RuntimeException(e);

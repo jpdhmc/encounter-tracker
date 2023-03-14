@@ -129,7 +129,7 @@ public class Monster{
 	private String name;
 
 	@JsonProperty("reactions")
-	private Object reactions;
+	private List<Reactions> reactions;
 
 	@JsonProperty("alignment")
 	private String alignment;
@@ -465,11 +465,11 @@ public class Monster{
 		return name;
 	}
 
-	public void setReactions(Object reactions){
+	public void setReactions(List<Reactions> reactions){
 		this.reactions = reactions;
 	}
 
-	public Object getReactions(){
+	public List<Reactions> getReactions(){
 		return reactions;
 	}
 
