@@ -123,6 +123,13 @@ public class GenericDao<T> {
         return session.createQuery(query).getResultList();
     }
 
+    /**
+     * Finds entities with a value similar to entered value
+     *
+     * @param propertyName
+     * @param value
+     * @return
+     */
     public List<T> findByPropertyLike(String propertyName, Object value) {
         Session session = getSession();
         CriteriaBuilder builder = session.getCriteriaBuilder();

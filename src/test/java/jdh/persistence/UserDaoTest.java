@@ -48,6 +48,12 @@ class UserDaoTest {
         assertEquals(1, users.size());
     }
 
+    @Test
+    void findByPropertyLikeSuccess() {
+        List<User> users = dao.findByPropertyLike("username", "jdh");
+        assertEquals(2, users.size());
+    }
+
     /**
      * Verifies getById
      */
