@@ -21,3 +21,11 @@
 2/20/23 - 2 hours - Week 5 exercise/Encounter Tracker hibernate work
 
 2/21/23 - 4 hours - Week 5 exercise/Encounter Tracker hibernate work
+
+2/24/23 - 1 hour
+
+2/27/23 - 1 hour
+
+03/11/23 - 2 hours - Week 8 exercise
+
+03/13/23 -
