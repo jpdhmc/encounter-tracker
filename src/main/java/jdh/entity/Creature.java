@@ -7,8 +7,6 @@ import javax.persistence.*;
 /**
  * Represents a creature
  *
- * TODO: finish creature class
- *
  * @author John Den Hartog
  */
 @Entity(name = "Creature")
@@ -19,56 +17,45 @@ public class Creature {
     @GenericGenerator(name = "native", strategy = "native")
     private int id;
 
-    @Column(name = "name")
-    private String creatureName;
+    @Column(name = "creaturename")
+    private String creaturename;
 
     @ManyToOne
-    private Encounter encounter;
+    private Encounter encounters;
 
     @Column(name = "maxhitpoints")
-    private int maxHitpoints;
+    private int maxhitpoints;
     @Column(name = "currenthitpoints")
-    private int currentHitpoints;
-    private int maxLegendaryActions;
-    private int currentLegendaryActions;
+    private int currenthitpoints;
     @Column(name = "initiative")
     private int initiative;
 
-    // Spell slots
-    private int maxLv1Slots;
-    private int currentLv1Slots;
-    private int maxLv2Slots;
-    private int currentLv2Slots;
-    private int maxLv3Slots;
-    private int currentLv3Slots;
-    private int maxLv4Slots;
-    private int currentLv4Slots;
-    private int maxLv5Slots;
-    private int currentLv5Slots;
-    private int maxLv6Slots;
-    private int currentLv6Slots;
-    private int maxLv7Slots;
-    private int currentLv7Slots;
-    private int maxLv8Slots;
-    private int currentLv8Slots;
-    private int maxLv9Slots;
-    private int currentLv9Slots;
-
-
-    private Boolean isAlly;
-    private Boolean isTrackingConditions;
+    @Column(name = "isally")
+    private Boolean isally;
+    @Column(name = "istrackingconditions")
+    private Boolean istrackingconditions;
 
     // Condition Booleans
-    private Boolean isBlinded;
-    private Boolean isCharmed;
-    private Boolean isDeafened;
-    private Boolean isFrightened;
-    private Boolean isStunned;
-    private Boolean isParalyzed;
-    private Boolean isPoisoned;
-    private Boolean isProne;
-    private Boolean isRestrained;
-    private Boolean isUnconscious;
+    @Column(name = "isblinded")
+    private Boolean isblinded;
+    @Column(name = "ischarmed")
+    private Boolean ischarmed;
+    @Column(name = "isdeafened")
+    private Boolean isdeafened;
+    @Column(name = "isfrightened")
+    private Boolean isfrightened;
+    @Column(name = "isstunned")
+    private Boolean isstunned;
+    @Column(name = "isparalyzed")
+    private Boolean isparalyzed;
+    @Column(name = "ispoisoned")
+    private Boolean ispoisoned;
+    @Column(name = "isprone")
+    private Boolean isprone;
+    @Column(name = "isrestrained")
+    private Boolean isrestrained;
+    @Column(name = "isunconscious")
+    private Boolean isunconscious;
 
     /**
      * No-arg constructor
@@ -76,4 +63,152 @@ public class Creature {
     public Creature() {
     }
 
+    public Creature(String creatureName, Encounter encounters) {
+        this.creaturename = creatureName;
+        this.encounters = encounters;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getCreaturename() {
+        return creaturename;
+    }
+
+    public void setCreaturename(String creaturename) {
+        this.creaturename = creaturename;
+    }
+
+    public Encounter getEncounters() {
+        return encounters;
+    }
+
+    public void setEncounters(Encounter encounters) {
+        this.encounters = encounters;
+    }
+
+    public int getMaxhitpoints() {
+        return maxhitpoints;
+    }
+
+    public void setMaxhitpoints(int maxhitpoints) {
+        this.maxhitpoints = maxhitpoints;
+    }
+
+    public int getCurrenthitpoints() {
+        return currenthitpoints;
+    }
+
+    public void setCurrenthitpoints(int currenthitpoints) {
+        this.currenthitpoints = currenthitpoints;
+    }
+
+    public int getInitiative() {
+        return initiative;
+    }
+
+    public void setInitiative(int initiative) {
+        this.initiative = initiative;
+    }
+
+    public Boolean getIsally() {
+        return isally;
+    }
+
+    public void setIsally(Boolean isally) {
+        this.isally = isally;
+    }
+
+    public Boolean getIstrackingconditions() {
+        return istrackingconditions;
+    }
+
+    public void setIstrackingconditions(Boolean istrackingconditions) {
+        this.istrackingconditions = istrackingconditions;
+    }
+
+    public Boolean getIsblinded() {
+        return isblinded;
+    }
+
+    public void setIsblinded(Boolean isblinded) {
+        this.isblinded = isblinded;
+    }
+
+    public Boolean getIscharmed() {
+        return ischarmed;
+    }
+
+    public void setIscharmed(Boolean ischarmed) {
+        this.ischarmed = ischarmed;
+    }
+
+    public Boolean getIsdeafened() {
+        return isdeafened;
+    }
+
+    public void setIsdeafened(Boolean isdeafened) {
+        this.isdeafened = isdeafened;
+    }
+
+    public Boolean getIsfrightened() {
+        return isfrightened;
+    }
+
+    public void setIsfrightened(Boolean isfrightened) {
+        this.isfrightened = isfrightened;
+    }
+
+    public Boolean getIsstunned() {
+        return isstunned;
+    }
+
+    public void setIsstunned(Boolean isstunned) {
+        this.isstunned = isstunned;
+    }
+
+    public Boolean getIsparalyzed() {
+        return isparalyzed;
+    }
+
+    public void setIsparalyzed(Boolean isparalyzed) {
+        this.isparalyzed = isparalyzed;
+    }
+
+    public Boolean getIspoisoned() {
+        return ispoisoned;
+    }
+
+    public void setIspoisoned(Boolean ispoisoned) {
+        this.ispoisoned = ispoisoned;
+    }
+
+    public Boolean getIsprone() {
+        return isprone;
+    }
+
+    public void setIsprone(Boolean isprone) {
+        this.isprone = isprone;
+    }
+
+    public Boolean getIsrestrained() {
+        return isrestrained;
+    }
+
+    public void setIsrestrained(Boolean isrestrained) {
+        this.isrestrained = isrestrained;
+    }
+
+    public Boolean getIsunconscious() {
+        return isunconscious;
+    }
+
+    public void setIsunconscious(Boolean isunconscious) {
+        this.isunconscious = isunconscious;
+    }
 }

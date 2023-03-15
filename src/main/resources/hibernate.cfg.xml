@@ -20,7 +20,7 @@
 
         <mapping class="jdh.entity.User"/>
         <mapping class="jdh.entity.Encounter"/>
-        <!-- TODO: <mapping class="jdh.entity.Creature"/> -->
+        <!-- <mapping class="jdh.entity.Creature"/> -->
 
 
     </session-factory>

@@ -25,8 +25,7 @@ public class Encounter {
     @ManyToOne
     private User user;
 
-
-    @OneToMany(mappedBy = "encounter", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "encounters", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private Set<Creature> creatures = new HashSet<>();
 
     /**
@@ -109,22 +108,32 @@ public class Encounter {
                 '}';
     }
 
-    /** TODO
+    /**
      * Gets creatures.
      *
      * @return the creatures
+     */
 
     public Set<Creature> getCreatures() {
         return creatures;
     }
 
-
+    /**
      * Sets creatures.
      *
      * @param creatures the creatures
-
+    */
     public void setCreatures(Set<Creature> creatures) {
         this.creatures = creatures;
     }
-    */
+
+    public void addCreature(Creature creature) {
+        creatures.add(creature);
+        creature.setEncounters(this);
+    }
+
+    public void removeCreature(Creature creature) {
+        creatures.remove(creature);
+        creature.setEncounters(null);
+    }
 }

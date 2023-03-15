@@ -1064,7 +1064,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="307" parent="303" name="name">
+    <column id="307" parent="303" name="creaturename">
       <DasType>varchar(50)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
@@ -1096,73 +1096,73 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <NotNull>1</NotNull>
       <Position>7</Position>
     </column>
-    <column id="313" parent="303" name="isBlinded">
+    <column id="313" parent="303" name="isblinded">
       <DasType>tinyint(1)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>8</Position>
     </column>
-    <column id="314" parent="303" name="isCharmed">
+    <column id="314" parent="303" name="ischarmed">
       <DasType>tinyint(1)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>9</Position>
     </column>
-    <column id="315" parent="303" name="isDeafened">
+    <column id="315" parent="303" name="isdeafened">
       <DasType>tinyint(1)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>10</Position>
     </column>
-    <column id="316" parent="303" name="isFrightened">
+    <column id="316" parent="303" name="isfrightened">
       <DasType>tinyint(1)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>11</Position>
     </column>
-    <column id="317" parent="303" name="isStunned">
+    <column id="317" parent="303" name="isstunned">
       <DasType>tinyint(1)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>12</Position>
     </column>
-    <column id="318" parent="303" name="isParalyzed">
+    <column id="318" parent="303" name="isparalyzed">
       <DasType>tinyint(1)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>13</Position>
     </column>
-    <column id="319" parent="303" name="isPoisoned">
+    <column id="319" parent="303" name="ispoisoned">
       <DasType>tinyint(1)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>14</Position>
     </column>
-    <column id="320" parent="303" name="isProne">
+    <column id="320" parent="303" name="isprone">
       <DasType>tinyint(1)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>15</Position>
     </column>
-    <column id="321" parent="303" name="isRestrained">
+    <column id="321" parent="303" name="isrestrained">
       <DasType>tinyint(1)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>16</Position>
     </column>
-    <column id="322" parent="303" name="isUnconscious">
+    <column id="322" parent="303" name="isunconscious">
       <DasType>tinyint(1)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>17</Position>
     </column>
-    <column id="323" parent="303" name="encounter_id">
+    <column id="323" parent="303" name="encounters_id">
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>18</Position>
     </column>
     <foreign-key id="324" parent="303" name="creatures_encounters_id_fk">
-      <ColNames>encounter_id</ColNames>
+      <ColNames>encounters_id</ColNames>
       <OnDelete>cascade</OnDelete>
       <OnUpdate>cascade</OnUpdate>
       <RefColNames>id</RefColNames>
@@ -1179,7 +1179,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Unique>1</Unique>
     </index>
     <index id="327" parent="303" name="creatures_encounters_id_fk">
-      <ColNames>encounter_id</ColNames>
+      <ColNames>encounters_id</ColNames>
       <Type>btree</Type>
     </index>
     <key id="328" parent="303" name="PRIMARY">
@@ -1191,7 +1191,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <UnderlyingIndexName>id</UnderlyingIndexName>
     </key>
     <column id="330" parent="304" name="id">
-      <AutoIncrement>8</AutoIncrement>
+      <AutoIncrement>9</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -1236,7 +1236,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <UnderlyingIndexName>id</UnderlyingIndexName>
     </key>
     <column id="339" parent="305" name="id">
-      <AutoIncrement>29</AutoIncrement>
+      <AutoIncrement>35</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
