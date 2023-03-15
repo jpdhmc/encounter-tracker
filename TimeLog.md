@@ -28,4 +28,4 @@
 
 03/11/23 - 2 hours - Week 8 exercise
 
-03/13/23 -
+03/13/23 - 6 hours - Indie project work, API and object mapping
