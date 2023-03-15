@@ -74,10 +74,14 @@ public class Speed{
 	}
 
 	@Override
- 	public String toString(){
-		return 
-			"Speed{" + 
-			"walk = '" + walk + '\'' + 
-			"}";
-		}
+	public String toString() {
+		return "Speed{" +
+				"walk=" + walk +
+				", fly=" + fly +
+				", swim=" + swim +
+				", climb=" + climb +
+				", burrow=" + burrow +
+				", hover=" + hover +
+				'}';
+	}
 }

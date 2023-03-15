@@ -66,7 +66,7 @@ public class Monster{
 	private String hitDice;
 
 	@JsonProperty("special_abilities")
-	private Object specialAbilities;
+	private List<SpecialAbilities> specialAbilities;
 
 	@JsonProperty("document__title")
 	private String documentTitle;
@@ -297,11 +297,11 @@ public class Monster{
 		return hitDice;
 	}
 
-	public void setSpecialAbilities(Object specialAbilities){
+	public void setSpecialAbilities(List<SpecialAbilities> specialAbilities){
 		this.specialAbilities = specialAbilities;
 	}
 
-	public Object getSpecialAbilities(){
+	public List<SpecialAbilities> getSpecialAbilities(){
 		return specialAbilities;
 	}
 
