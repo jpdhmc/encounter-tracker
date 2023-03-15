@@ -66,6 +66,7 @@ public class Creature {
     public Creature(String creatureName, Encounter encounters, int maxhitpoints) {
         this.creaturename = creatureName;
         this.encounters = encounters;
+        this.maxhitpoints = maxhitpoints;
     }
 
     public int getId() {

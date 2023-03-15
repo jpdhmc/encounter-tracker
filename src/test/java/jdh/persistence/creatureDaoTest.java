@@ -54,4 +54,28 @@ class CreatureDaoTest {
         Creature insertedCreature = dao.getById(id);
         assertEquals("insertcreaturetest", insertedCreature.getCreaturename());
     }
+
+    /**
+     * Verifies update
+     */
+    @Test
+    void updateSuccess() {
+        String newCreatureName = "brandnewcreaturename";
+        Creature creatureToUpdate = dao.getById(1);
+        creatureToUpdate.setCreaturename(newCreatureName);
+        creatureToUpdate.setMaxhitpoints(100);
+        dao.saveOrUpdate(creatureToUpdate);
+        Creature retrievedCreature = dao.getById(1);
+        assertEquals(newCreatureName, retrievedCreature.getCreaturename());
+        assertEquals(100, retrievedCreature.getMaxhitpoints());
+    }
+
+    /**
+     * Verifies delete
+     */
+    @Test
+    void deleteSuccess() {
+        dao.delete(dao.getById(1));
+        assertNull(dao.getById(1));
+    }
 }
