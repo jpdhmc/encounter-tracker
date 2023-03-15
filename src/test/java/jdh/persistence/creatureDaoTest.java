@@ -1,6 +1,7 @@
 package jdh.persistence;
 
 import jdh.entity.Creature;
+import jdh.entity.Encounter;
 import jdh.entity.User;
 import jdh.test.util.DaoFactory;
 import jdh.test.util.Database;
@@ -19,6 +20,7 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 class CreatureDaoTest {
     GenericDao<Creature> dao;
+    GenericDao<User> encounterDao;
 
     /**
      * Sets up new dao and resets database before each test
@@ -26,17 +28,30 @@ class CreatureDaoTest {
     @BeforeEach
     void setUp() {
         dao = DaoFactory.createDao(Creature.class);
+        encounterDao = DaoFactory.createDao(Encounter.class);
 
         Database database = Database.getInstance();
         database.runSQL("cleandb.sql");
     }
 
     /**
-     * Verifies getAllUsers
+     * Verifies getAllCreatures
      */
     @Test
     void getAllCreaturesSuccess() {
         List<Creature> creatures = dao.getAll();
         assertEquals(1, creatures.size());
+    }
+
+    /**
+     * Verifies insert
+     */
+    @Test
+    void insertSuccess() {
+        Encounter encounter = encounterDao.getById(1);
+        Creature newCreature = new Creature("insertcreaturetest", encounter, 32);
+        int id = dao.insert(newCreature);
+        Creature insertedCreature = dao.getById(id);
+        assertEquals("insertcreaturetest", insertedCreature.getCreaturename());
     }
 }

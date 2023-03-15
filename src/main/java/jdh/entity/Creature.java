@@ -63,7 +63,7 @@ public class Creature {
     public Creature() {
     }
 
-    public Creature(String creatureName, Encounter encounters) {
+    public Creature(String creatureName, Encounter encounters, int maxhitpoints) {
         this.creaturename = creatureName;
         this.encounters = encounters;
     }
