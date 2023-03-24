@@ -5,7 +5,6 @@ import jdh.entity.Encounter;
 import jdh.entity.User;
 import jdh.test.util.DaoFactory;
 import jdh.test.util.Database;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
