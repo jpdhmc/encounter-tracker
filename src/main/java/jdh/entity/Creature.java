@@ -23,18 +23,60 @@ public class Creature {
     @ManyToOne
     private Encounter encounters;
 
+    private String size;
+
+    private String type;
+
+    private String alignment;
+
+    private int armorClass;
+
     @Column(name = "maxhitpoints")
     private int maxHitpoints;
     @Column(name = "currenthitpoints")
     private int currenthitpoints;
+
+    private String hitDice;
+
     @Column(name = "initiative")
     private int initiative;
+
+    private String speed;
+
+    private int strength;
+    private int dexterity;
+    private int constitution;
+    private int intelligence;
+    private int wisdom;
+    private int charisma;
+
+    private int strengthSave;
+    private int dexteritySave;
+    private int constitutionSave;
+    private int intelligenceSave;
+    private int wisdomSave;
+    private int charismaSave;
+
+    private String skillBonuses;
+
+    private String vulnerabilities;
+    private String resistances;
+    private String immunities;
+    private String conditionImmunities;
+    private String senses;
+    private String languages;
+    private String challengeRating;
+    private String actions;
+    private String reactions;
+    private String legendaryActions;
+    private String specialAbilities;
+    private String spellList;
+
 
     @Column(name = "isally")
     private Boolean isAlly;
     @Column(name = "istrackingconditions")
     private Boolean isTrackingConditions;
-
     // Condition Booleans
     @Column(name = "isblinded")
     private Boolean isBlinded;
