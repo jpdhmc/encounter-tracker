@@ -1,4 +1,4 @@
-package edu.matc.controller;
+package jdh.controller;
 
 import edu.matc.util.PropertiesLoader;
 import org.apache.logging.log4j.LogManager;

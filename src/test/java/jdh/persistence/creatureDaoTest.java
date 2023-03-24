@@ -52,7 +52,7 @@ class CreatureDaoTest {
         Creature newCreature = new Creature("insertcreaturetest", encounter, 32);
         int id = dao.insert(newCreature);
         Creature insertedCreature = dao.getById(id);
-        assertEquals("insertcreaturetest", insertedCreature.getCreaturename());
+        assertEquals("insertcreaturetest", insertedCreature.getCreatureName());
     }
 
     /**
@@ -62,12 +62,12 @@ class CreatureDaoTest {
     void updateSuccess() {
         String newCreatureName = "brandnewcreaturename";
         Creature creatureToUpdate = dao.getById(1);
-        creatureToUpdate.setCreaturename(newCreatureName);
-        creatureToUpdate.setMaxhitpoints(100);
+        creatureToUpdate.setCreatureName(newCreatureName);
+        creatureToUpdate.setMaxHitpoints(100);
         dao.saveOrUpdate(creatureToUpdate);
         Creature retrievedCreature = dao.getById(1);
-        assertEquals(newCreatureName, retrievedCreature.getCreaturename());
-        assertEquals(100, retrievedCreature.getMaxhitpoints());
+        assertEquals(newCreatureName, retrievedCreature.getCreatureName());
+        assertEquals(100, retrievedCreature.getMaxHitpoints());
     }
 
     /**

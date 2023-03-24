@@ -1,4 +1,4 @@
-package edu.matc.auth;
+package jdh.auth;
 
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;

@@ -1,4 +1,4 @@
-package edu.matc.controller;
+package jdh.controller;
 
 
 import com.auth0.jwt.JWT;
@@ -6,8 +6,11 @@ import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.interfaces.DecodedJWT;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import edu.matc.auth.*;
 import edu.matc.util.PropertiesLoader;
+import jdh.auth.CognitoJWTParser;
+import jdh.auth.CognitoTokenHeader;
+import jdh.auth.Keys;
+import jdh.auth.TokenResponse;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.commons.io.*;
@@ -76,6 +79,7 @@ public class Auth extends HttpServlet implements PropertiesLoader {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String authCode = req.getParameter("code");
         String userName = null;
+        logger.info("doget auth");
 
         if (authCode == null) {
             //TODO forward to an error page or back to the login

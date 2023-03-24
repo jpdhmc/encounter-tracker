@@ -18,44 +18,44 @@ public class Creature {
     private int id;
 
     @Column(name = "creaturename")
-    private String creaturename;
+    private String creatureName;
 
     @ManyToOne
     private Encounter encounters;
 
     @Column(name = "maxhitpoints")
-    private int maxhitpoints;
+    private int maxHitpoints;
     @Column(name = "currenthitpoints")
     private int currenthitpoints;
     @Column(name = "initiative")
     private int initiative;
 
     @Column(name = "isally")
-    private Boolean isally;
+    private Boolean isAlly;
     @Column(name = "istrackingconditions")
-    private Boolean istrackingconditions;
+    private Boolean isTrackingConditions;
 
     // Condition Booleans
     @Column(name = "isblinded")
-    private Boolean isblinded;
+    private Boolean isBlinded;
     @Column(name = "ischarmed")
-    private Boolean ischarmed;
+    private Boolean isCharmed;
     @Column(name = "isdeafened")
-    private Boolean isdeafened;
+    private Boolean isDeafened;
     @Column(name = "isfrightened")
-    private Boolean isfrightened;
+    private Boolean isFrightened;
     @Column(name = "isstunned")
-    private Boolean isstunned;
+    private Boolean isStunned;
     @Column(name = "isparalyzed")
-    private Boolean isparalyzed;
+    private Boolean isParalyzed;
     @Column(name = "ispoisoned")
-    private Boolean ispoisoned;
+    private Boolean isPoisoned;
     @Column(name = "isprone")
-    private Boolean isprone;
+    private Boolean isProne;
     @Column(name = "isrestrained")
-    private Boolean isrestrained;
+    private Boolean isRestrained;
     @Column(name = "isunconscious")
-    private Boolean isunconscious;
+    private Boolean isUnconscious;
 
     /**
      * No-arg constructor
@@ -64,9 +64,9 @@ public class Creature {
     }
 
     public Creature(String creatureName, Encounter encounters, int maxhitpoints) {
-        this.creaturename = creatureName;
+        this.creatureName = creatureName;
         this.encounters = encounters;
-        this.maxhitpoints = maxhitpoints;
+        this.maxHitpoints = maxhitpoints;
     }
 
     public int getId() {
@@ -77,12 +77,12 @@ public class Creature {
         this.id = id;
     }
 
-    public String getCreaturename() {
-        return creaturename;
+    public String getCreatureName() {
+        return creatureName;
     }
 
-    public void setCreaturename(String creaturename) {
-        this.creaturename = creaturename;
+    public void setCreatureName(String creatureName) {
+        this.creatureName = creatureName;
     }
 
     public Encounter getEncounters() {
@@ -93,12 +93,12 @@ public class Creature {
         this.encounters = encounters;
     }
 
-    public int getMaxhitpoints() {
-        return maxhitpoints;
+    public int getMaxHitpoints() {
+        return maxHitpoints;
     }
 
-    public void setMaxhitpoints(int maxhitpoints) {
-        this.maxhitpoints = maxhitpoints;
+    public void setMaxHitpoints(int maxHitpoints) {
+        this.maxHitpoints = maxHitpoints;
     }
 
     public int getCurrenthitpoints() {
@@ -117,99 +117,99 @@ public class Creature {
         this.initiative = initiative;
     }
 
-    public Boolean getIsally() {
-        return isally;
+    public Boolean getAlly() {
+        return isAlly;
     }
 
-    public void setIsally(Boolean isally) {
-        this.isally = isally;
+    public void setAlly(Boolean ally) {
+        isAlly = ally;
     }
 
-    public Boolean getIstrackingconditions() {
-        return istrackingconditions;
+    public Boolean getTrackingConditions() {
+        return isTrackingConditions;
     }
 
-    public void setIstrackingconditions(Boolean istrackingconditions) {
-        this.istrackingconditions = istrackingconditions;
+    public void setTrackingConditions(Boolean trackingConditions) {
+        isTrackingConditions = trackingConditions;
     }
 
-    public Boolean getIsblinded() {
-        return isblinded;
+    public Boolean getBlinded() {
+        return isBlinded;
     }
 
-    public void setIsblinded(Boolean isblinded) {
-        this.isblinded = isblinded;
+    public void setBlinded(Boolean blinded) {
+        isBlinded = blinded;
     }
 
-    public Boolean getIscharmed() {
-        return ischarmed;
+    public Boolean getCharmed() {
+        return isCharmed;
     }
 
-    public void setIscharmed(Boolean ischarmed) {
-        this.ischarmed = ischarmed;
+    public void setCharmed(Boolean charmed) {
+        isCharmed = charmed;
     }
 
-    public Boolean getIsdeafened() {
-        return isdeafened;
+    public Boolean getDeafened() {
+        return isDeafened;
     }
 
-    public void setIsdeafened(Boolean isdeafened) {
-        this.isdeafened = isdeafened;
+    public void setDeafened(Boolean deafened) {
+        isDeafened = deafened;
     }
 
-    public Boolean getIsfrightened() {
-        return isfrightened;
+    public Boolean getFrightened() {
+        return isFrightened;
     }
 
-    public void setIsfrightened(Boolean isfrightened) {
-        this.isfrightened = isfrightened;
+    public void setFrightened(Boolean frightened) {
+        isFrightened = frightened;
     }
 
-    public Boolean getIsstunned() {
-        return isstunned;
+    public Boolean getStunned() {
+        return isStunned;
     }
 
-    public void setIsstunned(Boolean isstunned) {
-        this.isstunned = isstunned;
+    public void setStunned(Boolean stunned) {
+        isStunned = stunned;
     }
 
-    public Boolean getIsparalyzed() {
-        return isparalyzed;
+    public Boolean getParalyzed() {
+        return isParalyzed;
     }
 
-    public void setIsparalyzed(Boolean isparalyzed) {
-        this.isparalyzed = isparalyzed;
+    public void setParalyzed(Boolean paralyzed) {
+        isParalyzed = paralyzed;
     }
 
-    public Boolean getIspoisoned() {
-        return ispoisoned;
+    public Boolean getPoisoned() {
+        return isPoisoned;
     }
 
-    public void setIspoisoned(Boolean ispoisoned) {
-        this.ispoisoned = ispoisoned;
+    public void setPoisoned(Boolean poisoned) {
+        isPoisoned = poisoned;
     }
 
-    public Boolean getIsprone() {
-        return isprone;
+    public Boolean getProne() {
+        return isProne;
     }
 
-    public void setIsprone(Boolean isprone) {
-        this.isprone = isprone;
+    public void setProne(Boolean prone) {
+        isProne = prone;
     }
 
-    public Boolean getIsrestrained() {
-        return isrestrained;
+    public Boolean getRestrained() {
+        return isRestrained;
     }
 
-    public void setIsrestrained(Boolean isrestrained) {
-        this.isrestrained = isrestrained;
+    public void setRestrained(Boolean restrained) {
+        isRestrained = restrained;
     }
 
-    public Boolean getIsunconscious() {
-        return isunconscious;
+    public Boolean getUnconscious() {
+        return isUnconscious;
     }
 
-    public void setIsunconscious(Boolean isunconscious) {
-        this.isunconscious = isunconscious;
+    public void setUnconscious(Boolean unconscious) {
+        isUnconscious = unconscious;
     }
 }
