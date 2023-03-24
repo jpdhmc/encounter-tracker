@@ -29,3 +29,7 @@
 03/11/23 - 2 hours - Week 8 exercise
 
 03/13/23 - 6 hours - Indie project work, API and object mapping
+
+03/23/23 - 2 hours - Indie project cognito
+
+03/24/23 - 
