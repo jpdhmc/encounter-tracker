@@ -69,7 +69,7 @@ class UserDaoTest {
      */
     @Test
     void insertSuccess() {
-        User newUser = new User("JohnDAOTest", "daopass");
+        User newUser = new User("JohnDAOTest");
         int id = dao.insert(newUser);
         User insertedUser = dao.getById(id);
         assertEquals("JohnDAOTest", insertedUser.getUsername());

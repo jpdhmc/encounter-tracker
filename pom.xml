@@ -198,14 +198,19 @@
         </configuration>
       </plugin>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-war-plugin</artifactId>
+        <version>3.2.2</version>
         <configuration>
           <webResources>
             <resource>
-              <directory>src/main/webapp/META-INF</directory>
+              <directory>src/main/.platform</directory>
+              <targetPath>.platform</targetPath>
               <filtering>true</filtering>
-              <targetPath>META-INF</targetPath>
+            </resource>
+            <resource>
+              <directory>src/main/.ebextensions</directory>
+              <targetPath>.ebextensions</targetPath>
+              <filtering>true</filtering>
             </resource>
           </webResources>
         </configuration>
