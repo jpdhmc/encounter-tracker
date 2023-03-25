@@ -32,4 +32,4 @@
 
 03/23/23 - 2 hours - Indie project cognito
 
-03/24/23 - 
+03/24/23 - 4 hours - Deployed cognito app to beanstalk, refactored creature object and database
