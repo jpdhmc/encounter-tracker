@@ -33,3 +33,7 @@
 03/23/23 - 2 hours - Indie project cognito
 
 03/24/23 - 4 hours - Deployed cognito app to beanstalk, refactored creature object and database
+
+03/27/23 - 1 hour - Indie project work
+
+03/28/23 - 3 hours - Week 9 exercise
