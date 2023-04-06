@@ -150,9 +150,6 @@ public class Creature {
         dao = DaoFactory.createDao(Creature.class);
         Creature newCreature = new Creature();
 
-        /**
-         * TODO: FIX RETURNED VALUES
-         */
         newCreature.setCreatureName(monster.getName());
         newCreature.setEncounters(encounter);
         newCreature.setSize(monster.getSize());

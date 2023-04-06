@@ -37,3 +37,7 @@
 03/27/23 - 1 hour - Indie project work
 
 03/28/23 - 3 hours - Week 9 exercise
+
+04/05/23 - 1 hour - Indie project work
+
+04/06/23 - 1 hour - Indie project work

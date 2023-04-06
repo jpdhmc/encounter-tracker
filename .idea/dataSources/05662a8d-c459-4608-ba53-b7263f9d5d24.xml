@@ -1283,119 +1283,115 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <DasType>varchar(800)|0s</DasType>
       <Position>48</Position>
     </column>
-    <column id="354" parent="303" name="spelllist">
-      <DasType>varchar(800)|0s</DasType>
-      <Position>49</Position>
-    </column>
-    <foreign-key id="355" parent="303" name="creatures_encounters_id_fk">
+    <foreign-key id="354" parent="303" name="creatures_encounters_id_fk">
       <ColNames>encounters_id</ColNames>
       <OnDelete>cascade</OnDelete>
       <OnUpdate>cascade</OnUpdate>
       <RefColNames>id</RefColNames>
       <RefTableName>encounters</RefTableName>
     </foreign-key>
-    <index id="356" parent="303" name="PRIMARY">
+    <index id="355" parent="303" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="357" parent="303" name="id">
+    <index id="356" parent="303" name="id">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="358" parent="303" name="creatures_encounters_id_fk">
+    <index id="357" parent="303" name="creatures_encounters_id_fk">
       <ColNames>encounters_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="359" parent="303" name="PRIMARY">
+    <key id="358" parent="303" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <key id="360" parent="303" name="id">
+    <key id="359" parent="303" name="id">
       <UnderlyingIndexName>id</UnderlyingIndexName>
     </key>
-    <column id="361" parent="304" name="id">
+    <column id="360" parent="304" name="id">
       <AutoIncrement>3</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="362" parent="304" name="name">
+    <column id="361" parent="304" name="name">
       <DasType>varchar(30)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="363" parent="304" name="user_id">
+    <column id="362" parent="304" name="user_id">
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <foreign-key id="364" parent="304" name="encounters_user_id_fk">
+    <foreign-key id="363" parent="304" name="encounters_user_id_fk">
       <ColNames>user_id</ColNames>
       <OnDelete>cascade</OnDelete>
       <OnUpdate>cascade</OnUpdate>
       <RefColNames>id</RefColNames>
       <RefTableName>user</RefTableName>
     </foreign-key>
-    <index id="365" parent="304" name="PRIMARY">
+    <index id="364" parent="304" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="366" parent="304" name="id">
+    <index id="365" parent="304" name="id">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="367" parent="304" name="encounters_user_id_fk">
+    <index id="366" parent="304" name="encounters_user_id_fk">
       <ColNames>user_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="368" parent="304" name="PRIMARY">
+    <key id="367" parent="304" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <key id="369" parent="304" name="id">
+    <key id="368" parent="304" name="id">
       <UnderlyingIndexName>id</UnderlyingIndexName>
     </key>
-    <column id="370" parent="305" name="id">
+    <column id="369" parent="305" name="id">
       <AutoIncrement>3</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="371" parent="305" name="username">
+    <column id="370" parent="305" name="username">
       <DasType>varchar(30)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <index id="372" parent="305" name="PRIMARY">
+    <index id="371" parent="305" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="373" parent="305" name="id">
+    <index id="372" parent="305" name="id">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="374" parent="305" name="username">
+    <index id="373" parent="305" name="username">
       <ColNames>username</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="375" parent="305" name="PRIMARY">
+    <key id="374" parent="305" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <key id="376" parent="305" name="id">
+    <key id="375" parent="305" name="id">
       <UnderlyingIndexName>id</UnderlyingIndexName>
     </key>
-    <key id="377" parent="305" name="username">
+    <key id="376" parent="305" name="username">
       <UnderlyingIndexName>username</UnderlyingIndexName>
     </key>
   </database-model>
