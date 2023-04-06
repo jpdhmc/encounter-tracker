@@ -21,7 +21,7 @@ public class Monster{
 	private String conditionImmunities;
 
 	@JsonProperty("senses")
-	private Object senses;
+	private String senses;
 
 	@JsonProperty("challenge_rating")
 	private String challengeRating;
@@ -33,7 +33,7 @@ public class Monster{
 	private String type;
 
 	@JsonProperty("legendary_actions")
-	private Object legendaryActions;
+	private List<LegendaryActions> legendaryActions;
 
 	@JsonProperty("speed")
 	private Speed speed;
@@ -54,13 +54,13 @@ public class Monster{
 	private Skills skills;
 
 	@JsonProperty("intelligence_save")
-	private Object intelligenceSave;
+	private int intelligenceSave;
 
 	@JsonProperty("armor_class")
 	private int armorClass;
 
 	@JsonProperty("strength_save")
-	private Object strengthSave;
+	private int strengthSave;
 
 	@JsonProperty("subtype")
 	private String subtype;
@@ -75,10 +75,10 @@ public class Monster{
 	private String documentTitle;
 
 	@JsonProperty("constitution_save")
-	private Object constitutionSave;
+	private int constitutionSave;
 
 	@JsonProperty("wisdom_save")
-	private Object wisdomSave;
+	private int wisdomSave;
 
 	@JsonProperty("slug")
 	private String slug;
@@ -87,10 +87,10 @@ public class Monster{
 	private Object group;
 
 	@JsonProperty("dexterity_save")
-	private Object dexteritySave;
+	private int dexteritySave;
 
 	@JsonProperty("charisma_save")
-	private Object charismaSave;
+	private int charismaSave;
 
 	@JsonProperty("armor_desc")
 	private String armorDesc;
@@ -172,11 +172,11 @@ public class Monster{
 		return conditionImmunities;
 	}
 
-	public void setSenses(Object senses){
+	public void setSenses(String senses){
 		this.senses = senses;
 	}
 
-	public Object getSenses(){
+	public String getSenses(){
 		return senses;
 	}
 
@@ -204,11 +204,11 @@ public class Monster{
 		return type;
 	}
 
-	public void setLegendaryActions(Object legendaryActions){
+	public void setLegendaryActions(List<LegendaryActions> legendaryActions){
 		this.legendaryActions = legendaryActions;
 	}
 
-	public Object getLegendaryActions(){
+	public List<LegendaryActions> getLegendaryActions(){
 		return legendaryActions;
 	}
 
@@ -260,11 +260,11 @@ public class Monster{
 		return skills;
 	}
 
-	public void setIntelligenceSave(Object intelligenceSave){
+	public void setIntelligenceSave(int intelligenceSave){
 		this.intelligenceSave = intelligenceSave;
 	}
 
-	public Object getIntelligenceSave(){
+	public int getIntelligenceSave(){
 		return intelligenceSave;
 	}
 
@@ -276,11 +276,11 @@ public class Monster{
 		return armorClass;
 	}
 
-	public void setStrengthSave(Object strengthSave){
+	public void setStrengthSave(int strengthSave){
 		this.strengthSave = strengthSave;
 	}
 
-	public Object getStrengthSave(){
+	public int getStrengthSave(){
 		return strengthSave;
 	}
 
@@ -316,19 +316,19 @@ public class Monster{
 		return documentTitle;
 	}
 
-	public void setConstitutionSave(Object constitutionSave){
+	public void setConstitutionSave(int constitutionSave){
 		this.constitutionSave = constitutionSave;
 	}
 
-	public Object getConstitutionSave(){
+	public int getConstitutionSave(){
 		return constitutionSave;
 	}
 
-	public void setWisdomSave(Object wisdomSave){
+	public void setWisdomSave(int wisdomSave){
 		this.wisdomSave = wisdomSave;
 	}
 
-	public Object getWisdomSave(){
+	public int getWisdomSave(){
 		return wisdomSave;
 	}
 
@@ -348,19 +348,19 @@ public class Monster{
 		return group;
 	}
 
-	public void setDexteritySave(Object dexteritySave){
+	public void setDexteritySave(int dexteritySave){
 		this.dexteritySave = dexteritySave;
 	}
 
-	public Object getDexteritySave(){
+	public int getDexteritySave(){
 		return dexteritySave;
 	}
 
-	public void setCharismaSave(Object charismaSave){
+	public void setCharismaSave(int charismaSave){
 		this.charismaSave = charismaSave;
 	}
 
-	public Object getCharismaSave(){
+	public int getCharismaSave(){
 		return charismaSave;
 	}
 

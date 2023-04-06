@@ -17,6 +17,7 @@
     <th>Special Abilities</th>
     <th>Actions</th>
     <th>Reactions</th>
+    <th>Legendary Actions</th>
     </thead>
     <tbody>
         <tr>
@@ -62,6 +63,11 @@
             <td>
                 <c:forEach var="reaction" items="${monster.getReactions()}">
                     NAME: ${reaction.getName()} - DESC: ${reaction.getDesc()}<br/>
+                </c:forEach>
+            </td>
+            <td>
+                <c:forEach var="legendaryAction" items="${monster.getLegendaryActions()}">
+                    NAME: ${legendaryAction.getName()} - DESC: ${legendaryAction.getDesc()}<br/>
                 </c:forEach>
             </td>
         </tr>

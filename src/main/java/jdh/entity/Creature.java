@@ -1,5 +1,8 @@
 package jdh.entity;
 
+import jdh.open5edata.Monster;
+import jdh.persistence.GenericDao;
+import jdh.util.DaoFactory;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -91,8 +94,6 @@ public class Creature {
     private String legendaryActions;
     @Column(name = "specialabilities")
     private String specialAbilities;
-    @Column(name = "spelllist")
-    private String spellList;
 
 
     @Column(name = "isally")
@@ -140,8 +141,60 @@ public class Creature {
     }
 
     /**
-     * Getters and setters
+     * Receives a monster from the api and converts it into a creature entity, then adds it to the database
+     * @param monster
+     * @return
      */
+    public Creature convertFromMonster(Monster monster, Encounter encounter) {
+        GenericDao<Creature> dao;
+        dao = DaoFactory.createDao(Creature.class);
+        Creature newCreature = new Creature();
+
+        /**
+         * TODO: FIX RETURNED VALUES
+         */
+        newCreature.setCreatureName(monster.getName());
+        newCreature.setEncounters(encounter);
+        newCreature.setSize(monster.getSize());
+        newCreature.setType(monster.getType());
+        newCreature.setAlignment(monster.getAlignment());
+        newCreature.setArmorClass(monster.getArmorClass());
+        newCreature.setMaxHitpoints(monster.getHitPoints());
+        newCreature.setCurrenthitpoints(monster.getHitPoints());
+        newCreature.setHitDice(monster.getHitDice());
+        newCreature.setInitiative(0);
+        newCreature.setSpeed(monster.getSpeed().toString());
+        newCreature.setStrength(monster.getStrength());
+        newCreature.setDexterity(monster.getDexterity());
+        newCreature.setConstitution(monster.getConstitution());
+        newCreature.setIntelligence(monster.getIntelligence());
+        newCreature.setWisdom(monster.getWisdom());
+        newCreature.setCharisma(monster.getCharisma());
+        newCreature.setStrengthSave(monster.getStrengthSave());
+        newCreature.setDexteritySave(monster.getDexteritySave());
+        newCreature.setConstitutionSave(monster.getConstitutionSave());
+        newCreature.setIntelligenceSave(monster.getIntelligenceSave());
+        newCreature.setWisdomSave(monster.getWisdomSave());
+        newCreature.setCharismaSave(monster.getCharismaSave());
+        newCreature.setSkillBonuses(monster.getSkills().toString());
+        newCreature.setVulnerabilities(monster.getDamageVulnerabilities());
+        newCreature.setResistances(monster.getDamageResistances());
+        newCreature.setImmunities(monster.getDamageImmunities());
+        newCreature.setConditionImmunities(monster.getConditionImmunities());
+        newCreature.setSenses(monster.getSenses());
+        newCreature.setLanguages(monster.getLanguages());
+        newCreature.setChallengeRating(Integer.parseInt(monster.getChallengeRating()));
+        newCreature.setActions(monster.getActions().toString());
+        newCreature.setReactions(monster.getReactions().toString());
+        newCreature.setLegendaryActions(monster.getLegendaryActions().toString());
+        newCreature.setSpecialAbilities(monster.getSpecialAbilities().toString());
+        newCreature.isAlly = false;
+
+
+        dao.insert(newCreature);
+        return newCreature;
+    }
+
     public int getId() {
         return id;
     }
@@ -428,14 +481,6 @@ public class Creature {
 
     public void setSpecialAbilities(String specialAbilities) {
         this.specialAbilities = specialAbilities;
-    }
-
-    public String getSpellList() {
-        return spellList;
-    }
-
-    public void setSpellList(String spellList) {
-        this.spellList = spellList;
     }
 
     public Boolean getAlly() {
