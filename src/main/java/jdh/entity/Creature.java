@@ -85,7 +85,7 @@ public class Creature {
     @Column(name = "languages")
     private String languages;
     @Column(name = "challengerating")
-    private int challengeRating;
+    private String challengeRating;
     @Column(name = "actions")
     private String actions;
     @Column(name = "reactions")
@@ -180,15 +180,19 @@ public class Creature {
         newCreature.setConditionImmunities(monster.getConditionImmunities());
         newCreature.setSenses(monster.getSenses());
         newCreature.setLanguages(monster.getLanguages());
-        newCreature.setChallengeRating(Integer.parseInt(monster.getChallengeRating()));
+        newCreature.setChallengeRating(monster.getChallengeRating());
         newCreature.setActions(monster.getActions().toString());
-        newCreature.setReactions(monster.getReactions().toString());
-        newCreature.setLegendaryActions(monster.getLegendaryActions().toString());
-        newCreature.setSpecialAbilities(monster.getSpecialAbilities().toString());
+        if (monster.getReactions() != null) {
+            newCreature.setReactions(monster.getReactions().toString());
+        }
+        if (monster.getLegendaryActions() != null) {
+            newCreature.setLegendaryActions(monster.getLegendaryActions().toString());
+        }
+        if (monster.getSpecialAbilities() != null) {
+            newCreature.setSpecialAbilities(monster.getSpecialAbilities().toString());
+        }
         newCreature.isAlly = false;
 
-
-        dao.insert(newCreature);
         return newCreature;
     }
 
@@ -440,11 +444,11 @@ public class Creature {
         this.languages = languages;
     }
 
-    public int getChallengeRating() {
+    public String getChallengeRating() {
         return challengeRating;
     }
 
-    public void setChallengeRating(int challengeRating) {
+    public void setChallengeRating(String challengeRating) {
         this.challengeRating = challengeRating;
     }
 

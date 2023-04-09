@@ -9,6 +9,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import jdh.test.util.DaoFactory;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class CreatureTest {
     GenericDao<Creature> creatureDao;
     Open5eDataDao openDao;
@@ -25,7 +27,13 @@ public class CreatureTest {
 
     @Test
     void convertFromMonsterSuccess() {
+        Encounter retrievedEncounter = encounterDao.getById(1);
         Monster foundMonster;
-        foundMonster = openDao.getMonster("Bandit");
+        Creature newCreature = new Creature();
+        foundMonster = openDao.getMonster("bandit");
+        newCreature = newCreature.convertFromMonster(foundMonster, retrievedEncounter);
+
+        int id = creatureDao.insert(newCreature);
+        assertEquals("Bandit", newCreature.getCreatureName());
     }
 }

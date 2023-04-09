@@ -1186,8 +1186,8 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Position>27</Position>
     </column>
     <column id="333" parent="303" name="challengerating">
-      <DasType>int|0s</DasType>
-      <DefaultExpression>0</DefaultExpression>
+      <DasType>varchar(5)|0s</DasType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
       <Position>28</Position>
     </column>
     <column id="334" parent="303" name="istrackingconditions">
