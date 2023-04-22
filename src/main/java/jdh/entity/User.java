@@ -36,7 +36,6 @@ public class User {
      * Instantiates a new user
      *
      * @param username the username
-     * @param password the password
      */
     public User(String username) {
         this.username = username;

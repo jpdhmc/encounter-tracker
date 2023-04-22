@@ -11,6 +11,9 @@ import jdh.auth.CognitoJWTParser;
 import jdh.auth.CognitoTokenHeader;
 import jdh.auth.Keys;
 import jdh.auth.TokenResponse;
+import jdh.entity.User;
+import jdh.persistence.GenericDao;
+import jdh.util.DaoFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.commons.io.*;
@@ -177,9 +180,28 @@ public class Auth extends HttpServlet implements PropertiesLoader {
         logger.debug("here are all the available claims: " + jwt.getClaims());
 
         // TODO decide what you want to do with the info!
-        // for now, I'm just returning username for display back to the browser
+        checkNewOrExistingUser(userName);
 
         return userName;
+    }
+
+    /**
+     * Determines if the user is in the database yet. If not, adds them. Adds the user to the session. TODO finish
+     * @param userName
+     */
+    private void checkNewOrExistingUser(String userName) {
+        GenericDao<User> dao = DaoFactory.createDao(User.class);
+        User sessionUser;
+
+        List<User> foundUsers = dao.findByPropertyEqual("username", userName);
+
+        if (foundUsers.size() < 1) {
+            User newUser = new User(userName);
+            dao.insert(newUser);
+            sessionUser = newUser;
+        } else {
+            sessionUser = foundUsers.get(0);
+        }
     }
 
     /** Create the auth url and use it to build the request.
