@@ -47,7 +47,6 @@ import java.util.stream.Collectors;
 @WebServlet(
         urlPatterns = {"/auth"}
 )
-// TODO if something goes wrong it this process, route to an error page. Currently, errors are only caught and logged.
 /**
  * Inspired by: https://stackoverflow.com/questions/52144721/how-to-get-access-token-using-client-credentials-using-java-code
  */
@@ -87,7 +86,9 @@ public class Auth extends HttpServlet implements PropertiesLoader {
         logger.info("doget auth");
 
         if (authCode == null) {
-            //TODO forward to an error page or back to the login
+            req.setAttribute("errorMessage", "Auth code was null. Try again.");
+            RequestDispatcher dispatcher = req.getRequestDispatcher("error.jsp");
+            dispatcher.forward(req, resp);
         } else {
             HttpRequest authRequest = buildAuthRequest(authCode);
             try {
@@ -97,10 +98,14 @@ public class Auth extends HttpServlet implements PropertiesLoader {
                 session.setAttribute("loggedInUser", currentUser);
             } catch (IOException e) {
                 logger.error("Error getting or validating the token: " + e.getMessage(), e);
-                //TODO forward to an error page
+                req.setAttribute("errorMessage", e.getMessage());
+                RequestDispatcher dispatcher = req.getRequestDispatcher("error.jsp");
+                dispatcher.forward(req, resp);
             } catch (InterruptedException e) {
                 logger.error("Error getting token from Cognito oauth url " + e.getMessage(), e);
-                //TODO forward to an error page
+                req.setAttribute("errorMessage", e.getMessage());
+                RequestDispatcher dispatcher = req.getRequestDispatcher("error.jsp");
+                dispatcher.forward(req, resp);
             }
         }
         RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp");
@@ -153,7 +158,6 @@ public class Auth extends HttpServlet implements PropertiesLoader {
         BigInteger modulus = new BigInteger(1, org.apache.commons.codec.binary.Base64.decodeBase64(jwks.getKeys().get(0).getN()));
         BigInteger exponent = new BigInteger(1, org.apache.commons.codec.binary.Base64.decodeBase64(jwks.getKeys().get(0).getE()));
 
-        // TODO the following is "happy path", what if the exceptions are caught?
         // Create a public key
         PublicKey publicKey = null;
         try {
@@ -182,14 +186,13 @@ public class Auth extends HttpServlet implements PropertiesLoader {
 
         logger.debug("here are all the available claims: " + jwt.getClaims());
 
-        // TODO decide what you want to do with the info!
         User returnedUser = checkNewOrExistingUser(userName);
 
         return returnedUser;
     }
 
     /**
-     * Determines if the user is in the database yet. If not, adds them. Adds the user to the session. TODO finish
+     * Determines if the user is in the database yet. If not, adds them. Adds the user to the session.
      * @param userName
      */
     private User checkNewOrExistingUser(String userName) {
