@@ -81,7 +81,7 @@ public class Auth extends HttpServlet implements PropertiesLoader {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String authCode = req.getParameter("code");
-        String userName = null;
+        User currentUser;
         logger.info("doget auth");
 
         if (authCode == null) {
@@ -90,8 +90,8 @@ public class Auth extends HttpServlet implements PropertiesLoader {
             HttpRequest authRequest = buildAuthRequest(authCode);
             try {
                 TokenResponse tokenResponse = getToken(authRequest);
-                userName = validate(tokenResponse);
-                req.setAttribute("userName", userName);
+                currentUser = validate(tokenResponse);
+                req.setAttribute("currentUser", currentUser);
             } catch (IOException e) {
                 logger.error("Error getting or validating the token: " + e.getMessage(), e);
                 //TODO forward to an error page
@@ -134,10 +134,10 @@ public class Auth extends HttpServlet implements PropertiesLoader {
      * Get values out of the header to verify the token is legit. If it is legit, get the claims from it, such
      * as username.
      * @param tokenResponse
-     * @return
+     * @return User
      * @throws IOException
      */
-    private String validate(TokenResponse tokenResponse) throws IOException {
+    private User validate(TokenResponse tokenResponse) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
         CognitoTokenHeader tokenHeader = mapper.readValue(CognitoJWTParser.getHeader(tokenResponse.getIdToken()).toString(), CognitoTokenHeader.class);
 
@@ -180,16 +180,16 @@ public class Auth extends HttpServlet implements PropertiesLoader {
         logger.debug("here are all the available claims: " + jwt.getClaims());
 
         // TODO decide what you want to do with the info!
-        checkNewOrExistingUser(userName);
+        User returnedUser = checkNewOrExistingUser(userName);
 
-        return userName;
+        return returnedUser;
     }
 
     /**
      * Determines if the user is in the database yet. If not, adds them. Adds the user to the session. TODO finish
      * @param userName
      */
-    private void checkNewOrExistingUser(String userName) {
+    private User checkNewOrExistingUser(String userName) {
         GenericDao<User> dao = DaoFactory.createDao(User.class);
         User sessionUser;
 
@@ -202,6 +202,7 @@ public class Auth extends HttpServlet implements PropertiesLoader {
         } else {
             sessionUser = foundUsers.get(0);
         }
+        return sessionUser;
     }
 
     /** Create the auth url and use it to build the request.
