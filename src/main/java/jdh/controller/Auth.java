@@ -24,6 +24,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.*;
 import java.math.BigInteger;
 import java.net.URI;
@@ -82,6 +83,7 @@ public class Auth extends HttpServlet implements PropertiesLoader {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String authCode = req.getParameter("code");
         User currentUser;
+        HttpSession session = req.getSession();
         logger.info("doget auth");
 
         if (authCode == null) {
@@ -92,6 +94,7 @@ public class Auth extends HttpServlet implements PropertiesLoader {
                 TokenResponse tokenResponse = getToken(authRequest);
                 currentUser = validate(tokenResponse);
                 req.setAttribute("currentUser", currentUser);
+                session.setAttribute("loggedInUser", currentUser);
             } catch (IOException e) {
                 logger.error("Error getting or validating the token: " + e.getMessage(), e);
                 //TODO forward to an error page
@@ -131,8 +134,8 @@ public class Auth extends HttpServlet implements PropertiesLoader {
     }
 
     /**
-     * Get values out of the header to verify the token is legit. If it is legit, get the claims from it, such
-     * as username.
+     * Get values out of the header to verify the token is legit. If it is legit, get the username claim and check if
+     * the user is existing or not. Returns the user object.
      * @param tokenResponse
      * @return User
      * @throws IOException

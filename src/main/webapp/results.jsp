@@ -1,6 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:import url="head.jsp"/>
   <body>
+  <c:import url="header.jsp"/>
     <h2>Users</h2>
     <table id="encounterTable">
       <thead>
