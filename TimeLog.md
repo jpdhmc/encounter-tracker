@@ -45,3 +45,5 @@
 04/09/23 - 1 hours - Indie project testing work
 
 04/22/23 - 2 hours - Indie project cognito functionality work
+
+04/23/23 - 1.5 hours - Indie project auth work
