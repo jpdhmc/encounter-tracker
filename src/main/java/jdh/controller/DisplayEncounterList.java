@@ -1,5 +1,6 @@
 package jdh.controller;
 
+import jdh.entity.Encounter;
 import jdh.entity.User;
 import jdh.open5edata.Monster;
 import jdh.persistence.GenericDao;
@@ -12,19 +13,25 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.annotation.*;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @WebServlet(
-        urlPatterns = {"/searchMonster"}
+        urlPatterns = {"/displayEncounterList"}
 )
-// TODO create an encounter display based on user object stored in session
-public class SearchMonster extends HttpServlet {
+/**
+ * Servlet class that finds the encounters associated with the logged in user and forwards them to the jsp
+ *
+ * @author John Den Hartog
+ */
+public class DisplayEncounterList extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Open5eDataDao dao = new Open5eDataDao();
-        String enteredMonster = req.getParameter("monsterName");
-        Monster foundMonster = dao.getMonster(enteredMonster);
-        req.setAttribute("monster", foundMonster);
+        GenericDao<Encounter> dao = DaoFactory.createDao(Encounter.class);
+        HttpSession session = req.getSession();
+        User currentUser = (User) session.getAttribute("loggedInUser");
+
+        req.setAttribute("encounters", dao.findByPropertyEqual("user_id", currentUser.getId()));
         RequestDispatcher dispatcher = req.getRequestDispatcher("/monsterResults.jsp");
         dispatcher.forward(req, resp);
     }
