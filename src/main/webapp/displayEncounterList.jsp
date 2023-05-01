@@ -1,16 +1,20 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Jpden
-  Date: 4/23/2023
-  Time: 10:16 PM
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>$Title$</title>
-</head>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:import url="head.jsp"/>
 <body>
-$END$
+  <h2>Your Encounters</h2>
+  <table id="encounterTable">
+    <thead>
+    <th>Encounter Number</th>
+    <th>Name</th>
+    </thead>
+    <tbody>
+    <c:forEach var="encounter" items="${encounterList}">
+      <tr>
+        <td>${encounter.getId()}</td>
+        <td>${encounter.getEncounterName()}</td>
+      </tr>
+    </c:forEach>
+    </tbody>
+  </table>
 </body>
-</html>
+<c:import url="footer.jsp"/>
