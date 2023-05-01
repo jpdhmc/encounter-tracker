@@ -1,7 +1,6 @@
 package jdh.controller;
 
 import jdh.entity.Creature;
-import jdh.open5edata.Monster;
 import jdh.persistence.GenericDao;
 import jdh.util.DaoFactory;
 
@@ -20,7 +19,7 @@ public class CreateCreature extends HttpServlet {
 
         Creature newCreature = new Creature();
         //set attributes using info from form (createCreature.jsp)
-        newCreature.setCreatureName(req.getParameter("enteredName"));
+        newCreature.setCreatureName(req.getParameter("creatureName"));
 
         req.setAttribute("creature", newCreature);
         RequestDispatcher dispatcher = req.getRequestDispatcher("/viewCreature.jsp");
