@@ -47,3 +47,5 @@
 04/22/23 - 2 hours - Indie project cognito functionality work
 
 04/23/23 - 1.5 hours - Indie project auth work
+
+05/21/23 - 4 hours - Creature creator work
