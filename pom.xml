@@ -13,6 +13,16 @@
     <mysql-version>8.0.16</mysql-version>
     <jersey-version>2.29.1</jersey-version>
     <jackson-version>2.10.0</jackson-version>
+    <javax-version>7.0</javax-version>
+    <jstl-version>1.2</jstl-version>
+    <log4j-version>2.10.0</log4j-version>
+    <jupiter-version>5.0.0</jupiter-version>
+    <junit-platform-version>1.0.0</junit-platform-version>
+    <junit-vintage-version>4.12.0</junit-vintage-version>
+    <lombok-version>1.18.2</lombok-version>
+    <jwt-version>3.4.1</jwt-version>
+    <json-version>20170516</json-version>
+    <commons-version>2.11.0</commons-version>
   </properties>
 
   <dependencies>
@@ -51,7 +61,7 @@
     <dependency>
       <groupId>javax</groupId>
       <artifactId>javaee-web-api</artifactId>
-      <version>7.0</version>
+      <version>${javax-version}</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
     <dependency>
@@ -62,36 +72,36 @@
     <dependency>
       <groupId>jstl</groupId>
       <artifactId>jstl</artifactId>
-      <version>1.2</version>
+      <version>${jstl-version}</version>
     </dependency>
     <!-- next 2 dependencies are for log4j -->
     <dependency>
       <groupId>org.apache.logging.log4j</groupId>
       <artifactId>log4j-api</artifactId>
-      <version>2.10.0</version>
+      <version>${log4j-version}</version>
     </dependency>
     <dependency>
       <groupId>org.apache.logging.log4j</groupId>
       <artifactId>log4j-core</artifactId>
-      <version>2.10.0</version>
+      <version>${log4j-version}</version>
     </dependency>
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-engine</artifactId>
-      <version>5.0.0</version>
+      <version>${jupiter-version}</version>
       <scope>test</scope>
     </dependency>
     <!-- To run tests on IDE such as Eclipse, Intellij -->
     <dependency>
       <groupId>org.junit.platform</groupId>
       <artifactId>junit-platform-runner</artifactId>
-      <version>1.0.0</version>
+      <version>${junit-platform-version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.junit.vintage</groupId>
       <artifactId>junit-vintage-engine</artifactId>
-      <version>4.12.0</version>
+      <version>${junit-vintage-version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -110,7 +120,7 @@
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
-      <version>1.18.2</version>
+      <version>${lombok-version}</version>
       <scope>provided</scope>
     </dependency>
 
@@ -131,18 +141,18 @@
     <dependency>
       <groupId>com.auth0</groupId>
       <artifactId>java-jwt</artifactId>
-      <version>3.4.1</version>
+      <version>${jwt-version}</version>
     </dependency>
     <dependency>
       <groupId>org.json</groupId>
       <artifactId>json</artifactId>
-      <version>20170516</version>
+      <version>${json-version}</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
     <dependency>
       <groupId>commons-io</groupId>
       <artifactId>commons-io</artifactId>
-      <version>2.11.0</version>
+      <version>${commons-version}</version>
     </dependency>
 
   </dependencies>
