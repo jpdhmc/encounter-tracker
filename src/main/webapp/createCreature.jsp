@@ -1,10 +1,18 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:import url="head.jsp"/>
 <body>
+    <c:import url="header.jsp"/>
     <form id="createCreatureForm" action="createCreature" method="POST">
         <label for="creatureName">Name</label>
         <input type="text" id="creatureName" name="creatureName" maxLength="60" required>
         <br>
+
+        <label for="creatureEncounter">Encounter</label>
+        <select name="creatureEncounter" id="creatureEncounter">
+            <c:forEach var="encounter" items="${loggedInUser.encounters}">
+                <option value="${encounter.id}">${encounter.encounterName}</option>
+            </c:forEach>
+        </select>
 
         <label for="creatureSize">Size</label>
         <select name=creatureSize" id=creatureSize>
@@ -25,16 +33,16 @@
             <option value="beast">Beast</option>
             <option value="celestial">Celestial</option>
             <option value="construct">Construct</option>
-            <option value="Dragon">Dragon</option>
-            <option value="aberration">Elemental</option>
-            <option value="aberration">Fey</option>
-            <option value="aberration">Fiend</option>
-            <option value="aberration">Giant</option>
-            <option value="aberration">Humanoid</option>
-            <option value="aberration">Monstrosity</option>
-            <option value="aberration">Ooze</option>
-            <option value="aberration">Plant</option>
-            <option value="aberration">Undead</option>
+            <option value="dragon">Dragon</option>
+            <option value="elemental">Elemental</option>
+            <option value="fey">Fey</option>
+            <option value="fiend">Fiend</option>
+            <option value="giant">Giant</option>
+            <option value="humanoid">Humanoid</option>
+            <option value="monstrosity">Monstrosity</option>
+            <option value="ooze">Ooze</option>
+            <option value="plant">Plant</option>
+            <option value="undead">Undead</option>
         </select>
         <br>
 
