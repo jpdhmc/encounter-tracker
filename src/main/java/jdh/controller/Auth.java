@@ -11,8 +11,12 @@ import jdh.auth.CognitoJWTParser;
 import jdh.auth.CognitoTokenHeader;
 import jdh.auth.Keys;
 import jdh.auth.TokenResponse;
+import jdh.entity.Creature;
+import jdh.entity.Encounter;
 import jdh.entity.User;
+import jdh.open5edata.Monster;
 import jdh.persistence.GenericDao;
+import jdh.persistence.Open5eDataDao;
 import jdh.util.DaoFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -197,6 +201,9 @@ public class Auth extends HttpServlet implements PropertiesLoader {
      */
     private User checkNewOrExistingUser(String userName) {
         GenericDao<User> dao = DaoFactory.createDao(User.class);
+        GenericDao<Encounter> encounterDao = DaoFactory.createDao(Encounter.class);
+        GenericDao<Creature> creatureDao = DaoFactory.createDao(Creature.class)
+        Open5eDataDao open5eDao = new Open5eDataDao();
         User sessionUser;
 
         List<User> foundUsers = dao.findByPropertyEqual("username", userName);
@@ -205,6 +212,13 @@ public class Auth extends HttpServlet implements PropertiesLoader {
             User newUser = new User(userName);
             dao.insert(newUser);
             sessionUser = newUser;
+            // Create creature collection for every new user as well as an example creature
+            Encounter creatureCollection = new Encounter("Creature Collection", newUser);
+            encounterDao.insert(creatureCollection);
+            Monster foundMonster = open5eDao.getMonster("bandit");
+            Creature exampleCreature = new Creature();
+            exampleCreature = exampleCreature.convertFromMonster(foundMonster, creatureCollection);
+            creatureDao.insert(exampleCreature);
         } else {
             sessionUser = foundUsers.get(0);
         }

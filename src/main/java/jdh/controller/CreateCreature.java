@@ -61,7 +61,6 @@ public class CreateCreature extends HttpServlet {
         int id = dao.insert(newCreature);
 
         req.setAttribute("creatureId", id);
-        //viewcreature takes creature id and displays the entered creature
         RequestDispatcher dispatcher = req.getRequestDispatcher("/viewCreature.jsp");
         dispatcher.forward(req, resp);
     }

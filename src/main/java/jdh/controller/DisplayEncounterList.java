@@ -6,6 +6,8 @@ import jdh.open5edata.Monster;
 import jdh.persistence.GenericDao;
 import jdh.persistence.Open5eDataDao;
 import jdh.util.DaoFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -32,7 +34,7 @@ public class DisplayEncounterList extends HttpServlet {
         GenericDao<Encounter> dao = DaoFactory.createDao(Encounter.class);
         HttpSession session = req.getSession();
         User currentUser = (User) session.getAttribute("loggedInUser");
-        req.setAttribute("encounterList", dao.findByPropertyEqual("user_id", currentUser.getId()));
+        req.setAttribute("encounterList", currentUser.getEncounters());
         RequestDispatcher dispatcher = req.getRequestDispatcher("/displayEncounterList.jsp");
         dispatcher.forward(req, resp);
     }
