@@ -202,7 +202,7 @@ public class Auth extends HttpServlet implements PropertiesLoader {
     private User checkNewOrExistingUser(String userName) {
         GenericDao<User> dao = DaoFactory.createDao(User.class);
         GenericDao<Encounter> encounterDao = DaoFactory.createDao(Encounter.class);
-        GenericDao<Creature> creatureDao = DaoFactory.createDao(Creature.class)
+        GenericDao<Creature> creatureDao = DaoFactory.createDao(Creature.class);
         Open5eDataDao open5eDao = new Open5eDataDao();
         User sessionUser;
 
@@ -215,10 +215,11 @@ public class Auth extends HttpServlet implements PropertiesLoader {
             // Create creature collection for every new user as well as an example creature
             Encounter creatureCollection = new Encounter("Creature Collection", newUser);
             encounterDao.insert(creatureCollection);
-            Monster foundMonster = open5eDao.getMonster("bandit");
+            Monster foundMonster;
+            foundMonster = open5eDao.getMonster("bandit");
             Creature exampleCreature = new Creature();
             exampleCreature = exampleCreature.convertFromMonster(foundMonster, creatureCollection);
-            creatureDao.insert(exampleCreature);
+            int id = creatureDao.insert(exampleCreature);
         } else {
             sessionUser = foundUsers.get(0);
         }
@@ -260,7 +261,6 @@ public class Auth extends HttpServlet implements PropertiesLoader {
      * Demo url: https://cognito-idp.us-east-2.amazonaws.com/us-east-2_XaRYHsmKB/.well-known/jwks.json
      *
      * @see Keys
-     * @see KeysItem
      */
     private void loadKey() {
         ObjectMapper mapper = new ObjectMapper();

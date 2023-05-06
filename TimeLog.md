@@ -49,3 +49,9 @@
 04/23/23 - 1.5 hours - Indie project auth work
 
 05/01/23 - 4 hours - Creature creator work
+
+05/04/23 - 1 hour - Creature creator
+
+5/05/23 - 2 hours - Creature creator
+
+5/06/23 - 4 hours - Encounter displays
