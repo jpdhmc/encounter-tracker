@@ -19,7 +19,7 @@
     </table>
 
     <details>
-        <summary>Add a creature!</summary>
+        <summary>Create a new creature to add!</summary>
         <form id="createCreatureForm" action="createCreature" method="POST">
             <input type="hidden" name="creatureEncounter" value="${selectedEncounter.getId()}">
 
@@ -167,11 +167,23 @@
             <label for="creatureAddToCollectionTrue">Yes</label>
             <input type="radio" id="creatureAddToCollectionTrue" name="creatureAddToCollection" value="creatureAddToCollectionTrue">
 
-            <!-- make sure checked works -->
             <label for="creatureAddToCollectionFalse">No</label>
             <input type="radio" id="creatureAddToCollectionFalse" name="creatureAddToCollection" value="creatureAddToCollectionFalse" checked>
             <button type="submit" value="Submit">Save Creature</button>
         </form>
     </details>
+
+
+    <form id="createCreatureFromCollectionForm" action="createCreatureFromCollection" method="POST">
+        <input type="hidden" name="creatureEncounter" value="${selectedEncounter.getId()}">
+        <label for="addFromCollection">Or... Add a creature from your collection!</label>
+        <select name="addFromCollection" id="addFromCollection">
+            <option value=""></option>
+            <c:forEach var="creature" items="${loggedInUserCreatureCollection.getCreatures()}">
+            <option value="${creature.getId()}">${creature.getCreatureName()}</option>
+            </c:forEach>
+        </select>
+        <button type="submit" value="Submit">Add from collection</button>
+    </form>
 </body>
 <c:import url="footer.jsp"/>
