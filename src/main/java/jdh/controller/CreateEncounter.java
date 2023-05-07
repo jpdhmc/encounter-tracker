@@ -15,12 +15,12 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @WebServlet(
-        urlPatterns = {"/displayEncounter"}
+        urlPatterns = {"/createEncounter"}
 )
 /**
  * Servlet class to create a new encounter
  */
-public class createEncounter extends HttpServlet {
+public class CreateEncounter extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         GenericDao<Encounter> encounterDao = DaoFactory.createDao(Encounter.class);

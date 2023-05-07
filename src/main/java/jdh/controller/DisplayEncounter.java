@@ -21,7 +21,7 @@ import java.io.IOException;
  */
 public class DisplayEncounter extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         GenericDao<Encounter> dao = DaoFactory.createDao(Encounter.class);
         HttpSession session = req.getSession();
         int selectedEncounterId = Integer.parseInt(req.getParameter("selectedEncounter"));
