@@ -48,4 +48,5 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 
-cognito.properties
+src/main/resources/cognito.properties
+src/main/resources/hibernate.cfg.xml
