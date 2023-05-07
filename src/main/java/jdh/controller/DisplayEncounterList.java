@@ -35,6 +35,11 @@ public class DisplayEncounterList extends HttpServlet {
         User currentUser = (User) session.getAttribute("loggedInUser");
         List<Encounter> encounterList = dao.findByPropertyEqual("user", currentUser);
         req.setAttribute("encounterList", encounterList);
+        for (Encounter theEncounter : encounterList) {
+            if (theEncounter.getEncounterName().equals("Creature Collection")) {
+                session.setAttribute("loggedInUserCreatureCollection", theEncounter);
+            }
+        }
         RequestDispatcher dispatcher = req.getRequestDispatcher("/displayEncounterList.jsp");
         dispatcher.forward(req, resp);
     }

@@ -32,6 +32,7 @@ public class CreateCreatureFromCollection extends HttpServlet {
 
         dao.insert(newCreature);
 
+        creatureEncounter = encounterDao.getById(Integer.parseInt(req.getParameter("creatureEncounter")));
         req.setAttribute("selectedEncounter", creatureEncounter);
         RequestDispatcher dispatcher = req.getRequestDispatcher("/displayEncounter.jsp");
         dispatcher.forward(req, resp);

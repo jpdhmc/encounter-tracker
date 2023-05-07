@@ -91,17 +91,10 @@ public class Auth extends HttpServlet implements PropertiesLoader {
         } else {
             HttpRequest authRequest = buildAuthRequest(authCode);
             try {
-                GenericDao<Encounter> encounterDao = DaoFactory.createDao(Encounter.class);
                 TokenResponse tokenResponse = getToken(authRequest);
                 currentUser = validate(tokenResponse);
                 req.setAttribute("currentUser", currentUser);
                 session.setAttribute("loggedInUser", currentUser);
-                List<Encounter> encounterList = encounterDao.findByPropertyEqual("user", currentUser);
-                for (Encounter theEncounter : encounterList) {
-                    if (theEncounter.getEncounterName().equals("Creature Collection")) {
-                        session.setAttribute("loggedInUserCreatureCollection", theEncounter);
-                    }
-                }
             } catch (IOException e) {
                 req.setAttribute("errorMessage", e.getMessage());
                 RequestDispatcher dispatcher = req.getRequestDispatcher("error.jsp");
