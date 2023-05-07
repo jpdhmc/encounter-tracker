@@ -29,7 +29,7 @@ import java.util.List;
  */
 public class DisplayEncounterList extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         GenericDao<Encounter> dao = DaoFactory.createDao(Encounter.class);
         HttpSession session = req.getSession();
         User currentUser = (User) session.getAttribute("loggedInUser");

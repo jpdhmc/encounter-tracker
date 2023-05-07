@@ -9,8 +9,6 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -19,11 +17,7 @@ import org.hibernate.Transaction;
  *
  */
 public class GenericDao<T> {
-
     private Class<T> type;
-    private final Logger logger = LogManager.getLogger(this.getClass());
-
-
     /**
      * Instantiates a new Generic dao.
      *

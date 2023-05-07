@@ -32,10 +32,10 @@ public class CreateEncounter extends HttpServlet {
         newEncounter.setEncounterName(req.getParameter("encounterName"));
         newEncounter.setUser(currentUser);
 
-        int id = encounterDao.insert(newEncounter);
+        encounterDao.insert(newEncounter);
 
-        req.setAttribute("selectedEncounter", id);
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/displayEncounter");
+        req.setAttribute("selectedEncounter", newEncounter);
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/displayEncounter.jsp");
         dispatcher.forward(req, resp);
     }
 }

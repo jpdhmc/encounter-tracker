@@ -9,7 +9,9 @@
     </c:when>
     <c:otherwise>
       <h3>Welcome ${loggedInUser.getUsername()}</h3>
-      <a href="/displayEncounterList">View your encounters</a>
+      <form action="/displayEncounterList" method="post">
+        <input type="submit" value="View your encounters">
+      </form>
     </c:otherwise>
   </c:choose>
 </header>

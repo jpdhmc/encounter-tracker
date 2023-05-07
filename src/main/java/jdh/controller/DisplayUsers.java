@@ -3,8 +3,6 @@ package jdh.controller;
 import jdh.entity.User;
 import jdh.persistence.GenericDao;
 import jdh.util.DaoFactory;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

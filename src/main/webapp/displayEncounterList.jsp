@@ -12,7 +12,12 @@
     <c:forEach var="encounter" items="${encounterList}">
       <tr>
         <td>${encounter.getId()}</td>
-        <td><a href="/displayEncounter?selectedEncounter=${encounter.getId()}">${encounter.getEncounterName()}</a></td>
+        <td>${encounter.getEncounterName()}
+          <form action="displayEncounter" method="post">
+            <input type="hidden" name="selectedEncounter" value="${encounter.getId()}">
+            <input type="submit" value="View">
+          </form>
+        </td>
       </tr>
     </c:forEach>
     </tbody>
