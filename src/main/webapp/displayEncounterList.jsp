@@ -11,10 +11,8 @@
     <tbody>
     <c:forEach var="encounter" items="${encounterList}">
       <tr>
-        <a href="/displayEncounter?selectedEncounter=${encounter.getId()}">
         <td>${encounter.getId()}</td>
-        </a>
-        <td>${encounter.getEncounterName()}</td>
+        <td><a href="/displayEncounter?selectedEncounter=${encounter.getId()}">${encounter.getEncounterName()}</a></td>
       </tr>
     </c:forEach>
     </tbody>

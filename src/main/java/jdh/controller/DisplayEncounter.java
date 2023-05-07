@@ -1,7 +1,6 @@
 package jdh.controller;
 
 import jdh.entity.Encounter;
-import jdh.entity.User;
 import jdh.persistence.GenericDao;
 import jdh.util.DaoFactory;
 
@@ -20,7 +19,7 @@ import java.io.IOException;
 /**
  * Servlet class to examine a single encounter in detail
  */
-public class displayEncounter extends HttpServlet {
+public class DisplayEncounter extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         GenericDao<Encounter> dao = DaoFactory.createDao(Encounter.class);

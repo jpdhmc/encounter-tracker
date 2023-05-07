@@ -215,11 +215,10 @@ public class Auth extends HttpServlet implements PropertiesLoader {
             // Create creature collection for every new user as well as an example creature
             Encounter creatureCollection = new Encounter("Creature Collection", newUser);
             encounterDao.insert(creatureCollection);
-            Monster foundMonster;
-            foundMonster = open5eDao.getMonster("bandit");
+            Monster foundMonster = open5eDao.getMonster("bandit");
             Creature exampleCreature = new Creature();
             exampleCreature = exampleCreature.convertFromMonster(foundMonster, creatureCollection);
-            int id = creatureDao.insert(exampleCreature);
+            creatureDao.insert(exampleCreature);
         } else {
             sessionUser = foundUsers.get(0);
         }

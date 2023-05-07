@@ -17,14 +17,13 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.annotation.*;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet(
         urlPatterns = {"/displayEncounterList"}
 )
 /**
  * Servlet class that finds the encounters associated with the logged in user and forwards them to the jsp
- *
- * TODO: create servlet and jsp for creating a monster, creating an encounter, importing a monster from api. develop the "creature collection"
  *
  * @author John Den Hartog
  */
@@ -34,7 +33,8 @@ public class DisplayEncounterList extends HttpServlet {
         GenericDao<Encounter> dao = DaoFactory.createDao(Encounter.class);
         HttpSession session = req.getSession();
         User currentUser = (User) session.getAttribute("loggedInUser");
-        req.setAttribute("encounterList", currentUser.getEncounters());
+        List<Encounter> encounterList = dao.findByPropertyEqual("user", currentUser);
+        req.setAttribute("encounterList", encounterList);
         RequestDispatcher dispatcher = req.getRequestDispatcher("/displayEncounterList.jsp");
         dispatcher.forward(req, resp);
     }
