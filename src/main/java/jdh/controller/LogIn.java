@@ -1,8 +1,6 @@
 package jdh.controller;
 
 import edu.matc.util.PropertiesLoader;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,7 +19,6 @@ import java.util.Properties;
  */
 public class LogIn extends HttpServlet implements PropertiesLoader {
     Properties properties;
-    private final Logger logger = LogManager.getLogger(this.getClass());
     public static String CLIENT_ID;
     public static String LOGIN_URL;
     public static String REDIRECT_URL;
@@ -45,9 +42,9 @@ public class LogIn extends HttpServlet implements PropertiesLoader {
             LOGIN_URL = properties.getProperty("loginURL");
             REDIRECT_URL = properties.getProperty("redirectURL");
         } catch (IOException ioException) {
-            logger.error("Cannot load properties..." + ioException.getMessage(), ioException);
+
         } catch (Exception e) {
-            logger.error("Error loading properties" + e.getMessage(), e);
+
         }
     }
 

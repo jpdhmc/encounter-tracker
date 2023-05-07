@@ -25,8 +25,9 @@ public class CreateCreature extends HttpServlet {
         encounterDao = DaoFactory.createDao(Encounter.class);
 
         Creature newCreature = new Creature();
-        //set attributes using info from form (createCreature.jsp)
-        newCreature.setEncounters(encounterDao.getById(Integer.parseInt(req.getParameter("creatureEncounter"))));
+        Encounter creatureEncounter = encounterDao.getById(Integer.parseInt(req.getParameter("creatureEncounter")));
+
+        newCreature.setEncounters(creatureEncounter);
 
         newCreature.setSize(req.getParameter("creatureSize"));
         newCreature.setType(req.getParameter("creatureType"));
@@ -64,8 +65,8 @@ public class CreateCreature extends HttpServlet {
         newCreature.setTrackingConditions(Boolean.valueOf(req.getParameter("creatureIsTrackingConditions")));
         int id = dao.insert(newCreature);
 
-        req.setAttribute("creatureId", id);
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/viewCreature.jsp");
+        req.setAttribute("selectedEncounter", creatureEncounter);
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/displayEncounter.jsp");
         dispatcher.forward(req, resp);
     }
 }

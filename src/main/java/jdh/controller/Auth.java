@@ -18,8 +18,6 @@ import jdh.open5edata.Monster;
 import jdh.persistence.GenericDao;
 import jdh.persistence.Open5eDataDao;
 import jdh.util.DaoFactory;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.apache.commons.io.*;
 
 import javax.servlet.RequestDispatcher;
@@ -66,8 +64,6 @@ public class Auth extends HttpServlet implements PropertiesLoader {
     String POOL_ID;
     Keys jwks;
 
-    private final Logger logger = LogManager.getLogger(this.getClass());
-
     @Override
     public void init() throws ServletException {
         super.init();
@@ -87,7 +83,6 @@ public class Auth extends HttpServlet implements PropertiesLoader {
         String authCode = req.getParameter("code");
         User currentUser;
         HttpSession session = req.getSession();
-        logger.info("doget auth");
 
         if (authCode == null) {
             req.setAttribute("errorMessage", "Auth code was null. Try again.");
@@ -101,12 +96,10 @@ public class Auth extends HttpServlet implements PropertiesLoader {
                 req.setAttribute("currentUser", currentUser);
                 session.setAttribute("loggedInUser", currentUser);
             } catch (IOException e) {
-                logger.error("Error getting or validating the token: " + e.getMessage(), e);
                 req.setAttribute("errorMessage", e.getMessage());
                 RequestDispatcher dispatcher = req.getRequestDispatcher("error.jsp");
                 dispatcher.forward(req, resp);
             } catch (InterruptedException e) {
-                logger.error("Error getting token from Cognito oauth url " + e.getMessage(), e);
                 req.setAttribute("errorMessage", e.getMessage());
                 RequestDispatcher dispatcher = req.getRequestDispatcher("error.jsp");
                 dispatcher.forward(req, resp);
@@ -130,13 +123,8 @@ public class Auth extends HttpServlet implements PropertiesLoader {
 
         response = client.send(authRequest, HttpResponse.BodyHandlers.ofString());
 
-
-        logger.debug("Response headers: " + response.headers().toString());
-        logger.debug("Response body: " + response.body().toString());
-
         ObjectMapper mapper = new ObjectMapper();
         TokenResponse tokenResponse = mapper.readValue(response.body().toString(), TokenResponse.class);
-        logger.debug("Id token: " + tokenResponse.getIdToken());
 
         return tokenResponse;
 
@@ -167,9 +155,9 @@ public class Auth extends HttpServlet implements PropertiesLoader {
         try {
             publicKey = KeyFactory.getInstance("RSA").generatePublic(new RSAPublicKeySpec(modulus, exponent));
         } catch (InvalidKeySpecException e) {
-            logger.error("Invalid Key Error " + e.getMessage(), e);
+
         } catch (NoSuchAlgorithmException e) {
-            logger.error("Algorithm Error " + e.getMessage(), e);
+
         }
 
         // get an algorithm instance
@@ -186,9 +174,6 @@ public class Auth extends HttpServlet implements PropertiesLoader {
         // Verify the token
         DecodedJWT jwt = verifier.verify(tokenResponse.getIdToken());
         String userName = jwt.getClaim("cognito:username").asString();
-        logger.debug("here's the username: " + userName);
-
-        logger.debug("here are all the available claims: " + jwt.getClaims());
 
         User returnedUser = checkNewOrExistingUser(userName);
 
@@ -269,11 +254,10 @@ public class Auth extends HttpServlet implements PropertiesLoader {
             File jwksFile = new File("jwks.json");
             FileUtils.copyURLToFile(jwksURL, jwksFile);
             jwks = mapper.readValue(jwksFile, Keys.class);
-            logger.debug("Keys are loaded. Here's e: " + jwks.getKeys().get(0).getE());
         } catch (IOException ioException) {
-            logger.error("Cannot load json..." + ioException.getMessage(), ioException);
+
         } catch (Exception e) {
-            logger.error("Error loading json" + e.getMessage(), e);
+
         }
     }
 
@@ -293,9 +277,9 @@ public class Auth extends HttpServlet implements PropertiesLoader {
             REGION = properties.getProperty("region");
             POOL_ID = properties.getProperty("poolId");
         } catch (IOException ioException) {
-            logger.error("Cannot load properties..." + ioException.getMessage(), ioException);
+
         } catch (Exception e) {
-            logger.error("Error loading properties" + e.getMessage(), e);
+
         }
     }
 }
