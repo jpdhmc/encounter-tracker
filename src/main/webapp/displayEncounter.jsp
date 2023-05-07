@@ -162,6 +162,14 @@
             <label for="creatureIsTrackingConditionsFalse">No</label>
             <input type="radio" id="creatureIsTrackingConditionsFalse" name="creatureIsTrackingConditions" value="creatureIsTrackingConditionsFalse" checked>
             <br>
+
+            <p>Add this creature to your Creature Collection?</p>
+            <label for="creatureAddToCollectionTrue">Yes</label>
+            <input type="radio" id="creatureAddToCollectionTrue" name="creatureAddToCollection" value="creatureAddToCollectionTrue">
+
+            <!-- make sure checked works -->
+            <label for="creatureAddToCollectionFalse">No</label>
+            <input type="radio" id="creatureAddToCollectionFalse" name="creatureAddToCollection" value="creatureAddToCollectionFalse" checked>
             <button type="submit" value="Submit">Save Creature</button>
         </form>
     </details>

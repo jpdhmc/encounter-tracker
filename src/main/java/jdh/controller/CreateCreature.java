@@ -2,6 +2,7 @@ package jdh.controller;
 
 import jdh.entity.Creature;
 import jdh.entity.Encounter;
+import jdh.entity.User;
 import jdh.persistence.GenericDao;
 import jdh.util.DaoFactory;
 
@@ -11,7 +12,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet(
         urlPatterns = {"/createCreature"}
@@ -89,7 +92,20 @@ public class CreateCreature extends HttpServlet {
         newCreature.setReactions(req.getParameter("creatureReactions"));
         newCreature.setLegendaryActions(req.getParameter("creatureLegendaryActions"));
         newCreature.setTrackingConditions(Boolean.valueOf(req.getParameter("creatureIsTrackingConditions")));
+
         dao.insert(newCreature);
+
+        if (req.getParameter("creatureAddToCollection").equals("creatureAddToCollectionTrue")) {
+            HttpSession session = req.getSession();
+            User currentUser = (User) session.getAttribute("loggedInUser");
+            List<Encounter> encounterList = encounterDao.findByPropertyEqual("user", currentUser);
+            for (Encounter theEncounter : encounterList) {
+                if (theEncounter.getEncounterName().equals("Creature Collection")) {
+                    newCreature.setEncounters(theEncounter);
+                    dao.insert(newCreature);
+                }
+            }
+        }
 
         creatureEncounter = encounterDao.getById(Integer.parseInt(req.getParameter("creatureEncounter")));
         req.setAttribute("selectedEncounter", creatureEncounter);
