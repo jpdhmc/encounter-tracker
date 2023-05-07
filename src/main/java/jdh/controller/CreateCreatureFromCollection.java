@@ -26,7 +26,7 @@ public class CreateCreatureFromCollection extends HttpServlet {
         Encounter creatureEncounter = encounterDao.getById(Integer.parseInt(req.getParameter("creatureEncounter")));
 
         Creature newCreature;
-        Creature existingCreature = encounterDao.getById(Integer.parseInt(req.getParameter("addFromCollection")));
+        Creature existingCreature = dao.getById(Integer.parseInt(req.getParameter("addFromCollection")));
         newCreature = existingCreature;
         newCreature.setEncounters(creatureEncounter);
 

@@ -954,3 +954,48 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 [INFO ] 2023-05-07 17:02:25.179 [main] UserDao - GET USER BY ID: User{id=1, username='jdhtest'}
 [INFO ] 2023-05-07 17:02:25.186 [main] EncounterDao - INSERTED ENCOUNTER: Encounter{id=60, encounterName='brand new encounter', user=User{id=1, username='jdhtest'}}
 [INFO ] 2023-05-07 17:02:25.209 [main] EncounterDao - GET ENCOUNTER BY ID: Encounter{id=60, encounterName='brand new encounter', user=User{id=1, username='jdhtest'}}
+[INFO ] 2023-05-07 18:17:14.044 [main] EncounterDao - GET ENCOUNTER BY ID: Encounter{id=1, encounterName='test goblins', user=User{id=1, username='jdhtest'}}
+[INFO ] 2023-05-07 18:17:14.045 [main] EncounterDao - DELETING ENCOUNTER: Encounter{id=1, encounterName='test goblins', user=User{id=1, username='jdhtest'}}
+[INFO ] 2023-05-07 18:17:14.076 [main] EncounterDao - GET ENCOUNTER BY ID: null
+[INFO ] 2023-05-07 18:17:14.110 [main] EncounterDao - GET ENCOUNTER BY encounterName like test
+[INFO ] 2023-05-07 18:17:14.186 [main] EncounterDao - GET ENCOUNTER BY ID: Encounter{id=1, encounterName='test goblins', user=User{id=1, username='jdhtest'}}
+[INFO ] 2023-05-07 18:17:14.220 [main] EncounterDao - GET ENCOUNTER BY ID: Encounter{id=2, encounterName='wizardenc', user=User{id=2, username='secondtestname'}}
+[INFO ] 2023-05-07 18:17:14.226 [main] EncounterDao - UPDATED ENCOUNTER NAME: cool encounter name
+[INFO ] 2023-05-07 18:17:14.232 [main] EncounterDao - GET ENCOUNTER BY ID: Encounter{id=2, encounterName='cool encounter name', user=User{id=2, username='secondtestname'}}
+[INFO ] 2023-05-07 18:17:14.268 [main] EncounterDao - GET ALL ENCOUNTERS: 
+[INFO ] 2023-05-07 18:17:14.269 [main] EncounterDao - Encounter{id=1, encounterName='test goblins', user=User{id=1, username='jdhtest'}}
+[INFO ] 2023-05-07 18:17:14.269 [main] EncounterDao - Encounter{id=2, encounterName='wizardenc', user=User{id=2, username='secondtestname'}}
+[INFO ] 2023-05-07 18:17:14.269 [main] EncounterDao - Encounter{id=3, encounterName='thirdencountertest', user=User{id=1, username='jdhtest'}}
+[INFO ] 2023-05-07 18:17:14.380 [main] UserDao - GET USER BY ID: User{id=1, username='jdhtest'}
+[INFO ] 2023-05-07 18:17:14.411 [main] EncounterDao - INSERTED ENCOUNTER: Encounter{id=61, encounterName='brand new encounter', user=User{id=1, username='jdhtest'}}
+[INFO ] 2023-05-07 18:17:14.426 [main] EncounterDao - GET ENCOUNTER BY ID: Encounter{id=61, encounterName='brand new encounter', user=User{id=1, username='jdhtest'}}
+[INFO ] 2023-05-07 18:25:10.168 [main] EncounterDao - GET ENCOUNTER BY ID: Encounter{id=1, encounterName='test goblins', user=User{id=1, username='jdhtest'}}
+[INFO ] 2023-05-07 18:25:10.170 [main] EncounterDao - DELETING ENCOUNTER: Encounter{id=1, encounterName='test goblins', user=User{id=1, username='jdhtest'}}
+[INFO ] 2023-05-07 18:25:10.229 [main] EncounterDao - GET ENCOUNTER BY ID: null
+[INFO ] 2023-05-07 18:25:10.293 [main] EncounterDao - GET ENCOUNTER BY encounterName like test
+[INFO ] 2023-05-07 18:25:10.405 [main] EncounterDao - GET ENCOUNTER BY ID: Encounter{id=1, encounterName='test goblins', user=User{id=1, username='jdhtest'}}
+[INFO ] 2023-05-07 18:25:10.452 [main] EncounterDao - GET ENCOUNTER BY ID: Encounter{id=2, encounterName='wizardenc', user=User{id=2, username='secondtestname'}}
+[INFO ] 2023-05-07 18:25:10.458 [main] EncounterDao - UPDATED ENCOUNTER NAME: cool encounter name
+[INFO ] 2023-05-07 18:25:10.465 [main] EncounterDao - GET ENCOUNTER BY ID: Encounter{id=2, encounterName='cool encounter name', user=User{id=2, username='secondtestname'}}
+[INFO ] 2023-05-07 18:25:10.511 [main] EncounterDao - GET ALL ENCOUNTERS: 
+[INFO ] 2023-05-07 18:25:10.511 [main] EncounterDao - Encounter{id=1, encounterName='test goblins', user=User{id=1, username='jdhtest'}}
+[INFO ] 2023-05-07 18:25:10.511 [main] EncounterDao - Encounter{id=2, encounterName='wizardenc', user=User{id=2, username='secondtestname'}}
+[INFO ] 2023-05-07 18:25:10.511 [main] EncounterDao - Encounter{id=3, encounterName='thirdencountertest', user=User{id=1, username='jdhtest'}}
+[INFO ] 2023-05-07 18:25:10.539 [main] UserDao - GET USER BY ID: User{id=1, username='jdhtest'}
+[INFO ] 2023-05-07 18:25:10.551 [main] EncounterDao - INSERTED ENCOUNTER: Encounter{id=62, encounterName='brand new encounter', user=User{id=1, username='jdhtest'}}
+[INFO ] 2023-05-07 18:25:10.562 [main] EncounterDao - GET ENCOUNTER BY ID: Encounter{id=62, encounterName='brand new encounter', user=User{id=1, username='jdhtest'}}
+[INFO ] 2023-05-07 18:28:47.034 [main] EncounterDao - GET ENCOUNTER BY ID: Encounter{id=1, encounterName='test goblins', user=User{id=1, username='jdhtest'}}
+[INFO ] 2023-05-07 18:28:47.036 [main] EncounterDao - DELETING ENCOUNTER: Encounter{id=1, encounterName='test goblins', user=User{id=1, username='jdhtest'}}
+[INFO ] 2023-05-07 18:28:47.050 [main] EncounterDao - GET ENCOUNTER BY ID: null
+[INFO ] 2023-05-07 18:28:47.075 [main] EncounterDao - GET ENCOUNTER BY encounterName like test
+[INFO ] 2023-05-07 18:28:47.142 [main] EncounterDao - GET ENCOUNTER BY ID: Encounter{id=1, encounterName='test goblins', user=User{id=1, username='jdhtest'}}
+[INFO ] 2023-05-07 18:28:47.191 [main] EncounterDao - GET ENCOUNTER BY ID: Encounter{id=2, encounterName='wizardenc', user=User{id=2, username='secondtestname'}}
+[INFO ] 2023-05-07 18:28:47.201 [main] EncounterDao - UPDATED ENCOUNTER NAME: cool encounter name
+[INFO ] 2023-05-07 18:28:47.211 [main] EncounterDao - GET ENCOUNTER BY ID: Encounter{id=2, encounterName='cool encounter name', user=User{id=2, username='secondtestname'}}
+[INFO ] 2023-05-07 18:28:47.248 [main] EncounterDao - GET ALL ENCOUNTERS: 
+[INFO ] 2023-05-07 18:28:47.248 [main] EncounterDao - Encounter{id=1, encounterName='test goblins', user=User{id=1, username='jdhtest'}}
+[INFO ] 2023-05-07 18:28:47.248 [main] EncounterDao - Encounter{id=2, encounterName='wizardenc', user=User{id=2, username='secondtestname'}}
+[INFO ] 2023-05-07 18:28:47.248 [main] EncounterDao - Encounter{id=3, encounterName='thirdencountertest', user=User{id=1, username='jdhtest'}}
+[INFO ] 2023-05-07 18:28:47.274 [main] UserDao - GET USER BY ID: User{id=1, username='jdhtest'}
+[INFO ] 2023-05-07 18:28:47.280 [main] EncounterDao - INSERTED ENCOUNTER: Encounter{id=63, encounterName='brand new encounter', user=User{id=1, username='jdhtest'}}
+[INFO ] 2023-05-07 18:28:47.292 [main] EncounterDao - GET ENCOUNTER BY ID: Encounter{id=63, encounterName='brand new encounter', user=User{id=1, username='jdhtest'}}

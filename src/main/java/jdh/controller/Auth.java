@@ -99,7 +99,7 @@ public class Auth extends HttpServlet implements PropertiesLoader {
                 List<Encounter> encounterList = encounterDao.findByPropertyEqual("user", currentUser);
                 for (Encounter theEncounter : encounterList) {
                     if (theEncounter.getEncounterName().equals("Creature Collection")) {
-                        session.setAttribute("currentUserCreatureCollection", theEncounter);
+                        session.setAttribute("loggedInUserCreatureCollection", theEncounter);
                     }
                 }
             } catch (IOException e) {
