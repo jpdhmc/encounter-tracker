@@ -1,7 +1,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:import url="head.jsp"/>
 <body>
-<h2>${encounter.getEncounterName()}</h2>
+<c:import url="header.jsp"/>
+<h2>${selectedEncounter.getEncounterName()}</h2>
 <table id="encounterTable">
     <thead>
     <th>Creature ID</th>

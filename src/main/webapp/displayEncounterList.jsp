@@ -2,7 +2,7 @@
 <c:import url="head.jsp"/>
 <body>
   <c:import url="header.jsp"/>
-  <h2></h2>
+  <h2>Your Encounters</h2>
   <table id="encounterTable">
     <thead>
     <th>Encounter Number</th>
@@ -17,5 +17,6 @@
     </c:forEach>
     </tbody>
   </table>
+  <a href="createEncounter.jsp">Create an Encounter</a>
 </body>
 <c:import url="footer.jsp"/>
