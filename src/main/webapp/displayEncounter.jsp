@@ -160,7 +160,7 @@
             <label for="creatureIsTrackingConditionsTrue">Yes</label>
             <input type="radio" id="creatureIsTrackingConditionsTrue" name="creatureIsTrackingConditions" value="creatureIsTrackingConditionsTrue">
             <label for="creatureIsTrackingConditionsFalse">No</label>
-            <input type="radio" id="creatureIsTrackingConditionsFalse" name="creatureIsTrackingConditions" value="creatureIsTrackingConditionsFalse">
+            <input type="radio" id="creatureIsTrackingConditionsFalse" name="creatureIsTrackingConditions" value="creatureIsTrackingConditionsFalse" checked>
             <br>
             <button type="submit" value="Submit">Save Creature</button>
         </form>

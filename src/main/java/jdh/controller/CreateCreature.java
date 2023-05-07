@@ -31,24 +31,50 @@ public class CreateCreature extends HttpServlet {
 
         newCreature.setSize(req.getParameter("creatureSize"));
         newCreature.setType(req.getParameter("creatureType"));
-        newCreature.setArmorClass(Integer.parseInt(req.getParameter("creatureArmorClass")));
-        newCreature.setMaxHitpoints(Integer.parseInt(req.getParameter("creatureMaxHitPoints")));
+        if (req.getParameter("creatureArmorClass") != "") {
+            newCreature.setArmorClass(Integer.parseInt(req.getParameter("creatureArmorClass")));
+        }
+        newCreature.setMaxHitpoints(Integer.parseInt(req.getParameter("creatureMaxHitpoints")));
         newCreature.setHitDice(req.getParameter("creatureHitdice"));
         newCreature.setSpeed(req.getParameter("creatureSpeed"));
 
-        newCreature.setStrength(Integer.parseInt(req.getParameter("creatureStr")));
-        newCreature.setDexterity(Integer.parseInt(req.getParameter("creatureDex")));
-        newCreature.setConstitution(Integer.parseInt(req.getParameter("creatureCon")));
-        newCreature.setIntelligence(Integer.parseInt(req.getParameter("creatureInt")));
-        newCreature.setWisdom(Integer.parseInt(req.getParameter("creatureWis")));
-        newCreature.setCharisma(Integer.parseInt(req.getParameter("creatureCha")));
+        if (req.getParameter("creatureStr") != "") {
+            newCreature.setStrength(Integer.parseInt(req.getParameter("creatureStr")));
+        }
+        if (req.getParameter("creatureDex") != "") {
+            newCreature.setDexterity(Integer.parseInt(req.getParameter("creatureDex")));
+        }
+        if (req.getParameter("creatureCon") != "") {
+            newCreature.setConstitution(Integer.parseInt(req.getParameter("creatureCon")));
+        }
+        if (req.getParameter("creatureInt") != "") {
+            newCreature.setIntelligence(Integer.parseInt(req.getParameter("creatureInt")));
+        }
+        if (req.getParameter("creatureWis") != "") {
+            newCreature.setWisdom(Integer.parseInt(req.getParameter("creatureWis")));
+        }
+        if (req.getParameter("creatureCha") != "") {
+            newCreature.setCharisma(Integer.parseInt(req.getParameter("creatureCha")));
+        }
 
-        newCreature.setStrengthSave(Integer.parseInt(req.getParameter("creatureStrSave")));
-        newCreature.setDexteritySave(Integer.parseInt(req.getParameter("creatureDexSave")));
-        newCreature.setConstitutionSave(Integer.parseInt(req.getParameter("creatureConSave")));
-        newCreature.setIntelligenceSave(Integer.parseInt(req.getParameter("creatureIntSave")));
-        newCreature.setWisdomSave(Integer.parseInt(req.getParameter("creatureWisSave")));
-        newCreature.setCharismaSave(Integer.parseInt(req.getParameter("creatureChaSave")));
+        if (req.getParameter("creatureStrSave") != "") {
+            newCreature.setStrengthSave(Integer.parseInt(req.getParameter("creatureStrSave")));
+        }
+        if (req.getParameter("creatureDexSave") != "") {
+            newCreature.setDexteritySave(Integer.parseInt(req.getParameter("creatureDexSave")));
+        }
+        if (req.getParameter("creatureConSave") != "") {
+            newCreature.setConstitutionSave(Integer.parseInt(req.getParameter("creatureConSave")));
+        }
+        if (req.getParameter("creatureIntSave") != "") {
+            newCreature.setIntelligenceSave(Integer.parseInt(req.getParameter("creatureIntSave")));
+        }
+        if (req.getParameter("creatureWisSave") != "") {
+            newCreature.setWisdomSave(Integer.parseInt(req.getParameter("creatureWisSave")));
+        }
+        if (req.getParameter("creatureChaSave") != "") {
+            newCreature.setCharismaSave(Integer.parseInt(req.getParameter("creatureChaSave")));
+        }
 
         newCreature.setSkillBonuses(req.getParameter("creatureSkills"));
         newCreature.setImmunities(req.getParameter("creatureDamageImmunities"));
