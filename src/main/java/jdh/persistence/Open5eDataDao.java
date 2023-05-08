@@ -58,7 +58,7 @@ public class Open5eDataDao {
 
         for (int i = 0; i < receivedArray.length(); i++) {
             JSONObject obj = receivedArray.getJSONObject(i);
-            String name = obj.getString("name");
+            String name = obj.getString("slug");
             monsterNames.add(name);
         }
         return monsterNames;
