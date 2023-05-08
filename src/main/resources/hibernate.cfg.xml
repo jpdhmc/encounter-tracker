@@ -4,7 +4,7 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
-        <!-- TODO: replace connection url -->
+        <!-- TODO: replace connection url TESTING PURPOSES-->
         <!-- <property name="connection.url">jdbc:mysql://localhost:3306/encounter_tracker</property> -->
         <property name="connection.url">jdbc:mysql://awseb-e-wyy3by53tg-stack-awsebrdsdatabase-d1ogizglryow.cihfymikjjh3.us-east-1.rds.amazonaws.com:3306/sample</property>
         <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
