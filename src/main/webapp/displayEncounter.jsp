@@ -185,5 +185,12 @@
         </select>
         <button type="submit" value="Submit">Add from collection</button>
     </form>
+
+    <form id="createCreatureFromSearchForm" action="createCreatureFromSearch" method="POST">
+        <input type="hidden" name="creatureEncounter" value="${selectedEncounter.getId()}">
+        <label for="searchCreature">Or... Search the Open5e API for a creature!</label>
+        <input type="text" id="searchCreature" name="searchCreature" placeholder="Goblin">
+        <button type="submit" value="Submit">Search API</button>
+    </form>
 </body>
 <c:import url="footer.jsp"/>

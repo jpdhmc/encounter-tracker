@@ -13,6 +13,7 @@ class Open5eDataDaoTest {
         assertEquals(dao.getMonster("bandit").getName(), "Bandit");
     }
 
+
     @Test
     void getMonstersByName() {
         Open5eDataDao dao = new Open5eDataDao();
