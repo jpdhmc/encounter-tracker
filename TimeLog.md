@@ -54,6 +54,6 @@
 
 5/05/23 - 2 hours - Creature creator
 
-5/06/23 - 4 hours - Encounter displays
+5/06/23 - 6 hours - Encounter displays, application flow
 
-5/07/23 - 5 hours - Encounter displays, application flow
+5/07/23 - 7 hours - Encounter and creature creation and display functionality
