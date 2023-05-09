@@ -19,7 +19,15 @@
             <td>${monster.getCr()}
                 <form action="addConvertedCreatureToEncounter" method="post">
                     <input type="hidden" name="selectedEncounter" value="${selectedEncounter.getId()}">
-                    <input type="hidden" name="convertedCreature" value="${monster.getSlug()}}">
+                    <input type="hidden" name="slugToConvert" value="${monster.getSlug()}}">
+
+                    <p>Add this creature to your Creature Collection?</p>
+                    <label for="creatureAddToCollectionTrue">Yes</label>
+                    <input type="radio" id="creatureAddToCollectionTrue" name="creatureAddToCollection" value="creatureAddToCollectionTrue">
+
+                    <label for="creatureAddToCollectionFalse">No</label>
+                    <input type="radio" id="creatureAddToCollectionFalse" name="creatureAddToCollection" value="creatureAddToCollectionFalse" checked>
+                    <button type="submit" value="Submit">Save Creature</button>
                     <input type="submit" value="Add this creature">
                 </form>
             </td>
