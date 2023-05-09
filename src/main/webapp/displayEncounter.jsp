@@ -1,5 +1,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:import url="head.jsp"/>
+<script type="text/javascript" class="init">
+    $(document).ready( function () {
+        $('.longText').moreLess({
+            wordsCount: 10
+        });
+    } );
+</script>
 <body>
     <c:import url="header.jsp"/>
     <h2>${selectedEncounter.getEncounterName()}</h2>
@@ -76,8 +83,8 @@
                             <input type="submit" value="Delete">
                         </form>
                     </td>
-                    <td><input type="text" value="${creature.getInitiative()}"></td>
-                    <td><input type="text" value="${creature.getCurrenthitpoints()}"></td>
+                    <td><input type="text" size="5" value="${creature.getInitiative()}"></td>
+                    <td><input type="text" size="5" value="${creature.getCurrenthitpoints()}"></td>
                     <td>${creature.getMaxHitpoints()}</td>
                     <c:if test="${(creature.getHitDice() != null) && (creature.getHitDice() != '')}">
                         <td>${creature.getHitDice()}</td>
@@ -162,16 +169,16 @@
                         <td>${creature.getChallengeRating()}</td>
                     </c:if>
                     <c:if test="${(creature.getActions() != null) && (creature.getActions() != '')}">
-                        <td>${creature.getActions()}</td>
+                        <td class="longText">${creature.getActions()}</td>
                     </c:if>
                     <c:if test="${(creature.getReactions() != null) && (creature.getReactions() != '')}">
-                        <td>${creature.getReactions()}</td>
+                        <td class="longText">${creature.getReactions()}</td>
                     </c:if>
                     <c:if test="${(creature.getLegendaryActions() != null) && (creature.getLegendaryActions() != '')}">
-                        <td>${creature.getLegendaryActions()}</td>
+                        <td class="longText">${creature.getLegendaryActions()}</td>
                     </c:if>
                     <c:if test="${(creature.getSpecialAbilities() != null) && (creature.getSpecialAbilities() != '')}">
-                        <td>${creature.getSpecialAbilities()}</td>
+                        <td class="longText">${creature.getSpecialAbilities()}</td>
                     </c:if>
                 </tr>
             </tbody>

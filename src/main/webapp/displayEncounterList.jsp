@@ -22,10 +22,12 @@
             <input type="hidden" name="selectedEncounter" value="${encounter.getId()}">
             <input type="submit" value="View">
           </form>
+          <c:if test="${encounter.getEncounterName() != 'Creature Collection'}">
           <form action="deleteEncounter" method="post">
             <input type="hidden" name="deletingEncounter" value="${encounter.getId()}">
             <input type="submit" value="Delete">
           </form>
+          </c:if>
         </td>
       </tr>
     </c:forEach>
