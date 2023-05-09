@@ -30,10 +30,9 @@ public class CreatureTest {
         Encounter retrievedEncounter = encounterDao.getById(1);
         Monster foundMonster;
         Creature newCreature = new Creature();
-        foundMonster = openDao.getMonster("bandit");
+        foundMonster = openDao.getMonster("lich");
         newCreature = newCreature.convertFromMonster(foundMonster, retrievedEncounter);
-
         int id = creatureDao.insert(newCreature);
-        assertEquals("Bandit", newCreature.getCreatureName());
+        assertEquals("Lich", newCreature.getCreatureName());
     }
 }

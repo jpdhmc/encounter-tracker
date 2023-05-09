@@ -1,5 +1,6 @@
 package jdh.controller;
 
+import jdh.entity.Creature;
 import jdh.entity.Encounter;
 import jdh.open5edata.Monster;
 import jdh.persistence.GenericDao;
@@ -34,7 +35,7 @@ public class CreateCreatureFromSearch extends HttpServlet {
 
         req.setAttribute("monsterList", monsterList);
         req.setAttribute("selectedEncounter", creatureEncounter);
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/monsterResults.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/searchMonsterResults.jsp");
         dispatcher.forward(req, resp);
     }
 }

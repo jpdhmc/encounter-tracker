@@ -21,7 +21,7 @@
         <th>Legendary Actions</th>
         </thead>
         <tbody>
-            <c:forEach var="monster" items="${monsterList}">
+            <c:forEach var="monster" items="${creatureList}">
             <tr>
                 <td>${monster.getName()}</td>
                 <td>${monster.getArmorClass()}</td>
