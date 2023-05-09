@@ -17,6 +17,10 @@
             <input type="hidden" name="selectedEncounter" value="${encounter.getId()}">
             <input type="submit" value="View">
           </form>
+          <form action="deleteEncounter" method="post">
+            <input type="hidden" name="deletingEncounter" value="${encounter.getId()}">
+            <input type="submit" value="Delete">
+          </form>
         </td>
       </tr>
     </c:forEach>
