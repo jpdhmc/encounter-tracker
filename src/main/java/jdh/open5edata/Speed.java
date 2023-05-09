@@ -75,13 +75,27 @@ public class Speed{
 
 	@Override
 	public String toString() {
-		return "Speed{" +
-				"walk=" + walk +
-				", fly=" + fly +
-				", swim=" + swim +
-				", climb=" + climb +
-				", burrow=" + burrow +
-				", hover=" + hover +
-				'}';
+		String returnedString = "";
+
+		if (walk != 0) {
+			returnedString = returnedString + "Walk: " + walk + " ";
+		}
+		if (fly != 0) {
+			returnedString = returnedString + "Fly: " + fly + " ";
+		}
+		if (swim != 0) {
+			returnedString = returnedString + "Swim: " + swim + " ";;
+		}
+		if (climb != 0) {
+			returnedString = returnedString + "Climb: " + climb + " ";;
+		}
+		if (burrow != 0) {
+			returnedString = returnedString + "Burrow: " + burrow + " ";;
+		}
+		if (hover = true) {
+			returnedString = returnedString + "Hover: Yes";
+		}
+
+		return returnedString;
 	}
 }

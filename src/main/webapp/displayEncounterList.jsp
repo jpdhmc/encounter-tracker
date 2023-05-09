@@ -1,5 +1,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:import url="head.jsp"/>
+<script type="text/javascript" class="init">
+  $(document).ready( function () {
+    $('#encounterTable').DataTable();
+  } );
+</script>
 <body>
   <c:import url="header.jsp"/>
   <h2>Your Encounters</h2>

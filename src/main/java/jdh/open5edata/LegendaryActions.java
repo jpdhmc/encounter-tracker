@@ -49,11 +49,6 @@ public class LegendaryActions {
 
     @Override
     public String toString() {
-        return "LegendaryActions{" +
-                "name='" + name + '\'' +
-                ", desc='" + desc + '\'' +
-                ", attack_bonus='" + attack_bonus + '\'' +
-                ", damage_dice='" + damage_dice + '\'' +
-                '}';
+        return name + ": " + desc;
     }
 }

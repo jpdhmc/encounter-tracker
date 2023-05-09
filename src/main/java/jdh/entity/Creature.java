@@ -1,6 +1,6 @@
 package jdh.entity;
 
-import jdh.open5edata.Monster;
+import jdh.open5edata.*;
 import jdh.persistence.GenericDao;
 import jdh.util.DaoFactory;
 import org.hibernate.annotations.GenericGenerator;
@@ -173,7 +173,6 @@ public class Creature {
         newCreature.setIntelligenceSave(monster.getIntelligenceSave());
         newCreature.setWisdomSave(monster.getWisdomSave());
         newCreature.setCharismaSave(monster.getCharismaSave());
-        newCreature.setSkillBonuses(monster.getSkills().toString());
         newCreature.setVulnerabilities(monster.getDamageVulnerabilities());
         newCreature.setResistances(monster.getDamageResistances());
         newCreature.setImmunities(monster.getDamageImmunities());
@@ -181,15 +180,32 @@ public class Creature {
         newCreature.setSenses(monster.getSenses());
         newCreature.setLanguages(monster.getLanguages());
         newCreature.setChallengeRating(monster.getChallengeRating());
-        newCreature.setActions(monster.getActions().toString());
+        String textActions = "";
+        for (ActionsItem action : monster.getActions()) {
+            textActions = textActions + action.getString();
+        }
+        newCreature.setActions(textActions);
+
         if (monster.getReactions() != null) {
-            newCreature.setReactions(monster.getReactions().toString());
+            String textReactions = "";
+            for (Reactions reaction : monster.getReactions()) {
+                textReactions = textActions + reaction.toString();
+            }
+            newCreature.setReactions(textReactions);
         }
         if (monster.getLegendaryActions() != null) {
-            newCreature.setLegendaryActions(monster.getLegendaryActions().toString());
+            String textLegendaryActions = "";
+            for (LegendaryActions legendary : monster.getLegendaryActions()) {
+                textLegendaryActions = textLegendaryActions + legendary.toString();
+            }
+            newCreature.setLegendaryActions(textLegendaryActions);
         }
         if (monster.getSpecialAbilities() != null) {
-            newCreature.setSpecialAbilities(monster.getSpecialAbilities().toString());
+            String textSpecialAbilities = "";
+            for (SpecialAbilities ability : monster.getSpecialAbilities()) {
+                textSpecialAbilities = textSpecialAbilities + ability.toString();
+            }
+            newCreature.setSpecialAbilities(textSpecialAbilities);
         }
         newCreature.isAlly = false;
 

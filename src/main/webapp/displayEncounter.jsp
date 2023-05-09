@@ -10,94 +10,60 @@
             <th>Initiative</th>
             <th>Current Hitpoints</th>
             <th>Maximum Hitpoints</th>
-            <c:if test="${creature.getHitDice() != null}">
+            <c:if test="${(creature.getHitDice() != null) && (creature.getHitDice() != '')}">
                 <th>Hit Dice</th>
             </c:if>
-            <c:if test="${creature.getSize() != null}">
+            <c:if test="${(creature.getSize() != null) && (creature.getSize() != '')}">
                 <th>Size</th>
             </c:if>
-            <c:if test="${creature.getType() != null}">
+            <c:if test="${(creature.getType() != null) && (creature.getType() != '')}">
                 <th>Type</th>
             </c:if>
-            <c:if test="${creature.getAlignment() != null}">
+            <c:if test="${(creature.getAlignment() != null) && (creature.getAlignment() != '')}">
                 <th>Alignment</th>
             </c:if>
-            <c:if test="${creature.getArmorClass() != null}">
+            <c:if test="${(creature.getArmorClass() != null) && (creature.getArmorClass() != '')}">
                 <th>Armor Class</th>
             </c:if>
-            <c:if test="${creature.getSpeed() != null}">
+            <c:if test="${(creature.getSpeed() != null) && (creature.getSpeed() != '')}">
                 <th>Speed</th>
             </c:if>
-            <c:if test="${creature.getStrength() != null}">
-                <th>Strength</th>
-            </c:if>
-            <c:if test="${creature.getDexterity() != null}">
-                <th>Dexterity</th>
-            </c:if>
-            <c:if test="${creature.getConstitution() != null}">
-                <th>Constitution</th>
-            </c:if>
-            <c:if test="${creature.getIntelligence() != null}">
-                <th>Intelligence</th>
-            </c:if>
-            <c:if test="${creature.getWisdom() != null}">
-                <th>Wisdom</th>
-            </c:if>
-            <c:if test="${creature.getCharisma() != null}">
-                <th>Charisma</th>
-            </c:if>
-            <c:if test="${creature.getStrengthSave() != null}">
-                <th>Strength Save</th>
-            </c:if>
-            <c:if test="${creature.getDexteritySave() != null}">
-                <th>Dexterity Save</th>
-            </c:if>
-            <c:if test="${creature.getConstitutionSave() != null}">
-                <th>Constitution Save</th>
-            </c:if>
-            <c:if test="${creature.getIntelligenceSave() != null}">
-                <th>Intelligence Save</th>
-            </c:if>
-            <c:if test="${creature.getWisdomSave() != null}">
-                <th>Wisdom Save</th>
-            </c:if>
-            <c:if test="${creature.getCharismaSave() != null}">
-                <th>Charisma Save</th>
-            </c:if>
-            <c:if test="${creature.getSkillBonuses() != null}">
+            <th>Skills</th>
+            <th>Saves</th>
+            <c:if test="${(creature.getSkillBonuses() != null) && (creature.getSkillBonuses() != '')}">
                 <th>Skill Bonuses</th>
             </c:if>
-            <c:if test="${creature.getVulnerabilities() != null}">
+            <c:if test="${(creature.getVulnerabilities() != null) && (creature.getVulnerabilities() != '')}">
                 <th>Vulnerabilities</th>
             </c:if>
-            <c:if test="${creature.getResistances() != null}">
+            <c:if test="${(creature.getResistances() != null) && (creature.getResistances() != '')}">
                 <th>Resistances</th>
             </c:if>
-            <c:if test="${creature.getImmunities() != null}">
-                <th>Immunities</th>
+            <c:if test="${(creature.getImmunities() != null) && (creature.getImmunities() != '')}">
+                <th>Damage Immunities</th>
             </c:if>
-            <c:if test="${creature.getConditionImmunities() != null}">
+            <c:if test="${(creature.getConditionImmunities() != null) && (creature.getConditionImmunities() != '')}">
                 <th>Condition Immunities</th>
             </c:if>
-            <c:if test="${creature.getSenses() != null}">
+            <c:if test="${(creature.getSenses() != null) && (creature.getSenses() != '')}">
                 <th>Senses</th>
             </c:if>
-            <c:if test="${creature.getLanguages() != null}">
+            <c:if test="${(creature.getLanguages() != null) && (creature.getLanguages() != '')}">
                 <th>Languages</th>
             </c:if>
-            <c:if test="${creature.getChallengeRating() != null}">
+            <c:if test="${(creature.getChallengeRating() != null) && (creature.getChallengeRating() != '')}">
                 <th>Challenge Rating</th>
             </c:if>
-            <c:if test="${creature.getActions() != null}">
+            <c:if test="${(creature.getActions() != null) && (creature.getActions() != '')}">
                 <th>Actions</th>
             </c:if>
-            <c:if test="${creature.getReactions() != null}">
+            <c:if test="${(creature.getReactions() != null) && (creature.getReactions() != '')}">
                 <th>Reactions</th>
             </c:if>
-            <c:if test="${creature.getLegendaryActions() != null}">
+            <c:if test="${(creature.getLegendaryActions() != null) && (creature.getLegendaryActions() != '')}">
                 <th>Legendary Actions</th>
             </c:if>
-            <c:if test="${creature.getSpecialAbilities() != null}">
+            <c:if test="${(creature.getSpecialAbilities() != null) && (creature.getSpecialAbilities() != '')}">
                 <th>Special Abilities</th>
             </c:if>
             </thead>
@@ -110,103 +76,107 @@
                             <input type="submit" value="Delete">
                         </form>
                     </td>
-                    <td>${creature.getInitiative()}</td>
-                    <td><input type="text" value="${creature.getCurrentHitpoints()}"></td>
+                    <td><input type="text" value="${creature.getInitiative()}"></td>
+                    <td><input type="text" value="${creature.getCurrenthitpoints()}"></td>
                     <td>${creature.getMaxHitpoints()}</td>
-                    <c:if test="${creature.getHitDice() != null}">
+                    <c:if test="${(creature.getHitDice() != null) && (creature.getHitDice() != '')}">
                         <td>${creature.getHitDice()}</td>
                     </c:if>
-                    <c:if test="${creature.getSize() != null}">
+                    <c:if test="${(creature.getSize() != null) && (creature.getSize() != '')}">
                         <td>${creature.getSize()}</td>
                     </c:if>
-                    <c:if test="${creature.getType() != null}">
+                    <c:if test="${(creature.getType() != null) && (creature.getType() != '')}">
                         <td>${creature.getType()}</td>
                     </c:if>
-                    <c:if test="${creature.getAlignment() != null}">
+                    <c:if test="${(creature.getAlignment() != null) && (creature.getAlignment() != '')}">
                         <td>${creature.getAlignment()}</td>
                     </c:if>
-                    <c:if test="${creature.getArmorClass() != null}">
+                    <c:if test="${(creature.getArmorClass() != null) && (creature.getArmorClass() != '')}">
                         <td>${creature.getArmorClass()}</td>
                     </c:if>
-                    <c:if test="${creature.getSpeed() != null}">
+                    <c:if test="${(creature.getSpeed() != null) && (creature.getSpeed() != '')}">
                         <td>${creature.getSpeed()}</td>
                     </c:if>
-                    <c:if test="${creature.getStrength() != null}">
-                        <td>${creature.getStrength()}</td>
+                    <td>
+                        <c:if test="${(creature.getStrength() != null) && (creature.getStrength() != '')}">
+                        STR: ${creature.getStrength()}
                     </c:if>
-                    <c:if test="${creature.getDexterity() != null}">
-                        <td>${creature.getDexterity()}</td>
+                        <c:if test="${(creature.getDexterity() != null) && (creature.getDexterity() != '')}">
+                        DEX: ${creature.getDexterity()}
                     </c:if>
-                    <c:if test="${creature.getConstitution() != null}">
-                        <td>${creature.getConstitution()}</td>
+                        <c:if test="${(creature.getConstitution() != null) && (creature.getConstitution() != '')}">
+                        CON: ${creature.getConstitution()}
                     </c:if>
-                    <c:if test="${creature.getIntelligence() != null}">
-                        <td>${creature.getIntelligence()}</td>
+                        <c:if test="${(creature.getIntelligence() != null) && (creature.getIntelligence() != '')}">
+                        INT: ${creature.getIntelligence()}
                     </c:if>
-                    <c:if test="${creature.getWisdom() != null}">
-                        <td>${creature.getWisdom()}</td>
+                        <c:if test="${(creature.getWisdom() != null) && (creature.getWisdom() != '')}">
+                        WIS: ${creature.getWisdom()}
                     </c:if>
-                    <c:if test="${creature.getCharisma() != null}">
-                        <td>${creature.getCharisma()}</td>
+                        <c:if test="${(creature.getCharisma() != null) && (creature.getCharisma() != '')}">
+                        CHA: ${creature.getCharisma()}
                     </c:if>
-                    <c:if test="${creature.getStrengthSave() != null}">
-                        <td>${creature.getStrengthSave()}</td>
+                    </td>
+                    <td>
+                        <c:if test="${(creature.getStrengthSave() != null) && (creature.getStrengthSave() != '')}">
+                        STR SAVE: +${creature.getStrengthSave()}
                     </c:if>
-                    <c:if test="${creature.getDexteritySave() != null}">
-                        <td>${creature.getDexteritySave()}</td>
+                        <c:if test="${(creature.getDexteritySave() != null) && (creature.getDexteritySave() != '')}">
+                        DEX SAVE: +${creature.getDexteritySave()}
                     </c:if>
-                    <c:if test="${creature.getConstitutionSave() != null}">
-                        <td>${creature.getConstitutionSave()}</td>
+                        <c:if test="${(creature.getConstitutionSave() != null) && (creature.getConstitutionSave() != '')}">
+                        CON SAVE: +${creature.getConstitutionSave()}
                     </c:if>
-                    <c:if test="${creature.getIntelligenceSave() != null}">
-                        <td>${creature.getIntelligenceSave()}</td>
+                        <c:if test="${(creature.getIntelligenceSave() != null) && (creature.getIntelligenceSave() != '')}">
+                        INT SAVE: +${creature.getIntelligenceSave()}
                     </c:if>
-                    <c:if test="${creature.getWisdomSave() != null}">
-                        <td>${creature.getWisdomSave()}</td>
+                        <c:if test="${(creature.getWisdomSave() != null) && (creature.getWisdomSave() != '')}">
+                        WIS SAVE: +${creature.getWisdomSave()}
                     </c:if>
-                    <c:if test="${creature.getCharismaSave() != null}">
-                        <td>${creature.getCharismaSave()}</td>
+                        <c:if test="${(creature.getCharismaSave() != null) && (creature.getCharismaSave() != '')}">
+                        CHA SAVE: +${creature.getCharismaSave()}
                     </c:if>
-                    <c:if test="${creature.getSkillBonuses() != null}">
+                    </td>
+                    <c:if test="${(creature.getSkillBonuses() != null) && (creature.getSkillBonuses() != '')}">
                         <td>${creature.getSkillBonuses()}</td>
                     </c:if>
-                    <c:if test="${creature.getVulnerabilities() != null}">
+                    <c:if test="${(creature.getVulnerabilities() != null) && (creature.getVulnerabilities() != '')}">
                         <td>${creature.getVulnerabilities()}</td>
                     </c:if>
-                    <c:if test="${creature.getResistances() != null}">
+                    <c:if test="${(creature.getResistances() != null) && (creature.getResistances() != '')}">
                         <td>${creature.getResistances()}</td>
                     </c:if>
-                    <c:if test="${creature.getImmunities() != null}">
+                    <c:if test="${(creature.getImmunities() != null) && (creature.getImmunities() != '')}">
                         <td>${creature.getImmunities()}</td>
                     </c:if>
-                    <c:if test="${creature.getConditionImmunities() != null}">
+                    <c:if test="${(creature.getConditionImmunities() != null) && (creature.getConditionImmunities() != '')}">
                         <td>${creature.getConditionImmunities()}</td>
                     </c:if>
-                    <c:if test="${creature.getSenses() != null}">
+                    <c:if test="${(creature.getSenses() != null) && (creature.getSenses() != '')}">
                         <td>${creature.getSenses()}</td>
                     </c:if>
-                    <c:if test="${creature.getLanguages() != null}">
+                    <c:if test="${(creature.getLanguages() != null) && (creature.getLanguages() != '')}">
                         <td>${creature.getLanguages()}</td>
                     </c:if>
-                    <c:if test="${creature.getChallengeRating() != null}">
+                    <c:if test="${(creature.getChallengeRating() != null) && (creature.getChallengeRating() != '')}">
                         <td>${creature.getChallengeRating()}</td>
                     </c:if>
-                    <c:if test="${creature.getActions() != null}">
+                    <c:if test="${(creature.getActions() != null) && (creature.getActions() != '')}">
                         <td>${creature.getActions()}</td>
                     </c:if>
-                    <c:if test="${creature.getReactions() != null}">
+                    <c:if test="${(creature.getReactions() != null) && (creature.getReactions() != '')}">
                         <td>${creature.getReactions()}</td>
                     </c:if>
-                    <c:if test="${creature.getLegendaryActions() != null}">
+                    <c:if test="${(creature.getLegendaryActions() != null) && (creature.getLegendaryActions() != '')}">
                         <td>${creature.getLegendaryActions()}</td>
                     </c:if>
-                    <c:if test="${creature.getSpecialAbilities() != null}">
+                    <c:if test="${(creature.getSpecialAbilities() != null) && (creature.getSpecialAbilities() != '')}">
                         <td>${creature.getSpecialAbilities()}</td>
                     </c:if>
                 </tr>
-
             </tbody>
         </table>
+        <br>
     </c:forEach>
     <details>
         <summary>Create a new creature to add!</summary>

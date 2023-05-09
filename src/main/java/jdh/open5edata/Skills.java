@@ -23,7 +23,6 @@ public class Skills{
 	@Override
  	public String toString(){
 		return 
-			"Skills{" + 
-			"}";
+			"";
 		}
 }

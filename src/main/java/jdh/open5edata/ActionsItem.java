@@ -59,15 +59,13 @@ public class ActionsItem{
 		return desc;
 	}
 
+	public String getString() {
+		String returnedString = name + ": " + desc;
+		return returnedString;
+	}
+
 	@Override
  	public String toString(){
-		return 
-			"ActionsItem{" + 
-			"attack_bonus = '" + attackBonus + '\'' + 
-			",damage_dice = '" + damageDice + '\'' + 
-			",name = '" + name + '\'' + 
-			",damage_bonus = '" + damageBonus + '\'' + 
-			",desc = '" + desc + '\'' + 
-			"}";
+		return name + " " + desc;
 		}
 }

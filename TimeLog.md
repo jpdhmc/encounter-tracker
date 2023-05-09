@@ -57,3 +57,5 @@
 5/06/23 - 6 hours - Encounter displays, application flow
 
 5/07/23 - 7 hours - Encounter and creature creation and display functionality
+
+5/08/23 - 11 hours - Major changes to how application handles output, display
