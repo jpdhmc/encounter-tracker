@@ -25,7 +25,7 @@ public class DeleteEncounter extends HttpServlet {
         encounterDao.delete(creatureEncounter);
 
         req.setAttribute("selectedEncounter", creatureEncounter);
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/displayEncounter");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/displayEncounterList");
         dispatcher.forward(req, resp);
     }
 }

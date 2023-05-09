@@ -190,32 +190,32 @@
             <label for="creatureSize">Size</label>
             <select name=creatureSize" id=creatureSize>
                 <option value=""></option>
-                <option value="tiny">Tiny</option>
-                <option value="small">Small</option>
-                <option value="medium">Medium</option>
-                <option value="large">Large</option>
-                <option value="huge">Huge</option>
-                <option value="gargantuan">Gargantuan</option>
+                <option value="Tiny">Tiny</option>
+                <option value="Small">Small</option>
+                <option value="Medium">Medium</option>
+                <option value="Large">Large</option>
+                <option value="Huge">Huge</option>
+                <option value="Gargantuan">Gargantuan</option>
             </select>
             <br>
 
             <label for="creatureType">Type</label>
             <select name="creatureType" id="creatureType">
                 <option value=""></option>
-                <option value="aberration">Aberration</option>
-                <option value="beast">Beast</option>
-                <option value="celestial">Celestial</option>
-                <option value="construct">Construct</option>
-                <option value="dragon">Dragon</option>
-                <option value="elemental">Elemental</option>
-                <option value="fey">Fey</option>
-                <option value="fiend">Fiend</option>
-                <option value="giant">Giant</option>
-                <option value="humanoid">Humanoid</option>
-                <option value="monstrosity">Monstrosity</option>
-                <option value="ooze">Ooze</option>
-                <option value="plant">Plant</option>
-                <option value="undead">Undead</option>
+                <option value="Aberration">Aberration</option>
+                <option value="Beast">Beast</option>
+                <option value="Celestial">Celestial</option>
+                <option value="Construct">Construct</option>
+                <option value="Dragon">Dragon</option>
+                <option value="Elemental">Elemental</option>
+                <option value="Fey">Fey</option>
+                <option value="Fiend">Fiend</option>
+                <option value="Giant">Giant</option>
+                <option value="Humanoid">Humanoid</option>
+                <option value="Monstrosity">Monstrosity</option>
+                <option value="Ooze">Ooze</option>
+                <option value="Plant">Plant</option>
+                <option value="Undead">Undead</option>
             </select>
             <br>
 

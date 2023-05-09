@@ -14,7 +14,6 @@
     <th>Name</th>
     </thead>
     <tbody>
-    <!-- fix delete -->
     <c:forEach var="encounter" items="${encounterList}">
       <tr>
         <td>${encounter.getId()}</td>
