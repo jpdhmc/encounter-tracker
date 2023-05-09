@@ -11,6 +11,7 @@ class Open5eDataDaoTest {
         Open5eDataDao dao = new Open5eDataDao();
         assertEquals(dao.getMonster("bandit").getHitPoints(), 11);
         assertEquals(dao.getMonster("lich").getName(), "Lich");
+        assertEquals(dao.getMonster("fire-giant-war-priest-a5e").getSlug(), "fire-giant-war-priest-a5e");
     }
 
 
