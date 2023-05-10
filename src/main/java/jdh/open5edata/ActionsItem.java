@@ -60,12 +60,12 @@ public class ActionsItem{
 	}
 
 	public String getString() {
-		String returnedString = name + ": " + desc;
+		String returnedString = name + ": " + desc + " ";
 		return returnedString;
 	}
 
 	@Override
  	public String toString(){
-		return name + " " + desc;
+		return name + " " + desc + " ";
 		}
 }

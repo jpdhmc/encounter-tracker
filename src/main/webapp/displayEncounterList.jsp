@@ -14,9 +14,11 @@
     <th>Name</th>
     </thead>
     <tbody>
+    <c:set var="i" value="0"/>
     <c:forEach var="encounter" items="${encounterList}">
       <tr>
-        <td>${encounter.getId()}</td>
+        <c:set var="i" value="${i + 1}"/>
+        <td>${i}</td>
         <td>${encounter.getEncounterName()}
           <form action="displayEncounter" method="post">
             <input type="hidden" name="selectedEncounter" value="${encounter.getId()}">
@@ -33,6 +35,11 @@
     </c:forEach>
     </tbody>
   </table>
-  <a href="createEncounter.jsp">Create an Encounter</a>
+  <form id="createEncounterForm" action="createEncounter" method="POST">
+    <label for="encounterName">Or... Create a new encounter!</label>
+    <input type="text" id="encounterName" name="encounterName" placeholder="Name" maxLength="30" required>
+    <br>
+    <button type="submit" value="Submit">Create a new encounter</button>
+  </form>
 </body>
 <c:import url="footer.jsp"/>

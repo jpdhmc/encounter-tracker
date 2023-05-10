@@ -56,7 +56,7 @@ public class LogIn extends HttpServlet implements PropertiesLoader {
      * @throws IOException
      */
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // TODO if properties weren't loaded properly, route to an error page
         String url = LOGIN_URL + "?response_type=code&client_id=" + CLIENT_ID + "&redirect_uri=" + REDIRECT_URL;
         resp.sendRedirect(url);

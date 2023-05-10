@@ -49,6 +49,6 @@ public class LegendaryActions {
 
     @Override
     public String toString() {
-        return name + ": " + desc;
+        return name + ": " + desc + " ";
     }
 }

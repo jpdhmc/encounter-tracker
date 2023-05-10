@@ -50,6 +50,6 @@ public class SpecialAbilities {
 
     @Override
     public String toString() {
-        return name + ": " + desc;
+        return name + ": " + desc + " ";
     }
 }

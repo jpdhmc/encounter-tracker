@@ -27,6 +27,6 @@ public class Reactions {
 
     @Override
     public String toString(){
-        return name + ": " + desc;
+        return name + ": " + desc + " ";
     }
 }
