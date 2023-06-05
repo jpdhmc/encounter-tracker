@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet(
-        urlPatterns = {"/deleteCreature"}
+        urlPatterns = {"/editCreature"}
 )
 public class EditCreature extends HttpServlet {
     @Override
