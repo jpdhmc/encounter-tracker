@@ -24,11 +24,6 @@
     <commons-version>2.11.0</commons-version>
   </properties>
 
-  <error-page>
-    <error-code>404</error-code>
-    <location>/error404.jsp</location>
-  </error-page>
-
   <dependencies>
     <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
     <dependency>
