@@ -82,6 +82,11 @@
                             <input type="hidden" name="deletingCreature" value="${creature.getId()}">
                             <input type="submit" value="Delete">
                         </form>
+                        <form action="editCreature" method="post">
+                            <input type="hidden" name="selectedEncounter" value="${selectedEncounter.getId()}">
+                            <input type="hidden" name="editingCreature" value="${creature.getId()}">
+                            <input type="submit" value="Edit">
+                        </form>
                     </td>
                     <td><input type="text" size="5" value="${creature.getInitiative()}"></td>
                     <td><input type="text" size="5" value="${creature.getCurrenthitpoints()}"></td>

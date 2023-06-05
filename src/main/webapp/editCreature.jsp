@@ -4,4 +4,4 @@
     <c:import url="header.jsp"/>
 
 </body>
-</html>
+<c:import url="footer.jsp"/>

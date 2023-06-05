@@ -24,6 +24,7 @@ public class DeleteCreature extends HttpServlet {
         Creature selectedCreature = creatureDao.getById(Integer.parseInt(req.getParameter("deletingCreature")));
         creatureDao.delete(selectedCreature);
         Encounter creatureEncounter = encounterDao.getById(Integer.parseInt(req.getParameter("selectedEncounter")));
+        req.setAttribute("selectedEncounter", creatureEncounter);
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/displayEncounter");
         dispatcher.forward(req, resp);

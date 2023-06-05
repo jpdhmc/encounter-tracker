@@ -4,7 +4,7 @@
   <groupId>org.example</groupId>
   <artifactId>encounterTracker</artifactId>
   <packaging>war</packaging>
-  <version>1.0-SNAPSHOT</version>
+  <version>0.1</version>
   <name>encounterTracker Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <properties>
@@ -23,6 +23,11 @@
     <json-version>20170516</json-version>
     <commons-version>2.11.0</commons-version>
   </properties>
+
+  <error-page>
+    <error-code>404</error-code>
+    <location>/error404.jsp</location>
+  </error-page>
 
   <dependencies>
     <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
