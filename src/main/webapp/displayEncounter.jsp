@@ -36,7 +36,7 @@
             <c:if test="${(creature.getSpeed() != null) && (creature.getSpeed() != '')}">
                 <th>Speed</th>
             </c:if>
-            <th>Skills</th>
+            <th>Stats</th>
             <th>Saves</th>
             <c:if test="${(creature.getSkillBonuses() != null) && (creature.getSkillBonuses() != '')}">
                 <th>Skill Bonuses</th>
@@ -78,15 +78,15 @@
             <tbody>
                 <tr>
                     <td>${creature.getCreatureName()}
-                        <form action="deleteCreature" method="post">
-                            <input type="hidden" name="selectedEncounter" value="${selectedEncounter.getId()}">
-                            <input type="hidden" name="deletingCreature" value="${creature.getId()}">
-                            <input type="submit" value="Delete">
-                        </form>
                         <form action="editCreature" method="post">
                             <input type="hidden" name="selectedEncounter" value="${selectedEncounter.getId()}">
                             <input type="hidden" name="editingCreature" value="${creature.getId()}">
                             <input type="submit" value="Edit">
+                        </form>
+                        <form action="deleteCreature" method="post">
+                            <input type="hidden" name="selectedEncounter" value="${selectedEncounter.getId()}">
+                            <input type="hidden" name="deletingCreature" value="${creature.getId()}">
+                            <input type="submit" value="Delete">
                         </form>
                     </td>
                     <td><input type="text" size="5" value="${creature.getInitiative()}"></td>
