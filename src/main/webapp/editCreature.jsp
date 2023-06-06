@@ -4,8 +4,8 @@
     <c:import url="header.jsp"/>
     <h2>${selectedCreature.getCreatureName()}</h2>
     <form action="updateCreature" method="post">
-        <input type="hidden" name="creatureEncounter" value="${selectedEncounter.getId()}">
-        <input type="hidden" name="editingCreature" value="${creature.getId()}">
+        <input type="hidden" name="selectedEncounter" value="${selectedEncounter.getId()}">
+        <input type="hidden" name="editingCreature" value="${selectedCreature.getId()}">
         <table>
             <thead>
                 <th>Name</th>
@@ -14,10 +14,10 @@
             <tbody>
                 <tr>
                     <td>
-                        <input type="text" id="creatureName" name="creatureName" maxLength="60" value="${creature.getCreatureName()}" required>
+                        <input type="text" id="creatureName" name="creatureName" maxLength="60" value="${selectedCreature.getCreatureName()}" required>
                     </td>
                     <td>
-                        <input type="text" id="creatureMaxHitpoints" name="creatureMaxHitpoints" value="${creature.getMaxHitpoints()}" required>
+                        <input type="text" id="creatureMaxHitpoints" name="creatureMaxHitpoints" value="${selectedCreature.getMaxHitpoints()}" required>
                     </td>
                 </tr>
             </tbody>
