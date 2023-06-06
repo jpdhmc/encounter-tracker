@@ -8,28 +8,39 @@
         <input type="hidden" name="editingCreature" value="${selectedCreature.getId()}">
         <table>
             <thead>
-            <th>Creature Name</th>
-            <th>Max Hitpoints</th>
-            <th>Hit Dice</th>
-            <th>Size</th>
-            <th>Type</th>
-            <th>Alignment</th>
-            <th>Armor Class</th>
-            <th>Speed</th>
-            <th>Stats</th>
-            <th>Saves</th>
-            <th></th>
+                <th>Creature Name</th>
+                <th>Max Hitpoints</th>
+                <th>Hit Dice</th>
+                <th>Size</th>
+                <th>Type</th>
+                <th>Alignment</th>
+                <th>Armor Class</th>
+                <th>Speed</th>
+                <th>Stats</th>
+                <th>Saves</th>
+                <th>Skill Bonuses</th>
+                <th>Vulnerabilities</th>
+                <th>Resistances</th>
+                <th>Damage Immunities</th>
+                <th>Condition Immunities</th>
+                <th>Senses</th>
+                <th>Languages</th>
+                <th>Challenge Rating</th>
+                <th>Actions</th>
+                <th>Reactions</th>
+                <th>Legendary Actions</th>
+                <th>Special Abilities</th>
             </thead>
             <tbody>
-            <tr>
-                <!--TODO: Finish this-->
-                <td>
-                    <input type="text" id="creatureName" name="creatureName" maxLength="60" value="${selectedCreature.getCreatureName()}" required>
-                </td>
-                <td>
-                    <input type="text" id="creatureMaxHitpoints" name="creatureMaxHitpoints" value="${selectedCreature.getMaxHitpoints()}" required>
-                </td>
-            </tr>
+                <tr>
+                    <!--TODO: Finish this-->
+                    <td>
+                        <input type="text" id="creatureName" name="creatureName" maxLength="60" value="${selectedCreature.getCreatureName()}" required>
+                    </td>
+                    <td>
+                        <input type="text" id="creatureMaxHitpoints" name="creatureMaxHitpoints" value="${selectedCreature.getMaxHitpoints()}" required>
+                    </td>
+                </tr>
             </tbody>
         </table>
         <button type="submit" value="Submit">Save Creature</button>
