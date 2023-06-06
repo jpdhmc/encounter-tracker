@@ -40,6 +40,40 @@
                     <td>
                         <input type="text" id="creatureMaxHitpoints" name="creatureMaxHitpoints" value="${selectedCreature.getMaxHitpoints()}" required>
                     </td>
+                    <td>
+                        <input type="text" id="creatureHitDice" name="creatureHitDice" value="${selectedCreature.getHitDice()}">
+                    </td>
+                    <td>
+                        <input type="text" id="creatureSize" name="creatureSize" value="${selectedCreature.getSize()}">
+                    </td>
+                    <td>
+                        <input type="text" id="creatureType" name="creatureType" value="${selectedCreature.getType()}">
+                    </td>
+                    <td>
+                        <input type="text" id="creatureAlignment" name="creatureAlignment" value="${selectedCreature.getAlignment()}">
+                    </td>
+                    <td>
+                        <input type="text" id="creatureArmorClass" name="creatureArmorClass" value="${selectedCreature.getArmorClass()}">
+                    </td>
+                    <td>
+                        <input type="text" id="creatureSpeed" name="creatureSpeed" value="${selectedCreature.getSpeed()}">
+                    </td>
+                    <td>
+                        STR: <input type="text" id="creatureStrength" name="creatureStrength" value="${selectedCreature.getStrength()}">
+                        DEX: <input type="text" id="creatureDexterity" name="creatureDexterity" value="${selectedCreature.getDexterity()}">
+                        CON: <input type="text" id="creatureConstitution" name="creatureConstitution" value="${selectedCreature.getConstitution()}">
+                        INT: <input type="text" id="creatureIntelligence" name="creatureIntelligence" value="${selectedCreature.getIntelligence()}">
+                        WIS: <input type="text" id="creatureWisdom" name="creatureWisdom" value="${selectedCreature.getWisdom()}">
+                        CHA: <input type="text" id="creatureCharisma" name="creatureCharisma" value="${selectedCreature.getCharisma()}">
+                    </td>
+                    <td>
+                        STR Save: <input type="text" id="creatureStrengthSave" name="creatureStrengthSave" value="${selectedCreature.getStrengthSave()}">
+                        DEX Save: <input type="text" id="creatureDexteritySave" name="creatureDexteritySave" value="${selectedCreature.getDexteritySave()}">
+                        CON Save: <input type="text" id="creatureConstitutionSave" name="creatureConstitutionSave" value="${selectedCreature.getConstitutionSave()}">
+                        INT Save: <input type="text" id="creatureIntelligenceSave" name="creatureIntelligenceSave" value="${selectedCreature.getIntelligenceSave()}">
+                        WIS Save: <input type="text" id="creatureWisdomSave" name="creatureWisdomSave" value="${selectedCreature.getWisdomSave()}">
+                        CHA Save: <input type="text" id="creatureCharismaSave" name="creatureCharismaSave" value="${selectedCreature.getCharismaSave()}">
+                    </td>
                 </tr>
             </tbody>
         </table>
