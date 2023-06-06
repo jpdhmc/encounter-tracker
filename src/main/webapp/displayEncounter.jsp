@@ -32,6 +32,7 @@
             <c:if test="${(creature.getArmorClass() != null) && (creature.getArmorClass() != '')}">
                 <th>Armor Class</th>
             </c:if>
+            <!--TODO: fix every creature displaying hover as yes-->
             <c:if test="${(creature.getSpeed() != null) && (creature.getSpeed() != '')}">
                 <th>Speed</th>
             </c:if>
