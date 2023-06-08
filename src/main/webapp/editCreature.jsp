@@ -74,6 +74,42 @@
                         WIS Save: <input type="text" id="creatureWisdomSave" name="creatureWisdomSave" value="${selectedCreature.getWisdomSave()}">
                         CHA Save: <input type="text" id="creatureCharismaSave" name="creatureCharismaSave" value="${selectedCreature.getCharismaSave()}">
                     </td>
+                    <td>
+                        <input type="text" id="creatureSkills" name="creatureSkills" value="${selectedCreature.getSKillBonuses()}">
+                    </td>
+                    <td>
+                        <input type="text" id="creatureVulnerabilities" name="creatureVulnerabilities" value="${selectedCreature.getVulnerabilities()}">
+                    </td>
+                    <td>
+                        <input type="text" id="creatureResistances" name="creatureResistances" value="${selectedCreature.getResistances()}">
+                    </td>
+                    <td>
+                        <input type="text" id="creatureDamageImmunities" name="creatureDamageImmunities" value="${selectedCreature.getDamageImmunities()}">
+                    </td>
+                    <td>
+                        <input type="text" id="creatureConditionImmunities" name="creatureConditionImmunities" value="${selectedCreature.getConditionImmunities()}">
+                    </td>
+                    <td>
+                        <input type="text" id="creatureSenses" name="creatureSenses" value="${selectedCreature.getSenses()}">
+                    </td>
+                    <td>
+                        <input type="text" id="creatureLanguages" name="creatureLanguages" value="${selectedCreature.getLanguages()}">
+                    </td>
+                    <td>
+                        <input type="text" id="creatureChallengeRating" name="creatureChallengeRating" value="${selectedCreature.getChallengeRating()}">
+                    </td>
+                    <td>
+                        <input type="text" id="creatureActions" name="creatureActions" value="${selectedCreature.getActions()}">
+                    </td>
+                    <td>
+                        <input type="text" id="creatureReactions" name="creatureReactions" value="${selectedCreature.getReactions()}">
+                    </td>
+                    <td>
+                        <input type="text" id="creatureLegendaryActions" name="creatureLegendaryActions" value="${selectedCreature.getLegendaryActions()}">
+                    </td>
+                    <td>
+                        <input type="text" id="creatureSpecialAbilities" name="creatureSpecialAbilities" value="${selectedCreature.getSpecialAbilities()}">
+                    </td>
                 </tr>
             </tbody>
         </table>
