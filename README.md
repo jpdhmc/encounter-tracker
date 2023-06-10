@@ -1,3 +1,6 @@
+### Deployment Link
+[AWS](http://encountertracker-env.eba-w8kddmra.us-east-1.elasticbeanstalk.com/)
+
 ### Presentation
 [Youtube Link](https://youtu.be/gaidkPoz-9w)
 
