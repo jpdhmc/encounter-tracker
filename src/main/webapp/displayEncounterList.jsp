@@ -8,7 +8,7 @@
 <body>
   <c:import url="header.jsp"/>
   <h2>Your Encounters</h2>
-  <table id="encounterTable">
+  <table class="table table-bordered table-striped table-hover" id="encounterTable">
     <thead>
     <th>Encounter Number</th>
     <th>Name</th>

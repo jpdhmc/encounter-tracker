@@ -11,7 +11,7 @@
     <c:import url="header.jsp"/>
     <h2>${selectedEncounter.getEncounterName()}</h2>
     <c:forEach var="creature" items="${selectedEncounter.getCreatures()}">
-        <table id="encounterTable">
+        <table class="table table-bordered table-striped table-hover" id="encounterTable">
             <thead>
             <th>Creature Name</th>
             <th>Initiative</th>

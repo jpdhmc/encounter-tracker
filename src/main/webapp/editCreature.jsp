@@ -6,7 +6,7 @@
     <form action="updateCreature" method="post">
         <input type="hidden" name="selectedEncounter" value="${selectedEncounter.getId()}">
         <input type="hidden" name="editingCreature" value="${selectedCreature.getId()}">
-        <table>
+        <table class="table table-bordered table-striped table-hover">
             <thead>
                 <th>Creature Name</th>
                 <th>Max Hitpoints</th>

@@ -3,7 +3,7 @@
 <body>
     <c:import url="header.jsp"/>
     <h2>Monsters:</h2>
-    <table id="monsterTable">
+    <table class="table table-bordered table-striped table-hover" id="monsterTable">
         <thead>
         <th>Name</th>
         <th>AC</th>
