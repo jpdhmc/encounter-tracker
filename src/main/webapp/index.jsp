@@ -3,8 +3,7 @@
 
     <body>
         <c:import url="header.jsp"/>
-        <div class="container mt-5">
-        <div class="text-center">
+        <div class="container mt-5 text-center">
         <c:choose>
             <c:when test="${empty loggedInUser}">
                 <h1>Please log in!</h1>
@@ -13,10 +12,9 @@
             <c:otherwise>
                 <h1 class="newUserMessage">Thanks for logging in!</h1>
                 <h3 class="newUserMessage">Click on the "view your encounters" button to get started!</h3>
-                <img src="happygoblin.png" alt="A happy goblin" class="centerimg">
+                <img src="happygoblin.png" alt="A happy goblin">
             </c:otherwise>
         </c:choose>
-        </div>
         </div>
     </body>
 <c:import url="footer.jsp"/>

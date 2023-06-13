@@ -6,17 +6,17 @@
   </div>
 
   <nav class="navbar navbar-expand-sm navbar-light bg-light">
-      <form class="mr-1 ml-1" action="/index.jsp">
+      <form class="px-2" action="/index.jsp">
         <input class="btn btn-primary" type="submit" value="Home">
       </form>
       <c:choose>
         <c:when test="${empty loggedInUser}">
-          <form class="mr-1 ml-1" action="/logIn" method="post">
+          <form class="px-2" action="/logIn" method="post">
             <input class="btn btn-primary" type="submit" value="Log in">
           </form>
         </c:when>
         <c:otherwise>
-          <form class="mr-1 ml-1" action="/displayEncounterList" method="post">
+          <form class="px-2" action="/displayEncounterList" method="post">
             <input class="btn btn-primary" type="submit" value="View your encounters">
           </form>
         </c:otherwise>

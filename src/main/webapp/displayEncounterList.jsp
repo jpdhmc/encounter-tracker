@@ -7,6 +7,7 @@
 </script>
 <body>
   <c:import url="header.jsp"/>
+  <div class="container p-2 text-center">
   <h2>Your Encounters</h2>
   <table class="table table-bordered table-striped table-hover" id="encounterTable">
     <thead>
@@ -22,12 +23,12 @@
         <td>${encounter.getEncounterName()}
           <form action="displayEncounter" method="post">
             <input type="hidden" name="selectedEncounter" value="${encounter.getId()}">
-            <input type="submit" value="View">
+            <input class="btn btn-primary" type="submit" value="View">
           </form>
           <c:if test="${encounter.getEncounterName() != 'Creature Collection'}">
           <form action="deleteEncounter" method="post">
             <input type="hidden" name="deletingEncounter" value="${encounter.getId()}">
-            <input type="submit" value="Delete">
+            <input class="btn btn-primary" type="submit" value="Delete">
           </form>
           </c:if>
         </td>
@@ -39,7 +40,8 @@
     <label for="encounterName">Or... Create a new encounter!</label>
     <input type="text" id="encounterName" name="encounterName" placeholder="Name" maxLength="30" required>
     <br>
-    <button type="submit" value="Submit">Create a new encounter</button>
+    <button class="btn btn-primary" type="submit" value="Submit">Create a new encounter</button>
   </form>
+  </div>
 </body>
 <c:import url="footer.jsp"/>

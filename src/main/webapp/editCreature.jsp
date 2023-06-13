@@ -75,7 +75,7 @@
                         CHA Save: <input type="text" id="creatureCharismaSave" name="creatureCharismaSave" value="${selectedCreature.getCharismaSave()}">
                     </td>
                     <td>
-                        <input type="text" id="creatureSkills" name="creatureSkills" value="${selectedCreature.getSKillBonuses()}">
+                        <input type="text" id="creatureSkills" name="creatureSkills" value="${selectedCreature.getSkillBonuses()}">
                     </td>
                     <td>
                         <input type="text" id="creatureVulnerabilities" name="creatureVulnerabilities" value="${selectedCreature.getVulnerabilities()}">

@@ -9,8 +9,10 @@
 </script>
 <body>
     <c:import url="header.jsp"/>
+    <div class="container-fluid p-5 text-center">
     <h2>${selectedEncounter.getEncounterName()}</h2>
     <c:forEach var="creature" items="${selectedEncounter.getCreatures()}">
+        <div class="table-responsive">
         <table class="table table-bordered table-striped table-hover" id="encounterTable">
             <thead>
             <th>Creature Name</th>
@@ -81,12 +83,12 @@
                         <form action="editCreature" method="post">
                             <input type="hidden" name="selectedEncounter" value="${selectedEncounter.getId()}">
                             <input type="hidden" name="editingCreature" value="${creature.getId()}">
-                            <input type="submit" value="Edit">
+                            <input class="btn btn-primary" type="submit" value="Edit">
                         </form>
                         <form action="deleteCreature" method="post">
                             <input type="hidden" name="selectedEncounter" value="${selectedEncounter.getId()}">
                             <input type="hidden" name="deletingCreature" value="${creature.getId()}">
-                            <input type="submit" value="Delete">
+                            <input class="btn btn-primary" type="submit" value="Delete">
                         </form>
                     </td>
                     <td><input type="text" size="5" value="${creature.getInitiative()}"></td>
@@ -189,19 +191,20 @@
                 </tr>
             </tbody>
         </table>
+        </div>
         <br>
     </c:forEach>
     <details>
         <summary>Create a new creature to add!</summary>
-        <form class="creationForm" id="createCreatureForm" action="createCreature" method="POST">
+        <div class="container p-1 text-start bg-light">
+        <form id="createCreatureForm" action="createCreature" method="POST">
             <input type="hidden" name="creatureEncounter" value="${selectedEncounter.getId()}">
 
             <label for="creatureName">Name</label>
-            <input type="text" id="creatureName" name="creatureName" maxLength="60" required>
-            <br>
+            <input class="form-control" type="text" id="creatureName" name="creatureName" maxLength="60" required>
 
             <label for="creatureSize">Size</label>
-            <select name=creatureSize" id=creatureSize>
+            <select class="form-select" name=creatureSize" id=creatureSize>
                 <option value=""></option>
                 <option value="Tiny">Tiny</option>
                 <option value="Small">Small</option>
@@ -210,10 +213,9 @@
                 <option value="Huge">Huge</option>
                 <option value="Gargantuan">Gargantuan</option>
             </select>
-            <br>
 
             <label for="creatureType">Type</label>
-            <select name="creatureType" id="creatureType">
+            <select class="form-select" name="creatureType" id="creatureType">
                 <option value=""></option>
                 <option value="Aberration">Aberration</option>
                 <option value="Beast">Beast</option>
@@ -230,48 +232,39 @@
                 <option value="Plant">Plant</option>
                 <option value="Undead">Undead</option>
             </select>
-            <br>
 
             <label for="creatureArmorClass">Armor Class</label>
-            <input type="text" id="creatureArmorClass" name="creatureArmorClass" pattern="^(\d+)?$">
-            <br>
+            <input class="form-control" type="text" id="creatureArmorClass" name="creatureArmorClass" pattern="^(\d+)?$">
 
             <label for="creatureMaxHitpoints">Max Hitpoints</label>
-            <input type="text" id="creatureMaxHitpoints" name="creatureMaxHitpoints" pattern="^(\d+)?$" required>
-            <br>
+            <input class="form-control" type="text" id="creatureMaxHitpoints" name="creatureMaxHitpoints" pattern="^(\d+)?$" required>
 
             <label for="creatureHitdice">Hitdice</label>
-            <input type="text" id="creatureHitdice" name="creatureHitdice" maxLength="30">
-            <br>
+            <input class="form-control" type="text" id="creatureHitdice" name="creatureHitdice" maxLength="30">
 
             <label for="creatureSpeed">Speed</label>
-            <input type="text" id="creatureSpeed" name="creatureSpeed" placeholder="Walk 30ft. Fly 60ft." maxLength="120">
-            <br>
+            <input class="form-control" type="text" id="creatureSpeed" name="creatureSpeed" placeholder="Walk 30ft. Fly 60ft." maxLength="120">
 
             <label for="creatureSkills">Skill Bonuses</label>
-            <input type="text" id="creatureSkills" name="creatureSkills" placeholder="Stealth +4, Initiative +2" maxLength="120">
-            <br>
+            <input class="form-control" type="text" id="creatureSkills" name="creatureSkills" placeholder="Stealth +4, Initiative +2" maxLength="120">
 
             <label for="creatureSenses">Senses</label>
-            <input type="text" id="creatureSenses" name="creatureSenses" placeholder="Darkvision 60ft." maxLength="120">
-            <br>
+            <input class="form-control" type="text" id="creatureSenses" name="creatureSenses" placeholder="Darkvision 60ft." maxLength="120">
 
             <label for="creatureLanguages">Languages</label>
-            <input type="text" id="creatureLanguages" name="creatureLanguages" placeholder="Common, Draconic" maxLength="120">
-            <br>
+            <input class="form-control" type="text" id="creatureLanguages" name="creatureLanguages" placeholder="Common, Draconic" maxLength="120">
 
             <label for="creatureChallengeRating">Challenge Rating</label>
-            <input type="text" id="creatureChallengeRating" name="creatureChallengeRating" pattern="^(\d+)?$" maxLength="5">
-            <br>
+            <input class="form-control" type="text" id="creatureChallengeRating" name="creatureChallengeRating" pattern="^(\d+)?$" maxLength="5">
 
             <label for="creatureSpecialAbilities">Special Abilities</label>
-            <textarea id="creatureSpecialAbilities" name="creatureSpecialAbilities" maxLength="800" rows="5" cols="70" placeholder="Ambusher. When submerged in water, the dragon has advantage on Stealth checks. If the dragon hits a creature that can't see it with its bite, it can deal piercing damage and grapple the target simultaneously.
+            <textarea class="form-control" id="creatureSpecialAbilities" name="creatureSpecialAbilities" maxLength="800" rows="5" cols="70" placeholder="Ambusher. When submerged in water, the dragon has advantage on Stealth checks. If the dragon hits a creature that can't see it with its bite, it can deal piercing damage and grapple the target simultaneously.
 
 Innate Spellcasting. The dragons spellcasting ability is Charisma (save DC 17). It can innately cast the following spells, requiring no material components. 3/day each: animate dead, fog cloud, legend lore, pass without trace, speak with dead"></textarea>
             <br>
 
             <label for="creatureActions">Actions</label>
-            <textarea id="creatureActions" name="creatureActions" maxLength="800" rows="5" cols="70" placeholder="Multiattack. The dragon attacks once with its bite and twice with its claws. In place of its bite attack it can use Acid Spit.
+            <textarea class="form-control" id="creatureActions" name="creatureActions" maxLength="800" rows="5" cols="70" placeholder="Multiattack. The dragon attacks once with its bite and twice with its claws. In place of its bite attack it can use Acid Spit.
 
 Bite. Melee Weapon Attack: +12 to hit reach 10 ft. one target. Hit: 22 (3d10 + 6) piercing damage plus 4 (1d8) acid damage. Instead of dealing piercing damage the dragon can grapple the target (escape DC 20) and a Large or smaller creature grappled in this way is restrained. While grappling a creature the dragon can't bite or use Acid Spit against another target.
 
@@ -279,11 +272,11 @@ Acid Breath (Recharge 5-6). The dragon exhales sizzling acid or necrotic energy 
             <br>
 
             <label for="creatureReactions">Reactions</label>
-            <textarea id="creatureReactions" name="creatureReactions" maxLength="800" rows="5" cols="70" placeholder="Tail Attack. When a creature the dragon can see within 10 feet hits the dragon with a melee attack, the dragon makes a tail attack against it."></textarea>
+            <textarea class="form-control" id="creatureReactions" name="creatureReactions" maxLength="800" rows="5" cols="70" placeholder="Tail Attack. When a creature the dragon can see within 10 feet hits the dragon with a melee attack, the dragon makes a tail attack against it."></textarea>
             <br>
 
             <label for="creatureLegendaryActions">Legendary Actions</label>
-            <textarea id="creatureLegendaryActions" name="creatureLegendaryActions" maxLength="800" rows="5" cols="70" placeholder="The dragon can take 3 legendary actions. Only one legendary action can be used at a time and only at the end of another creatures turn. It regains spent legendary actions at the start of its turn.
+            <textarea class="form-control" id="creatureLegendaryActions" name="creatureLegendaryActions" maxLength="800" rows="5" cols="70" placeholder="The dragon can take 3 legendary actions. Only one legendary action can be used at a time and only at the end of another creatures turn. It regains spent legendary actions at the start of its turn.
 
 Darkness. The dragon creates a 20-foot-radius sphere of magical darkness originating from a point it can see within 120 feet. Darkvision can't penetrate this darkness. The darkness lasts for 1 minute or until the dragon uses this action again.
 
@@ -292,59 +285,67 @@ Roar. Each creature of the dragons choice within 120 feet that can hear it makes
 
             <details>
                 <summary>Stats</summary>
-                <input type="text" id="creatureStr" name="creatureStr" placeholder="Strength" pattern="^(\d+)?$">
-                <input type="text" id="creatureDex" name="creatureDex" placeholder="Dexterity" pattern="^(\d+)?$">
-                <input type="text" id="creatureCon" name="creatureCon" placeholder="Constitution" pattern="^(\d+)?$">
-                <input type="text" id="creatureInt" name="creatureInt" placeholder="Intelligence" pattern="^(\d+)?$">
-                <input type="text" id="creatureWis" name="creatureWis" placeholder="Wisdom" pattern="^(\d+)?$">
-                <input type="text" id="creatureCha" name="creatureCha" placeholder="Charisma" pattern="^(\d+)?$">
+                <input class="form-control" type="text" id="creatureStr" name="creatureStr" placeholder="Strength" pattern="^(\d+)?$">
+                <input class="form-control" type="text" id="creatureDex" name="creatureDex" placeholder="Dexterity" pattern="^(\d+)?$">
+                <input class="form-control" type="text" id="creatureCon" name="creatureCon" placeholder="Constitution" pattern="^(\d+)?$">
+                <input class="form-control" type="text" id="creatureInt" name="creatureInt" placeholder="Intelligence" pattern="^(\d+)?$">
+                <input class="form-control" type="text" id="creatureWis" name="creatureWis" placeholder="Wisdom" pattern="^(\d+)?$">
+                <input class="form-control" type="text" id="creatureCha" name="creatureCha" placeholder="Charisma" pattern="^(\d+)?$">
             </details>
 
             <details>
                 <summary>Saving Throws</summary>
-                <input type="text" id="creatureStrSave" name="creatureStrSave" placeholder="Strength Save" pattern="^(\d+)?$">
-                <input type="text" id="creatureDexSave" name="creatureDexSave" placeholder="Dexterity Save" pattern="^(\d+)?$">
-                <input type="text" id="creatureConSave" name="creatureConSave" placeholder="Constitution Save" pattern="^(\d+)?$">
-                <input type="text" id="creatureIntSave" name="creatureIntSave" placeholder="Intelligence Save" pattern="^(\d+)?$">
-                <input type="text" id="creatureWisSave" name="creatureWisSave" placeholder="Wisdom Save" pattern="^(\d+)?$">
-                <input type="text" id="creatureChaSave" name="creatureChaSave" placeholder="Charisma Save" pattern="^(\d+)?$">
+                <input class="form-control" type="text" id="creatureStrSave" name="creatureStrSave" placeholder="Strength Save" pattern="^(\d+)?$">
+                <input class="form-control" type="text" id="creatureDexSave" name="creatureDexSave" placeholder="Dexterity Save" pattern="^(\d+)?$">
+                <input class="form-control" type="text" id="creatureConSave" name="creatureConSave" placeholder="Constitution Save" pattern="^(\d+)?$">
+                <input class="form-control" type="text" id="creatureIntSave" name="creatureIntSave" placeholder="Intelligence Save" pattern="^(\d+)?$">
+                <input class="form-control" type="text" id="creatureWisSave" name="creatureWisSave" placeholder="Wisdom Save" pattern="^(\d+)?$">
+                <input class="form-control" type="text" id="creatureChaSave" name="creatureChaSave" placeholder="Charisma Save" pattern="^(\d+)?$">
             </details>
 
             <details>
                 <summary>Damage Modifiers</summary>
                 <label for="creatureDamageImmunities">Damage Immunities</label>
-                <input type="text" id="creatureDamageImmunities" name="creatureDamageImmunities" placeholder="Fire, Force" maxLength="120">
+                <input class="form-control" type="text" id="creatureDamageImmunities" name="creatureDamageImmunities" placeholder="Fire, Force" maxLength="120">
                 <br>
 
                 <label for="creatureConditionImmunities">Condition Immunities</label>
-                <input type="text" id="creatureConditionImmunities" name="creatureConditionImmunities" placeholder="Stunned, Charmed" maxLength="120">
+                <input class="form-control" type="text" id="creatureConditionImmunities" name="creatureConditionImmunities" placeholder="Stunned, Charmed" maxLength="120">
                 <br>
 
                 <label for="creatureDamageResistances">Damage Resistances</label>
-                <input type="text" id="creatureDamageResistances" name="creatureDamageResistances" placeholder="Acid" maxLength="120">
+                <input class="form-control" type="text" id="creatureDamageResistances" name="creatureDamageResistances" placeholder="Acid" maxLength="120">
                 <br>
 
                 <label for="creatureDamageVulnerabilities">Damage Vulnerabilities</label>
-                <input type="text" id="creatureDamageVulnerabilities" name="creatureDamageVulnerabilities" placeholder="Radiant" maxLength="120">
+                <input class="form-control" type="text" id="creatureDamageVulnerabilities" name="creatureDamageVulnerabilities" placeholder="Radiant" maxLength="120">
                 <br>
             </details>
             <br>
 
             <p>Track conditions for this creature?</p>
-            <label for="creatureIsTrackingConditionsTrue">Yes</label>
-            <input type="radio" id="creatureIsTrackingConditionsTrue" name="creatureIsTrackingConditions" value="creatureIsTrackingConditionsTrue">
-            <label for="creatureIsTrackingConditionsFalse">No</label>
-            <input type="radio" id="creatureIsTrackingConditionsFalse" name="creatureIsTrackingConditions" value="creatureIsTrackingConditionsFalse" checked>
+            <div class="form-check">
+            <label class="form-check-label" for="creatureIsTrackingConditionsTrue">Yes</label>
+            <input class="form-check-input" type="radio" id="creatureIsTrackingConditionsTrue" name="creatureIsTrackingConditions" value="creatureIsTrackingConditionsTrue">
+            </div>
+            <div class="form-check">
+            <label class="form-check-label" for="creatureIsTrackingConditionsFalse">No</label>
+            <input class="form-check-input" type="radio" id="creatureIsTrackingConditionsFalse" name="creatureIsTrackingConditions" value="creatureIsTrackingConditionsFalse" checked>
+            </div>
             <br>
 
             <p>Add this creature to your Creature Collection?</p>
-            <label for="creatureAddToCollectionTrue">Yes</label>
-            <input type="radio" id="creatureAddToCollectionTrue" name="creatureAddToCollection" value="creatureAddToCollectionTrue">
-
-            <label for="creatureAddToCollectionFalse">No</label>
-            <input type="radio" id="creatureAddToCollectionFalse" name="creatureAddToCollection" value="creatureAddToCollectionFalse" checked>
-            <button type="submit" value="Submit">Save Creature</button>
+            <div class="form-check">
+            <label class="form-check-label" for="creatureAddToCollectionTrue">Yes</label>
+            <input class="form-check-input" type="radio" id="creatureAddToCollectionTrue" name="creatureAddToCollection" value="creatureAddToCollectionTrue">
+            </div>
+            <div class="form-check">
+            <label class="form-check-label" for="creatureAddToCollectionFalse">No</label>
+            <input class="form-check-input" type="radio" id="creatureAddToCollectionFalse" name="creatureAddToCollection" value="creatureAddToCollectionFalse" checked>
+            </div>
+            <button class="btn btn-primary" type="submit" value="Submit">Save Creature</button>
         </form>
+        </div>
     </details>
 
 
@@ -357,14 +358,15 @@ Roar. Each creature of the dragons choice within 120 feet that can hear it makes
             <option value="${creature.getId()}">${creature.getCreatureName()}</option>
             </c:forEach>
         </select>
-        <button type="submit" value="Submit">Add from collection</button>
+        <button class="btn btn-primary" type="submit" value="Submit">Add from collection</button>
     </form>
 
     <form id="createCreatureFromSearchForm" action="createCreatureFromSearch" method="POST">
         <input type="hidden" name="creatureEncounter" value="${selectedEncounter.getId()}">
         <label for="searchCreature">Or... Search the Open5e API for a creature!</label>
         <input type="text" id="searchCreature" name="searchCreature" placeholder="Goblin">
-        <button type="submit" value="Submit">Search API</button>
+        <button class="btn btn-primary" type="submit" value="Submit">Search API</button>
     </form>
+    </div>
 </body>
 <c:import url="footer.jsp"/>
