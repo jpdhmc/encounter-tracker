@@ -63,7 +63,7 @@ public class Speed{
 	}
 
 	@JsonProperty("hover")
-	private boolean hover;
+	private boolean hover = false;
 
 	public void setHover(boolean hover){
 		this.hover = hover;

@@ -9,6 +9,9 @@
       <form class="px-2" action="/index.jsp">
         <input class="btn btn-primary" type="submit" value="Home">
       </form>
+      <form class="px-2" action="/about.jsp">
+        <input class="btn btn-primary" type="submit" value="About">
+      </form>
       <c:choose>
         <c:when test="${empty loggedInUser}">
           <form class="px-2" action="/logIn" method="post">
