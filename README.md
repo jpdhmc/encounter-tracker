@@ -10,8 +10,11 @@ Keeping track of combat encounters when you're playing Dungeons and Dragons can 
 
 ### Project Technologies/Techniques 
 API: [Open5e API](https://open5e.com/)
+
 Bootstrap 5
+
 MySQL
+
 AWS Elastic Beanstalk
 
 ### Design
