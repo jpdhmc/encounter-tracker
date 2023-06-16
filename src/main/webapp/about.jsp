@@ -15,7 +15,7 @@
         </ul>
         <div class="row bg-light">
             <div class="col d-flex align-items-center justify-content-center">
-                <p>A user will first have the opportunity to create an account or log in using Amazon Cognito functionality.</p>
+                <p>A user will first have the opportunity to create an account or log in using Amazon Cognito functionality.<br>(<b>NOTE:</b> For development purposes this application is using a self-signed SSL certificate, which may cause a warning screen on your browser upon login/registration - This is expected, and you may bypass it safely.</p>
                 <p>(Images may be clicked on for a better view)</p>
             </div>
             <div class="col d-flex align-items-center justify-content-center">
