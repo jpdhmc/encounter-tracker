@@ -15,11 +15,17 @@
         </ul>
         <div class="row bg-light">
             <div class="col d-flex align-items-center justify-content-center">
-                <p>A user will first have the opportunity to create an account or log in using Amazon Cognito functionality.<br>(<b>NOTE:</b> For development purposes this application is using a self-signed SSL certificate, which may cause a warning screen on your browser upon login/registration - This is expected, and you may bypass it safely.</p>
-                <p>(Images may be clicked on for a better view)</p>
+                <div class="row">
+                    <div class="col-12 col-lg-8">
+                        <p>A user will first have the opportunity to create an account or log in using Amazon Cognito functionality.<br>(<b>NOTE:</b> For development purposes this application is using a self-signed SSL certificate, which may cause a warning screen on your browser upon login/registration - This is expected, and you may bypass it safely.)</p>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <p>(Images may be clicked on for a better view)</p>
+                    </div>
+                </div>
             </div>
             <div class="col d-flex align-items-center justify-content-center">
-                <button type="button" data-bs-toggle="modal" data-bs-target="#modal1"><img class="img-fluid" src="images/home.JPG" alt="The home page" style="width:960px;height:500px;"></button>
+                <button type="button" data-bs-toggle="modal" data-bs-target="#modal1"><img class="img-fluid" src="images/home.JPG" alt="The home page"></button>
                 <div class="modal fade" id="modal1">
                     <div class="modal-dialog modal-xl">
                         <div class="modal-content">
@@ -39,7 +45,7 @@
                 <p>Once logged in, you may view your encounters. Every user has a creature collection for storing and reusing creatures as desired. We can also create a new encounter.</p>
             </div>
             <div class="col d-flex align-items-center justify-content-center">
-                <button type="button" data-bs-toggle="modal" data-bs-target="#modal2"><img class="img-fluid" src="images/viewEncounters.JPG" alt="View encounters page" style="width:960px;height:500px;"></button>
+                <button type="button" data-bs-toggle="modal" data-bs-target="#modal2"><img class="img-fluid" src="images/viewEncounters.JPG" alt="View encounters page"></button>
                 <div class="modal fade" id="modal2">
                     <div class="modal-dialog modal-xl">
                         <div class="modal-content">
@@ -59,7 +65,7 @@
                 <p>Now that we have an encounter, we can create creatures to populate it. First, I will create one from scratch.</p>
             </div>
             <div class="col d-flex align-items-center justify-content-center">
-                <button type="button" data-bs-toggle="modal" data-bs-target="#modal3"><img class="img-fluid" src="images/createdEncounter.JPG" alt="View encounter page" style="width:960px;height:500px;"></button>
+                <button type="button" data-bs-toggle="modal" data-bs-target="#modal3"><img class="img-fluid" src="images/createdEncounter.JPG" alt="View encounter page"></button>
                 <div class="modal fade" id="modal3">
                     <div class="modal-dialog modal-xl">
                         <div class="modal-content">
@@ -79,7 +85,7 @@
                 <p>When filling out the form with your desired creature details, you will have an option to add it to your collection.</p>
             </div>
             <div class="col d-flex align-items-center justify-content-center">
-                <button type="button" data-bs-toggle="modal" data-bs-target="#modal4"><img class="img-fluid" src="images/createCreature.JPG" alt="Creating a creature" style="width:960px;height:500px;"></button>
+                <button type="button" data-bs-toggle="modal" data-bs-target="#modal4"><img class="img-fluid" src="images/createCreature.JPG" alt="Creating a creature"></button>
                 <div class="modal fade" id="modal4">
                     <div class="modal-dialog modal-xl">
                         <div class="modal-content">
@@ -99,7 +105,7 @@
                 <p>Since we added our scary monster to our collection, we are able to recreate it easily if we want. Next I will demonstrate searching the Open5e API for a creature.</p>
             </div>
             <div class="col d-flex align-items-center justify-content-center">
-                <button type="button" data-bs-toggle="modal" data-bs-target="#modal5"><img class="img-fluid" src="images/createFromCollection.JPG" alt="Creating a creature" style="width:960px;height:500px;"></button>
+                <button type="button" data-bs-toggle="modal" data-bs-target="#modal5"><img class="img-fluid" src="images/createFromCollection.JPG" alt="Creating a creature"></button>
                 <div class="modal fade" id="modal5">
                     <div class="modal-dialog modal-xl">
                         <div class="modal-content">
@@ -119,7 +125,7 @@
                 <p>I entered the search term "dragon" and was returned a table of matching creatures with the option to add them to my encounter.</p>
             </div>
             <div class="col d-flex align-items-center justify-content-center">
-                <button type="button" data-bs-toggle="modal" data-bs-target="#modal6"><img class="img-fluid" src="images/searchApi.JPG" alt="Searching the open5e api" style="width:960px;height:500px;"></button>
+                <button type="button" data-bs-toggle="modal" data-bs-target="#modal6"><img class="img-fluid" src="images/searchApi.JPG" alt="Searching the open5e api"></button>
                 <div class="modal fade" id="modal6">
                     <div class="modal-dialog modal-xl">
                         <div class="modal-content">
@@ -139,7 +145,7 @@
                 <p>And here is the added dragon in our encounter!</p>
             </div>
             <div class="col d-flex align-items-center justify-content-center">
-                <button type="button" data-bs-toggle="modal" data-bs-target="#modal7"><img class="img-fluid" src="images/createdFromApi.JPG" alt="Created a creature from the API" style="width:960px;height:500px;"></button>
+                <button type="button" data-bs-toggle="modal" data-bs-target="#modal7"><img class="img-fluid" src="images/createdFromApi.JPG" alt="Created a creature from the API"></button>
                 <div class="modal fade" id="modal7">
                     <div class="modal-dialog modal-xl">
                         <div class="modal-content">

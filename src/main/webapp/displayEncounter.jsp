@@ -83,7 +83,7 @@
                         <form action="editCreature" method="post">
                             <input type="hidden" name="selectedEncounter" value="${selectedEncounter.getId()}">
                             <input type="hidden" name="editingCreature" value="${creature.getId()}">
-                            <input class="btn btn-primary" type="submit" value="Edit">
+                            <input class="btn btn-primary disabled" type="submit" value="Edit">
                         </form>
                         <form action="deleteCreature" method="post">
                             <input type="hidden" name="selectedEncounter" value="${selectedEncounter.getId()}">
